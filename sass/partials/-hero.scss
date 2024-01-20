@@ -1,0 +1,25 @@
+.hero{
+    padding-bottom: 5rem;
+    background-color: #D2EE62;
+    background: url(../img/img-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.hero-text {
+    text-align: center;
+    position: relative;
+    padding-top: 22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.img-hero{
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
