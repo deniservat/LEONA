@@ -1,34 +1,38 @@
-
-@use 'partials/hero';
-@use 'partials/text-style';
-@use 'partials/buttons';
-@use 'partials/img-and-icons';
-@use 'partials/category-layout';
-@use 'partials/sections';
-
+@use './partials/variables';
+@use './partials/buttons';
+@use './partials/category-layout';
+@use './partials/hero';
+@use './partials/img-and-icons';
+@use './partials/navbar';
+@use './partials/sections';
+@use './partials/text-style';
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
 }
 
 body, html{
     width: 100%;
 }
 
-.dark{
-    color: #282828;
+html{
+    font-size: 62.5%;
+    background-color: $color-white;
+    font-family: "primary-font";
 }
 
-.d-center{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+@font-face {
+    font-family: "primary-font";
+    src:url("../fonts/RussischSans-ExtraLight.ttf");
+    src:url("../fonts/RussischSans-Light.ttf");
+    src:url("../fonts/RussischSans-Regular.ttf");
+    src:url("../fonts/RussischSans-Medium.ttf");
+    src:url("../fonts/RussischSans-SemiBold.ttf");
+    src:url("../fonts/RussischSans-Bold.ttf");
+    src:url("../fonts/RussischSans-ExtraBold.ttf");
 }
 
-.r-center{
-    justify-content: center;
-    align-items: center;
-}
+
+

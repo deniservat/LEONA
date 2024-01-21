@@ -1,7 +1,7 @@
+@use './partials/variables';
 
 .h1{
     color: #FFF;
-    font-family: "Josefin Sans";
     font-size: 36px;
     font-style: normal;
     font-weight: 400;
@@ -11,7 +11,6 @@
 
 .h2{
     color: #FFF;
-    font-family: "Josefin Sans";
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -21,7 +20,6 @@
 
 .page-title{
     color: #000;
-    font-family: "Josefin Sans";
     font-size: 32px;
     font-style: normal;
     font-weight: 300;
@@ -32,10 +30,9 @@
 
 .h5{
     color: #000;
-    font-family: "Josefin Sans";
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     text-align: center;
 }

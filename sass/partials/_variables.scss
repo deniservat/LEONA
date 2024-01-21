@@ -1,0 +1,33 @@
+$color-main: #CCFF00;
+$color-2: #D0ED5D;
+$color-3: #05E0E0;
+$color-4: #E1E7FE;
+$color-hover: #00FF85;
+$color-black: #282828;
+$color-white: #F8FCF5;
+
+.d-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.r-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.r-end{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.r-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}

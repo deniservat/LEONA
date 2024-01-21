@@ -1,0 +1,19 @@
+@use './partials/variables'; 
+
+.btn-hero{
+    color: $color-black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: $color-main;
+    border: none;
+    border-radius: 40px;
+    padding: 24px 32px;
+}
+
+.btn-hero:hover{
+    background-color: $color-hover;
+    color: $color-black;
+}
+
