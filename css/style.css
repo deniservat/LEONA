@@ -29,52 +29,64 @@
   margin-bottom: 0;
 }
 
-.cover-frame {
+.btn-category {
+  color: #282828;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #CCFF00;
+  border: none;
+  border-radius: 40px;
+  padding: 18px 28px;
+}
+
+.btn-category:hover {
+  background-color: #00FF85;
+  color: #282828;
+}
+
+.wrapper {
+  width: 100%;
   height: 500px;
+  overflow: hidden;
+}
+
+.cover-frame {
+  width: 100%;
+  height: 100%;
   position: relative;
   background-size: cover;
-  /*animate*/
-  transition: all 0.2s ease-in;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .cover-frame-1 {
   background-image: url(../img/img-category-1.jpg);
 }
 
-.cover-frame-1:hover {
-  background-image: url(../img/img-category-1-hover.jpg);
-  /*animate*/
-  transition: all 0.6s ease-out;
-}
-
 .cover-frame-2 {
   background-image: url(../img/img-category-2.jpg);
-}
-
-.cover-frame-2:hover {
-  background-image: url(../img/img-category-2-hover.jpg);
-  /*animate*/
-  transition: all 0.6s ease-out;
 }
 
 .cover-frame-3 {
   background-image: url(../img/img-category-3.jpg);
 }
 
-.cover-frame-3:hover {
-  background-image: url(../img/img-category-3-hover.jpg);
-  /*animate*/
-  transition: all 0.6s ease-out;
-}
-
 .cover-frame-4 {
   background-image: url(../img/img-category-4.jpg);
 }
 
-.cover-frame-4:hover {
-  background-image: url(../img/img-category-4-hover.jpg);
-  /*animate*/
-  transition: all 0.6s ease-out;
+.cover-frame:hover {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .title-overlay {
@@ -83,6 +95,10 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
+  opacity: 100;
+}
+.title-overlay:hover {
+  opacity: 0;
 }
 
 .overlay {
@@ -99,7 +115,6 @@
   bottom: 0;
   width: 100%;
   height: 500px;
-  /*animate*/
   transition: all 0.3s ease-in;
 }
 
@@ -116,7 +131,7 @@
   align-items: center;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 3%;
   right: 0;
   bottom: 0;
   width: 100%;
@@ -142,7 +157,12 @@
 }
 
 .height-25 {
+  width: 100%;
   height: 250px;
+}
+
+.width-25 {
+  width: 25%;
 }
 
 .hero {
