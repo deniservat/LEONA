@@ -1,0 +1,21 @@
+.promo-strip{
+    width: 100vw;
+    height: 3rem;
+    top: 0;
+    background-color: #D2EE62;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0.5rem;
+    z-index: 5;
+}
+
+#promo p{
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 0.5rem;
+}

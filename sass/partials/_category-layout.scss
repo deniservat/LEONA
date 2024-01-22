@@ -1,6 +1,5 @@
 
 .cover-frame{
-    background-image:url(../img/img-placeholder.jpg);
     height:500px;
     position:relative;
     background-size:cover;
@@ -8,16 +7,44 @@
     transition:all .2s ease-in;
 }
 
-.cover-frame:hover{
-    background-image:url(../img/img-placeholder-hover.jpg);
-    /*animate*/
-    transition:all .4s ease-in;
+.cover-frame-1{
+    background-image:url(../img/img-category-1.jpg);
 }
+.cover-frame-1:hover{
+    background-image:url(../img/img-category-1-hover.jpg);
+    /*animate*/
+    transition:all .6s ease-out;
+}
+.cover-frame-2{
+    background-image:url(../img/img-category-2.jpg);
+}
+.cover-frame-2:hover{
+    background-image:url(../img/img-category-2-hover.jpg);
+    /*animate*/
+    transition:all .6s ease-out;
+}
+.cover-frame-3{
+    background-image:url(../img/img-category-3.jpg);
+}
+.cover-frame-3:hover{
+    background-image:url(../img/img-category-3-hover.jpg);
+    /*animate*/
+    transition:all .6s ease-out;
+}
+.cover-frame-4{
+    background-image:url(../img/img-category-4.jpg);
+}
+.cover-frame-4:hover{
+    background-image:url(../img/img-category-4-hover.jpg);
+    /*animate*/
+    transition:all .6s ease-out;
+}
+
+
 
 .title-overlay{
     position: absolute;
     color: #FFF;
-    font-family: "Josefin Sans";
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

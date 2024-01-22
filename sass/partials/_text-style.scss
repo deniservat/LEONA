@@ -1,5 +1,5 @@
-@use './partials/variables';
-
+/* @use './partials/variables';
+ */
 .h1{
     color: #FFF;
     font-size: 36px;
@@ -20,12 +20,12 @@
 
 .page-title{
     color: #000;
-    font-size: 32px;
+    font-size: 36px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 200;
     line-height: normal;
     text-align: center;
-    padding-top: 10rem;
+    padding-top: 9rem;
 }
 
 .h5{
@@ -34,5 +34,77 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    text-align: center;
+}
+
+.product-title{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+.producct-price{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.filter-name{
+    color: #282828;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+.filter-value{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+.filter-value-label{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+
+}
+
+.h6-footer{
+    color: #282828;
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 2rem;
+}
+
+.p-footer{
+    color: #282828;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 2rem;
+}
+
+.large-heading{
+    color: #282828;
+    font-size: 240px;
+    font-weight: 50;
+    line-height: normal;
+}
+
+.p{
+    color: #282828;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: normal;
+    padding-top: 2rem;
     text-align: center;
 }

@@ -1,6 +1,18 @@
-@use './partials/variables';
+/* @use '../partials/variables'; */
 
-.section-1{
-    background-color: aqua;
-    height: 60rem;
+.bg-color{
+    background-color: #E1E7FE;
+}
+
+.section-about-1{
+    padding: 12rem 36rem 0 36rem;
+}
+
+.section-about-2{
+    padding: 3rem 36rem 12rem 36rem;
+}
+
+.section-about-items{
+    padding: 0;
+    margin: 0;
 }

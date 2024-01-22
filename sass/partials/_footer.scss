@@ -1,0 +1,43 @@
+@import 'variables';
+
+@mixin flex-row-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+footer{
+    padding: 5rem 0;
+    background-color: #D0ED5D;
+}
+
+
+
+.footer_contact_frame{
+    @include flex-row-left;
+    padding-bottom: 1rem;
+}
+
+.footer_icn{
+    color: #282828;
+    padding-right: 2rem;
+    width: 64px;
+    height: 64px;
+}
+
+.footer_logo{
+    width: 90%;
+}
+
+/*FOOTER responsive*/ 
+
+@media only screen and (max-width: 992px) {
+
+.footer_column2,
+.footer_column3{
+    padding-left: 4rem;
+    padding-top: 4rem;
+}
+    
+}

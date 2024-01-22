@@ -1,4 +1,4 @@
-@use './partials/variables';
+//NAVBAR INDEX
 
 .navbar{
     position: fixed;
@@ -9,27 +9,6 @@
     align-items: center;
     padding: 0;
     z-index: 1;
-}
-
-.promo-strip{
-    width: 100vw;
-    height: 2rem;
-    top: 0;
-    background-color: #D2EE62;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 0.5rem;
-}
-
-#promo p{
-    color: #000;
-    font-family: "Josefin Sans";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 0.5rem;
 }
 
 .navbar ol{
@@ -47,61 +26,32 @@
   height: 48.13px;
 }
 
-/*SEARCH BAR*/
+.page-logo{
+  z-index: 1;
+}
+  
+//NAVBAR PRODUCTOS
+  
 
-.search-box{
-  position: relative;
-  width: 40%;
-  border-radius: 0;
-  padding: 6px 12px 6px 12px;
-  background: transparent;
-  border: 2px solid #282828;
+.navbar-products{
+  background-color: #F8FCF5;
 }
 
-.input{
+.navbar ol{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
   background-color: transparent;
-  border: none;
-  color: #282828;
-  font-family: "Josefin Sans";
-  font-size: 16px;
-  font-weight: 400;
-
-  &:focus{
-    outline: none;
-  }
-
-  &::placeholder{
-    color: #282828;
-    font-weight: 200;
-  }
+  padding-top: 1rem;
+  padding-right: 1.5rem;
 }
 
-.btn-search{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    border: none;
-    background-color: transparent;
+.nav-brand{
+width: 220.68px;
+height: 48.13px;
+}
 
-    .icn-search{
-      height: 100%;
-      width: 100%;
-      fill: #282828;
-      background-color: transparent;
-
-      &:hover{
-        fill: #fff;
-        background-color: #282828;
-      }
-    }
-    }
-
-
-    
-  
-
-  
-
-
-
+.page-logo{
+z-index: 1;
+}

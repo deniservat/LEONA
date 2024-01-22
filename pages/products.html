@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="e-commerce, shop, natural cosmetic, natural ingredients">
     <meta name="description" content="">
-
     <title>Leona</title>
-
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar-products navbar">
             <div id="promo" class="promo-strip">
                 <p class="text-center">FREE SHIPPING and 10% OFF on purchases over £59!</p>
             </div>
             <ol class="container-fluid"> 
-                <a class="col-6" href=""><img class="icn-burger" src="../icn/icn-burger-dark.svg"></a>
-                
-                <div class="col-6 r-start">
+                <a class="col-5" href=""><img class="icn-burger" src="../icn/icn-burger-dark.svg"></a>
+                <a class="col-2 page-logo" href="../index.html"><img src="../icn/logo-dark.svg"></a>
+                <div class="col-5 r-start">
                     <div class="container r-end pr-5">
                       <form class="search-box">
                           <input class='input' placeholder="I'm looking for..." type='text'>
@@ -40,17 +42,204 @@
         </nav> 
     </header>
 
-    <main id="main">
-        <section class="section-1 container-fluid">
-            <h1 class="page-title">Productos</h1>
-            <article class="filters"></article>
-            <article class="product-container"></article>
-        </section>
+    <main id="main container">
+      <section class="headings row">
+        <article class="logo col-12">
+          <h1 class="page-title">Productos</h1>
+        </article>
+      </section>
+
+      <section class="order row w-90 align-center">
+        <article class="col-md-6">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="breadcrumb-a" href="../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </ol>
+          </nav>
+        </article>
+        <article class="col-md-6 p-0 ">
+          <div class="row r-end">
+            <div class="dropdown">
+              <div class="input-box"></div>
+              <div class="list">
+                
+                <input type="radio" name="drop1" id="id11" class="radio" />
+                <label for="id11">
+                  <span class="name">Most popular</span>
+                </label>
+      
+                <input type="radio" name="drop1" id="id12" class="radio" />
+                <label for="id12">
+                  <span class="name">Highest price</span>
+                </label>
+      
+                <input type="radio" name="drop1" id="id13" class="radio" />
+                <label for="id13">
+                  <span class="name">Lowest price</span>
+                </label>
+      
+              </div>
+            </div> 
+          </div>
+        </article>
+      </section>
+
+      <section class="row w-90 filters-and-products">   
+        
+        <aside class="container-filters col-md-3">
+
+          <div class="filter">
+            <h2 class="filter-name">CATEGORY</h2>
+            <ul class="ul-value">
+              <li class="filter-value">Kits</li>
+              <li class="filter-value">Skin</li>
+              <li class="filter-value">Lips</li>
+              <li class="filter-value">Eyes</li>
+            </ul>
+          </div>
+
+          <div class="filter">
+            <h2 class="filter-name">PRICE</h2>
+            <div class="price-value container-fluid">
+              <div class="row">
+                <div class="price-value col-md-6">
+                  <h3 class="filter-value-label">Min.</h3>
+                  <input class="input-filter-value" placeholder="£00.00" type="text">
+                </div>
+                <div class="price-value col-md-6">
+                  <h3 class="filter-value-label">Max.</h3>
+                  <input class="input-filter-value" placeholder="£00.00" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter">
+            <h2 class="filter-name">COLOR</h2>
+            <ul class="ul-value">
+              <li class="filter-value">Black</li>
+              <li class="filter-value">White</li>
+              <li class="filter-value">Yellow</li>
+              <li class="filter-value">Blue</li>
+              <li class="filter-value">Red</li>
+              <li class="filter-value">Green</li>
+              <li class="filter-value">Orange</li>
+              <li class="filter-value">Purple</li>
+              <li class="filter-value">Sand</li>
+              <li class="filter-value">Grey</li>
+            </ul>
+          </div>
+        </aside>
+
+        <article class="product-list col-md-9 p-0 m-0">
+          <div class="container-fluid p-0 m-0">
+            <div class="row">
+
+              <div class="col-xs-12 col-md-4 p-0 m-0">
+                <div class="product-card">
+                  <div class="wrapper d-end">
+                    <div class="parent">
+                      <div class="child bg-1">
+                      </div>
+                    </div>
+                    <a class="btn-add d-end" href="">
+                      <svg width="48" height="41" viewBox="0 0 48 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="btn-add-bg" d="M0 18C0 8.05887 8.05887 0 18 0H30C39.9411 0 48 8.05887 48 18V41H0V18Z"/>
+                        <path d="M24 14V32" stroke="#282828" stroke-width="2"/>
+                        <path d="M15 23H33" stroke="#282828" stroke-width="2"/>
+                      </svg>
+                    </a> 
+                  </div>
+                  <div class="product-details">
+                    <h2 class="product-title">Product title</h2>
+                    <h3 class="product-price">£00.00</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4 p-0 m-0">
+                <div class="product-card">
+                  <div class="wrapper d-end">
+                    <div class="parent">
+                      <div class="child bg-2">
+                      </div>
+                    </div>
+                    <a class="btn-add d-end" href="">
+                      <svg width="48" height="41" viewBox="0 0 48 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="btn-add-bg" d="M0 18C0 8.05887 8.05887 0 18 0H30C39.9411 0 48 8.05887 48 18V41H0V18Z"/>
+                        <path d="M24 14V32" stroke="#282828" stroke-width="2"/>
+                        <path d="M15 23H33" stroke="#282828" stroke-width="2"/>
+                      </svg>
+                    </a> 
+                  </div>
+                  <div class="product-details">
+                    <h2 class="product-title">Product title</h2>
+                    <h3 class="product-price">£00.00</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-4 p-0 m-0">
+                <div class="product-card">
+                  <div class="wrapper d-end">
+                    <div class="parent">
+                      <div class="child bg-3">
+                      </div>
+                    </div>
+                    <a class="btn-add d-end" href="">
+                      <svg width="48" height="41" viewBox="0 0 48 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="btn-add-bg" d="M0 18C0 8.05887 8.05887 0 18 0H30C39.9411 0 48 8.05887 48 18V41H0V18Z"/>
+                        <path d="M24 14V32" stroke="#282828" stroke-width="2"/>
+                        <path d="M15 23H33" stroke="#282828" stroke-width="2"/>
+                      </svg>
+                    </a> 
+                  </div>
+                  <div class="product-details">
+                    <h2 class="product-title">Product title</h2>
+                    <h3 class="product-price">£00.00</h3>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </article>
+
+      </section>   
     </main>
 
-    <footer id="footer">
+    <footer class="container-fluid">
+      <section class="row justify-content-around">
+          <article class="col-lg-5 col-xs-10">
+            <a class="" href="../index.html"><img src="../icn/LEONA-logo.svg" alt="Brand logo"></a>
+          </article>
+          <article class="col-lg-2 col-md-6 col-xs-10 footer_column2">
+              <h3 class="h6-footer">Stay connected</h3>
+              <div class="footer_socialicons">
+                  <a href=""><img class="footer_icn" src="../icn/icn-ig.svg" alt="instagram icon" width="40px"></a>
+                  <a href=""><img class="footer_icn" src="../icn/icn-tw.svg" alt="twitter icon" width="40px"></a>
+                  <a href=""><img class="footer_icn" src="../icn/icn-linkedin.svg" alt="linkedin icon" width="40px"></a>       
+              </div>
+          </article>
 
-    </footer>
+          <article class="col-lg-3 col-md-6 col-xs-10 footer_column3">
+              <h3 class="h6-footer">Contact us</h3>
+              <div class="footer_contact_frame">
+                  <img class="footer_icn" src="../icn/icn-location.svg"alt="location icon" width="40px" height="40px">
+                  <p class="p-footer">Suburb, City, Country</p>
+              </div>
+              <div class="footer_contact_frame">
+                  <img class="footer_icn" src="../icn/icn-wsp.svg" alt="whatsapp icon" width="50px" height="50px">
+                  <p class="p-footer">+44 00000000000</p>
+              </div>
+              <div class="footer_contact_frame">
+                  <img class="footer_icn" src="../icn/icn-mail.svg" alt="email icon" width="40px" height="40px">
+                  <p class="p-footer">info@mail.com</p>
+              </div>
+          </article>
+      </section>
+  </footer>
+
     
 
     
@@ -59,6 +248,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

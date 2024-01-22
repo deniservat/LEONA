@@ -1,19 +1,31 @@
-@use './partials/variables'; 
+/* @use '../partials/variables';  */
 
 .btn-hero{
-    color: $color-black;
+    color: #282828;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background-color: $color-main;
+    background-color: #CCFF00;
     border: none;
     border-radius: 40px;
     padding: 24px 32px;
 }
 
 .btn-hero:hover{
-    background-color: $color-hover;
-    color: $color-black;
+    background-color: #00FF85;
+    color: #282828;
 }
 
+.btn-add-bg{
+    fill: #CCFF00;
+    &:hover{
+        fill: #00FF85;
+    }
+}
+
+.btn-add{
+    position: absolute;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
