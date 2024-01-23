@@ -271,6 +271,14 @@
   margin: 0;
 }
 
+.section-padding {
+  padding: 12rem;
+}
+
+.p-divider {
+  padding-bottom: 6rem;
+}
+
 /* @use './partials/variables';
  */
 .h1 {
@@ -707,6 +715,19 @@ footer {
   font-weight: 400;
   line-height: normal;
   padding-top: 0.5rem;
+}
+
+.input-box-subscribe {
+  width: 300px;
+  height: 48px;
+  box-sizing: border-box;
+  outline: 1px solid #282828;
+  background-color: rgba(255, 255, 255, 0.2666666667);
+  border-radius: 0;
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
 }
 
 * {
