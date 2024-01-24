@@ -1,6 +1,6 @@
 //creo tabla con products seleccionados q va a ir en la pagina del carrito
 
-/* const renderProdCart = () =>{
+const renderProdCart = () =>{
     const productsCart = loadProdCartLS();
     //validacion en caso de q no encuentre products tirar un cartel
     let output = "";
@@ -46,7 +46,14 @@
                 </div>
               </article>`;
       }else{
-        output = `<div class="alert alert-danger text-center" role="alert">Your cart is empty</div>`
+        output = `<article class="container-fluid">
+                    <div class="d-center">
+                        <p class="cart-product-reg pb-5 text-center">Your cart is empty, <br>are you ready to change to a fresher look? </p>
+                        <a href="products.html">
+                            <button class="btn-hero" id="btn-hero">SHOP NOW</button>
+                        </a>
+                    </div>
+                </article>`
       }
   
     document.getElementById("selected-products").innerHTML = output;
@@ -54,4 +61,3 @@
   
   renderProdCart();
   renderBtnCart();
- */
