@@ -1,5 +1,4 @@
 //NEWSLETTER
-
 $.ajax({
     url: "https://formsubmit.co/ajax/deniservat@gmail.com",
     method: "POST",

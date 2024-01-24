@@ -41,7 +41,6 @@
     font-size: 2.2rem;
     font-weight: 200;
     line-height: normal;
-    text-align: left;
     padding-bottom: 1rem;
 }
 
@@ -50,7 +49,6 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0em;
-    text-align: left;
 }
 
 .filter-name{
@@ -106,4 +104,53 @@
     line-height: normal;
     padding-top: 2rem;
     text-align: center;
+}
+
+
+.selected-product-title{
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: 2rem;
+}
+
+.selected-product-description{
+    font-size: 2.2rem;
+    font-weight: 200;
+    line-height: normal;
+    padding-bottom: 2rem;
+    width: 70%;
+}
+
+.selected-product-price{
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 990x) {
+
+    .selected-product-description{
+        width: 100%;
+    }
+}
+
+.cart-product-xbold{
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+}
+.cart-product-bold{
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.cart-product-reg{
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: normal;
+    margin: 0;
 }

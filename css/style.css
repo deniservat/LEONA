@@ -25,7 +25,7 @@
 
 .btn-add {
   position: absolute;
-  top: 41.5%;
+  top: 300px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -33,6 +33,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
+  height: fit-content;
 }
 
 .btn-category {
@@ -327,6 +328,18 @@
   padding-bottom: 6rem;
 }
 
+.section-ptb {
+  padding: 24rem 0;
+}
+
+.line-top {
+  border-top: solid 1px #282828;
+}
+
+.section-cart-padding {
+  padding: 12rem 24rem;
+}
+
 /* @use './partials/variables';
  */
 .h1 {
@@ -370,7 +383,6 @@
   font-size: 2.2rem;
   font-weight: 200;
   line-height: normal;
-  text-align: left;
   padding-bottom: 1rem;
 }
 
@@ -379,7 +391,6 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0em;
-  text-align: left;
 }
 
 .filter-name {
@@ -434,6 +445,53 @@
   line-height: normal;
   padding-top: 2rem;
   text-align: center;
+}
+
+.selected-product-title {
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 2rem;
+}
+
+.selected-product-description {
+  font-size: 2.2rem;
+  font-weight: 200;
+  line-height: normal;
+  padding-bottom: 2rem;
+  width: 70%;
+}
+
+.selected-product-price {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media only screen and (max-width: 990x) {
+  .selected-product-description {
+    width: 100%;
+  }
+}
+.cart-product-xbold {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+
+.cart-product-bold {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.cart-product-reg {
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: normal;
+  margin: 0;
 }
 
 .product-image {
@@ -821,6 +879,8 @@ html {
 }
 
 .r-center {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -832,10 +892,24 @@ html {
   align-items: center;
 }
 
+.r-end-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+}
+
 .r-start {
   display: flex;
   flex-direction: row;
   justify-content: start;
+  align-items: center;
+}
+
+.r-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
