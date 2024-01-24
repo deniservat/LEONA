@@ -26,8 +26,15 @@
 
 .btn-add{
     position: absolute;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    top: 40.5%;
+    bottom:0;
+    left:0;
+    right:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width:100%;
+
 }
 
 .btn-category{
