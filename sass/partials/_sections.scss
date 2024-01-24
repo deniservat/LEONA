@@ -5,11 +5,23 @@
 }
 
 .section-about-1{
-    padding: 12rem 36rem 0 36rem;
+    padding: 12rem 0;
 }
 
 .section-about-2{
-    padding: 3rem 36rem 12rem 36rem;
+    padding: 3rem 0;
+}
+
+@media only screen and (max-width: 990x) {
+
+    .section-about-1{
+        padding: 12rem 0 0 0;
+    }
+    
+    .section-about-2{
+        padding: 3rem 0 12rem 0;
+    }
+
 }
 
 .section-about-items{

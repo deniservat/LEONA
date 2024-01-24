@@ -25,7 +25,7 @@
 
 .btn-add {
   position: absolute;
-  top: 40.5%;
+  top: 41.5%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -50,6 +50,40 @@
 .btn-category:hover {
   background-color: #00FF85;
   color: #282828;
+}
+
+.btn-warning {
+  background-color: transparent;
+  border: none;
+  color: #282828;
+}
+.btn-warning:hover {
+  background-color: transparent;
+}
+
+.bg-danger {
+  background-color: #00FF85 !important;
+}
+.bg-danger:hover {
+  background-color: #CCFF00 !important;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.6rem 0.9rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 3rem;
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+  right: -1px;
 }
 
 .category-wrapper {
@@ -265,13 +299,21 @@
 }
 
 .section-about-1 {
-  padding: 12rem 36rem 0 36rem;
+  padding: 12rem 0;
 }
 
 .section-about-2 {
-  padding: 3rem 36rem 12rem 36rem;
+  padding: 3rem 0;
 }
 
+@media only screen and (max-width: 990x) {
+  .section-about-1 {
+    padding: 12rem 0 0 0;
+  }
+  .section-about-2 {
+    padding: 3rem 0 12rem 0;
+  }
+}
 .section-about-items {
   padding: 0;
   margin: 0;
@@ -289,7 +331,7 @@
  */
 .h1 {
   color: #FFF;
-  font-size: 36px;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -307,7 +349,7 @@
 
 .page-title {
   color: #000;
-  font-size: 36px;
+  font-size: 3.5rem;
   font-style: normal;
   font-weight: 200;
   line-height: normal;
@@ -317,7 +359,7 @@
 
 .h5 {
   color: #000;
-  font-size: 20px;
+  font-size: 2, 3rem;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -325,25 +367,24 @@
 }
 
 .product-title {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0em;
+  font-size: 2.2rem;
+  font-weight: 200;
+  line-height: normal;
   text-align: left;
   padding-bottom: 1rem;
 }
 
 .producct-price {
-  font-size: 20px;
+  font-size: 2.6rem;
   font-weight: 400;
-  line-height: 20px;
+  line-height: normal;
   letter-spacing: 0em;
   text-align: left;
 }
 
 .filter-name {
   color: #282828;
-  font-size: 16px;
+  font-size: 2rem;
   font-weight: 600;
   line-height: normal;
   padding-bottom: 1rem;
@@ -351,7 +392,7 @@
 
 .filter-value {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 2rem;
   font-weight: 300;
   line-height: normal;
   padding-bottom: 1rem;
@@ -359,21 +400,21 @@
 
 .filter-value-label {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 2rem;
   font-weight: 300;
   line-height: normal;
 }
 
 .h6-footer {
   color: #282828;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 2.6rem;
+  font-weight: 400;
   padding-bottom: 2rem;
 }
 
 .p-footer {
   color: #282828;
-  font-size: 18px;
+  font-size: 2.2rem;
   font-weight: 400;
   line-height: normal;
   padding-top: 2rem;
@@ -381,14 +422,14 @@
 
 .large-heading {
   color: #282828;
-  font-size: 240px;
+  font-size: 24rem;
   font-weight: 50;
   line-height: normal;
 }
 
 .p {
   color: #282828;
-  font-size: 32px;
+  font-size: 3rem;
   font-weight: 200;
   line-height: normal;
   padding-top: 2rem;
