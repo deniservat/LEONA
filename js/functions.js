@@ -16,12 +16,7 @@
     // si no existe que me tire un array vacío
   }
 
-  const searchProduct = (id) => {
-    const products = loadProdCartLS();
-    return products.find(item => item.id === id);
-}
-
-const seeProduct = (id) => {
+  const seeProduct = (id) => {
     const product = searchProduct(id);
     localStorage.setItem("product", JSON.stringify(product));
     location.href = "product.html";
@@ -31,33 +26,6 @@ const loadProd = () => {
   return JSON.parse(localStorage.getItem("product"));
 }
 
-// Agrego carrito en la navbar
-  
-  // creo funcion que devuelva la amount de items
-  
-  const totalItemsCart = () => {
-    //reduce el array a un unico valor (para obtener un resultado total. PARAMETROS: acumulador, valor inicial del acumulador)
-    const productsCart = loadProdCartLS();
-    //pongo += para q reconozca cdo tenes mas de 1 de algun item
-    return productsCart.reduce((total, item) => total += item.amount, 0);
-  }
-  
-  const totalPriceCart = () => {
-    const productsCart = loadProdCartLS();
-    return productsCart.reduce((total, item) => total += item.amount * item.price, 0);
-  }
-
-const renderBtnCart = () => {
-  let output =  `<button type="button" class="btn btn-warning position-relative">
-                  <img class="btn-cart" src="../icn/icn-cart-dark.svg"> 
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${totalItemsCart()}</span>
-                </button>`;
-  document.getElementById("btn-cart").innerHTML = output;
-}
-
-//ATENCION! necesito antes poner el totalItemsCart
-renderBtnCart();
-
 //si esta el item en el carrito sumar 1 a cantidad, sino, q lo agregue x primera vez
 
 const inCart = (id) => {
@@ -65,6 +33,7 @@ const inCart = (id) => {
   //el some es como el find pero devuelve T o F array.some(item.name => item.name == "Juan")
   return productsCart.some(item => item.id === id);
 }
+
 
 //ATENCION! necesito antes poner el inCart
   // funcion con parametro id del product, para que busque en el array y devuelva para agregarlo al array
@@ -91,26 +60,62 @@ const inCart = (id) => {
     renderBtnCart();
   }
 
-const deleteProd = (id) => {
-  const productsCart = loadProdCartLS();
-  const products = productsCart.filter(item => item.id !== id);
-  saveProdCartLS(products);
-  renderProdCart();
-  renderBtnCart();
+  const deleteProd = (id) => {
+    const productsCart = loadProdCartLS();
+    const products = productsCart.filter(item => item.id !== id);
+    saveProdCartLS(products);
+    renderProdCart();
+    renderBtnCart();
+  }
+
+
+  const emptyCart = () => {
+    //al clickear deberia llamar al metodo renderProdCart y actualizar el carrito
+      localStorage.removeItem("cart");
+      renderProdCart();
+      renderBtnCart();
+    //al vaciar puede mostrar cartel q diga q no se encontraron products: hay q validar renderProdCart
+    }
+
+
+// Agrego carrito en la navbar
+  
+  // creo funcion que devuelva la amount de items
+  
+  const totalItemsCart = () => {
+    //reduce el array a un unico valor (para obtener un resultado total. PARAMETROS: acumulador, valor inicial del acumulador)
+    const productsCart = loadProdCartLS();
+    //pongo += para q reconozca cdo tenes mas de 1 de algun item
+    return productsCart.reduce((total, item) => total += item.amount, 0);
+  }
+  
+  const totalPriceCart = () => {
+    const productsCart = loadProdCartLS();
+    return productsCart.reduce((total, item) => total += item.amount * item.price, 0);
+  }
+
+const renderBtnCart = () => {
+  let output =  `<button type="button" class="btn btn-warning position-relative">
+                  <img class="btn-cart" src="../icn/icn-cart-dark.svg"> 
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${totalItemsCart()}</span>
+                </button>`;
+  document.getElementById("btn-cart").innerHTML = output;
 }
 
-const emptyCart = () => {
-//al clickear deberia llamar al metodo renderProdCart y actualizar el carrito
-  localStorage.removeItem("cart");
-  renderProdCart();
-  renderBtnCart();
-//al vaciar puede mostrar cartel q diga q no se encontraron products: hay q validar renderProdCart
-}
 
 //eliminar producto del carrito
 
 const deleteItemProd= (id) => {
   //q me devuelva un nuevo array con todos los elementos q sean distintos al id
+  const addItemProd = (id) => {
+    const productsCart = loadProdCartLS();
+    let pos = productsCart.findIndex(item => item.id === id);
+    productsCart[pos].amount += 1;
+    saveProdCartLS(productsCart);
+    renderProdCart();
+    renderBtnCart();
+  }
+  
   const productsCart = loadProdCartLS();
   let pos = productsCart.findIndex(item => item.id === id);
   productsCart[pos].amount -= 1;
@@ -124,11 +129,20 @@ const deleteItemProd= (id) => {
   }    
 }
 
-const addItemProd = (id) => {
-  const productsCart = loadProdCartLS();
-  let pos = productsCart.findIndex(item => item.id === id);
-  productsCart[pos].amount += 1;
-  saveProdCartLS(productsCart);
-  renderProdCart();
-  renderBtnCart();
+  const searchProduct = (id) => {
+    const products = loadProdCartLS();
+    return products.find(item => item.id === id);
 }
+
+
+
+
+
+//ATENCION! necesito antes poner el totalItemsCart
+/* renderBtnCart(); */
+
+
+
+
+
+

@@ -48,7 +48,7 @@ const renderProdCart = () =>{
       }else{
         output = `<article class="container-fluid">
                     <div class="d-center">
-                        <p class="cart-product-reg pb-5 text-center">Your cart is empty, <br>are you ready to change to a fresher look? </p>
+                        <p class="cart-product-reg pb-5 text-center">Your cart is empty,<br><br>  time to refresh with natural beauty essentials!</p>
                         <a href="products.html">
                             <button class="btn-hero" id="btn-hero">SHOP NOW</button>
                         </a>

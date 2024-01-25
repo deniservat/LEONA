@@ -10,10 +10,10 @@ const renderProd = () => {
     <a href="#" class="btn btn-warning mt-5 mt-5" onClick="addCart(${product.id})" title="Add to cart">
         <button class="btn-hero" id="btn-hero">ADD TO CART</button>
     </a>
-</article>`
-
-    document.getElementById("see-product").innerHTML = output;
+</article>`;
+    document.getElementById("product").innerHTML = output;
 }
 
 renderProd();
 renderBtnCart();
+
