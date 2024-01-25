@@ -10,7 +10,7 @@ const renderProducts = () =>{
         card.innerHTML = `<div class="product-card">
         <div class="container-image">
           <a class="wrapper">
-            <div class="parent d-center" onClick="seeProduct(${product.id})" href="">
+            <div class="parent d-center" onClick="seeSelectedProd(${product.id})">
               <div class="child" style="background-image: url(../img/img-prod-${product.id}.jpg);"></div>
             </div>
           </a>

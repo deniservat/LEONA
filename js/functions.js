@@ -12,19 +12,21 @@
   
   // funcion para cargar del json
   const loadProdCartLS = () => {
-    return JSON.parse(localStorage.getItem("cart")) || [];
+  return JSON.parse(localStorage.getItem("cart")) || [];
     // si no existe que me tire un array vacío
   }
 
-  const seeProduct = (id) => {
-    const product = searchProduct(id);
+  const seeSelectedProd = (id) => {
+    const product = searchSelectedProd(id);
     localStorage.setItem("product", JSON.stringify(product));
     location.href = "product.html";
 }
 
-const loadProd = () => {
-  return JSON.parse(localStorage.getItem("product"));
-}
+  // funcion para cargar del json
+  const loadSelectedProd = () => {
+    return JSON.parse(localStorage.getItem("product"));
+    // si no existe que me tire un array vacío
+  }
 
 //si esta el item en el carrito sumar 1 a cantidad, sino, q lo agregue x primera vez
 
@@ -137,20 +139,7 @@ const deleteItemProd= (id) => {
   }    
 }
 
-  const searchProduct = (id) => {
-    const products = loadProdCartLS();
-    return products.find(item => item.id === id);
+const searchSelectedProd = (id) => {
+  const products = loadProdLS();
+  return products.find(item => item.id === id);
 }
-
-
-
-
-
-//ATENCION! necesito antes poner el totalItemsCart
-/* renderBtnCart(); */
-
-
-
-
-
-
