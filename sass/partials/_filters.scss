@@ -8,7 +8,7 @@
 }
 
 .input-filter-value{
-    width: 90%;
+    width: 100%;
     border-radius: 0;
     padding: 6px 12px 6px 12px;
     background: transparent;
@@ -33,4 +33,20 @@
     padding: 0;
     margin: 0;
     width: 100%;
+}
+
+@media only screen and (max-width: 576px){
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px){
+   
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px){
+   
+}
+
+@media only screen and (min-width: 1201px){
+  
 }

@@ -4,27 +4,39 @@
     background-color: #E1E7FE;
 }
 
-.section-about-1{
-    padding: 12rem 0;
+.bg-black{
+    background-color: #282828;
 }
 
-.section-about-2{
-    padding: 3rem 0;
+.color-white{
+    color: #E1E7FE;
 }
 
-@media only screen and (max-width: 990x) {
 
-    .section-about-1{
-        padding: 12rem 0 0 0;
-    }
-    
-    .section-about-2{
-        padding: 3rem 0 12rem 0;
-    }
 
+.section-about{
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.section-about-items{
+.wrapper-about{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.icn-about{
+    width: 12rem;
+    height: 12rem;
+}
+
+.section-about-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
     padding: 0;
     margin: 0;
 }
@@ -48,3 +60,42 @@
 .section-cart-padding{
     padding: 12rem 24rem;
 }
+
+.section-about-padding{
+    padding: 12rem 24rem;
+}
+
+
+@media only screen and (max-width: 768px){
+    .wrapper-about{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    .section-about-item{
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width: 990px){
+    .section-about-padding{
+        padding: 12rem 3rem;
+    }
+    .section-about-item{
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 321px){
+    .wrapper-about{
+    padding: 3rem 0;
+    }
+}
+@media only screen and (min-width: 991px){
+    .section-about-padding{
+        padding: 6rem 3rem;
+    }
+    .wrapper-about{
+        padding: 3rem 0;
+        }
+}
+

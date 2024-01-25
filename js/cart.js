@@ -21,15 +21,15 @@ const renderProdCart = () =>{
                           <p class="cart-product-bold">${product.name}</p>
                       </div>
                       <div class="col-md-2 r-end">
-                          <button class="btn btn-warning cart-product-reg" title="Delete Item" onClick="deleteItemProd(${product.id})"> - </button>
+                          <button class="btn-amount" title="Rest Item" onClick="deleteItemProd(${product.id})"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
                           <p class="cart-product-reg">${product.amount}</p>
-                          <button class="btn btn-warning" title="Add Item" onClick="addItemProd(${product.id})"> + </button>
+                          <button class="btn-amount" title="Add Item" onClick="addItemProd(${product.id})"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
                       </div>
                       <div class="col-md-2 r-end">
                           <p class="cart-product-reg">${product.amount} X £${product.price}</p>
                       </div>
                       <div class="col-md-2 r-between">
-                        <p class="cart-product-bold">£${product.amount * product.price}</p>
+                        <p class="cart-product-bold">£${(product.amount * product.price).toFixed(2)}</p>
                         <a class="d-center" href="#" title="Delete product" onClick="deleteProd(${product.id})">
                           <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
                         </a>    
@@ -41,7 +41,7 @@ const renderProdCart = () =>{
                       <p class="cart-product-xbold">Total</p>
                   </div>
                   <div class="col-md-6 r-end">
-                      <p class="cart-product-xbold">£${totalPriceCart()}</p>
+                      <p class="cart-product-xbold">£${(totalPriceCart()).toFixed(2)}</p>
                   </div>
                 </div>
               </article>`;

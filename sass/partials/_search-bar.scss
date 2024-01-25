@@ -1,20 +1,27 @@
 
-.search-box{
-    position: relative;
-    width: 40%;
-    border-radius: 0;
-    padding: 6px 12px 6px 12px;
-    background: transparent;
-    border: 1px solid #282828;
-  }
-  
-  .input{
+.wrapper-search-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.search-box-dark{
+  position: relative;
+  border-radius: 0;
+  margin-right: 2rem;
+  background: transparent;
+  border: 1px solid #282828;
+  width: 60%;
+
+  .input-search-dark{
     background-color: transparent;
     border: none;
     color: #282828;
     font-size: 16px;
     font-weight: 400;
-  
+    padding: 6px 12px 6px 12px;
+
     &:focus{
       outline: none;
     }
@@ -24,11 +31,52 @@
       font-weight: 200;
     }
   }
-  
   .btn-search{
+    .icn-search-dark{
+      height: 100%;
+      width: 100%;
+      fill: #282828;
+      background-color: transparent;
+
+      &:hover{
+        fill: #fff;
+        background-color: #282828;
+      }
+    }
+    }
+}
+
+
+.search-box{
+    position: relative;
+    border-radius: 0;
+    margin-right: 2rem;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 60%;
+
+    .input-search{
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 6px 12px 6px 12px;
+  
+      &:focus{
+        outline: none;
+      }
+    
+      &::placeholder{
+        color: #ffff;
+        font-weight: 200;
+      }
+    }
+    .btn-search{
       position: absolute;
       right: 0;
       top: 0;
+      width: 20%;
       height: 100%;
       border: none;
       background-color: transparent;
@@ -36,12 +84,37 @@
       .icn-search{
         height: 100%;
         width: 100%;
-        fill: #282828;
+        fill: #fff;
         background-color: transparent;
   
         &:hover{
-          fill: #fff;
-          background-color: #282828;
+          fill: #282828;
+          background-color: #fff;
         }
       }
+  }
+}
+  
+  
+  
+  
+
+      @media only screen and (max-width: 576px){
+        .search-box{
+          display: none;
+        }
+      }
+      
+      @media only screen and (min-width: 769px) and (max-width: 990px){
+         
+      }
+      
+      @media only screen and (min-width: 991px) and (max-width: 1200px){
+        .wrapper-search-box{
+          padding: 0;
+        }
+      }
+      
+      @media only screen and (min-width: 1201px){
+        
       }

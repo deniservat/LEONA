@@ -1,12 +1,67 @@
 .input-box-subscribe{
-    width: 300px;
+    width: 100%;
     height: 48px;
     box-sizing: border-box;
-    outline: 1px solid #282828;
-    background-color: #fff4;
+    outline: 1px solid  #E1E7FE;
+    background-color: #fff1;
     border-radius: 0;
     padding: 8px 16px;
     font-size: 18px;
     font-weight: 200;
     cursor: pointer;
+    margin-right: 3rem;
 }
+
+.form-subscribe{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.section-newsletter-padding{
+    padding: 6rem 24rem;
+}
+
+@media only screen and (max-width: 768px){
+    .input-box-subscribe{
+        margin-right: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .form-subscribe{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+    .section-newsletter-padding{
+        padding: 6rem 3rem;
+    }
+
+}
+@media only screen and (min-width: 769px) and (max-width: 990px){
+    .input-box-subscribe{
+        margin-right: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .section-newsletter-padding{
+        padding: 6rem 6rem;
+    }
+}
+@media only screen and (min-width: 991px){
+    .input-box-subscribe{
+        margin-right: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .section-newsletter-padding{
+        padding: 6rem 6rem;
+    }
+}
+
+
+

@@ -6,9 +6,9 @@
 @use './partials/sections';
 @use './partials/text-style';
 @use './partials/product-card';
-@use './partials/aside-filters';
+@use './partials/filters';
 @use './partials/variables';
-@use './partials/order';
+@use './partials/sort';
 @use './partials/breadcrumbs';
 @use './partials/footer';
 @use './partials/search-bar';
@@ -57,6 +57,19 @@ html{
     justify-content: end;
     align-items: center;
 }
+.d-end-start{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.d-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+}
 
 .r-center{
     display: flex;
@@ -93,6 +106,26 @@ html{
     align-items: center;
 }
 
+.r-between-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+.r-between-end{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.r-end-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
 .w-90{
     padding: 5rem 10rem 0;
 }
+
