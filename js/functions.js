@@ -95,13 +95,22 @@ const inCart = (id) => {
   }
 
 const renderBtnCart = () => {
-  let output =  `<button type="button" class="btn btn-warning position-relative">
+  let output =  `<button type="button" class="btn position-relative">
                   <img class="btn-cart" src="../icn/icn-cart-dark.svg"> 
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${totalItemsCart()}</span>
                 </button>`;
   document.getElementById("btn-cart").innerHTML = output;
 }
 
+//agregar item del producto al carrito
+const addItemProd = (id) => {
+  const productsCart = loadProdCartLS();
+  let pos = productsCart.findIndex(item => item.id === id);
+  productsCart[pos].amount += 1;
+  saveProdCartLS(productsCart);
+  renderProdCart();
+  renderBtnCart();
+}
 
 //eliminar producto del carrito
 
@@ -115,7 +124,6 @@ const deleteItemProd= (id) => {
     renderProdCart();
     renderBtnCart();
   }
-  
   const productsCart = loadProdCartLS();
   let pos = productsCart.findIndex(item => item.id === id);
   productsCart[pos].amount -= 1;

@@ -21,9 +21,9 @@ const renderProdCart = () =>{
                           <p class="cart-product-bold">${product.name}</p>
                       </div>
                       <div class="col-md-2 r-end">
-                          <button class="btn btn-warning cart-product-reg" title="Delete Item" onClick="deleteItemProd(${product.id});"> - </button>
+                          <button class="btn btn-warning cart-product-reg" title="Delete Item" onClick="deleteItemProd(${product.id})"> - </button>
                           <p class="cart-product-reg">${product.amount}</p>
-                          <button class="btn btn-warning" title="Add Item" onClick="addItemProd(${product.id});"> + </button>
+                          <button class="btn btn-warning" title="Add Item" onClick="addItemProd(${product.id})"> + </button>
                       </div>
                       <div class="col-md-2 r-end">
                           <p class="cart-product-reg">${product.amount} X £${product.price}</p>

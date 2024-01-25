@@ -53,12 +53,7 @@
   color: #282828;
 }
 
-.btn-warning {
-  background-color: transparent;
-  border: none;
-  color: #282828;
-}
-.btn-warning:hover {
+.btn {
   background-color: transparent;
 }
 

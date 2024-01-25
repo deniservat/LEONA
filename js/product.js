@@ -11,7 +11,7 @@ const renderProd = () => {
         <button class="btn-hero" id="btn-hero">ADD TO CART</button>
     </a>
 </article>`;
-    document.getElementById("product").innerHTML = output;
+    document.getElementById("view-product").innerHTML = output;
 }
 
 renderProd();
