@@ -233,7 +233,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 12rem 0 12rem 0;
+  padding: 24rem 0 24rem 0;
 }
 
 .hero-text {
@@ -267,8 +267,8 @@
   position: fixed;
   justify-content: center;
   width: 100%;
-  padding: 0;
   z-index: 1;
+  padding: 0;
 }
 
 .navbar-ul {
@@ -277,6 +277,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 3rem;
 }
 
 .col-nav-icn {
@@ -341,6 +342,10 @@
   align-items: flex-start;
 }
 
+.section-about-padding {
+  padding: 12rem 12rem;
+}
+
 .wrapper-about {
   display: flex;
   flex-direction: row;
@@ -379,11 +384,19 @@
   border-top: solid 1px #282828;
 }
 
-.section-cart-padding {
-  padding: 12rem 24rem;
+.section-title-padding {
+  padding: 3rem 0;
 }
 
-.section-about-padding {
+.section-sort-padding {
+  padding: 3rem 12rem;
+}
+
+.section-filters-and-prod-padding {
+  padding: 3rem 12rem;
+}
+
+.section-cart-padding {
   padding: 12rem 24rem;
 }
 
@@ -410,7 +423,7 @@
     padding: 3rem 0;
   }
 }
-@media only screen and (min-width: 991px) {
+@media only screen and (min-width: 991px) and (max-width: 1200px) {
   .section-about-padding {
     padding: 6rem 3rem;
   }
@@ -975,13 +988,22 @@ footer {
   color: #282828;
   font-weight: 200;
 }
-.search-box-dark .btn-search .icn-search-dark {
+.search-box-dark .btn-search-dark {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+.search-box-dark .btn-search-dark .icn-search-dark {
   height: 100%;
   width: 100%;
   fill: #282828;
   background-color: transparent;
 }
-.search-box-dark .btn-search .icn-search-dark:hover {
+.search-box-dark .btn-search-dark .icn-search-dark:hover {
   fill: #fff;
   background-color: #282828;
 }

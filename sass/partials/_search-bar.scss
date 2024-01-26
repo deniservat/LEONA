@@ -31,7 +31,14 @@
       font-weight: 200;
     }
   }
-  .btn-search{
+  .btn-search-dark{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
     .icn-search-dark{
       height: 100%;
       width: 100%;
@@ -54,7 +61,6 @@
     background: transparent;
     border: 1px solid #fff;
     width: 60%;
-
     .input-search{
       background-color: transparent;
       border: none;
@@ -62,11 +68,9 @@
       font-size: 16px;
       font-weight: 400;
       padding: 6px 12px 6px 12px;
-  
       &:focus{
         outline: none;
       }
-    
       &::placeholder{
         color: #ffff;
         font-weight: 200;
@@ -80,20 +84,21 @@
       height: 100%;
       border: none;
       background-color: transparent;
-  
+    
       .icn-search{
         height: 100%;
         width: 100%;
         fill: #fff;
         background-color: transparent;
-  
         &:hover{
           fill: #282828;
           background-color: #fff;
         }
       }
-  }
+    }
 }
+
+
   
   
   

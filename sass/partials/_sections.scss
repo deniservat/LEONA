@@ -12,11 +12,14 @@
     color: #E1E7FE;
 }
 
-
-
+//ABOUT
 .section-about{
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.section-about-padding{
+    padding: 12rem 12rem;
 }
 
 .wrapper-about{
@@ -57,13 +60,26 @@
     border-top: solid 1px #282828;
 }
 
+//PAGE TITLE 
+.section-title-padding{
+    padding: 3rem 0;
+}
+//PAGE SORT
+.section-sort-padding{
+    padding: 3rem 12rem;
+}
+//PAGE SORT
+.section-filters-and-prod-padding{
+    padding: 3rem 12rem;
+}
+
+//CART
 .section-cart-padding{
     padding: 12rem 24rem;
 }
 
-.section-about-padding{
-    padding: 12rem 24rem;
-}
+
+
 
 
 @media only screen and (max-width: 768px){
@@ -90,7 +106,7 @@
     padding: 3rem 0;
     }
 }
-@media only screen and (min-width: 991px){
+@media only screen and (min-width: 991px) and (max-width: 1200px){
     .section-about-padding{
         padding: 6rem 3rem;
     }
