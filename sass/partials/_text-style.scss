@@ -143,6 +143,15 @@
     line-height: normal;
 }
 
+.filter-selected-name{
+    display: inline;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: normal;
+    padding: .5rem 1rem;
+}
+
 @media only screen and (max-width: 990x) {
 
     .selected-product-description{
@@ -170,6 +179,20 @@
     margin: 0;
 }
 
+.sidebar-li{
+    font-size: 2.6rem;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1rem 3rem;
+    &:hover{
+        background-color: #28282899;
+        color: #F8FCF5;
+    }
+}
+
+.category-li{
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 576px){
     .small-heading{

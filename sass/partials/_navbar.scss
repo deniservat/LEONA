@@ -6,6 +6,8 @@
     width: 100%;
     z-index: 1;
     padding: 0;
+    padding-bottom: 1rem;
+    background-color: transparent;
 }
 
 .navbar-ul{
@@ -14,7 +16,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 3rem;
+  margin: .5rem 3rem;
+}
+
+.navbar-scroll-light {
+  background-color: #28282899;
+}
+
+.navbar-scroll-dark {
+  background-color: transparent;
 }
 
 .col-nav-icn{
@@ -33,6 +43,47 @@
 .navbar-products{
   background-color: #F8FCF5;
 }
+
+//SIDEBAR
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -30%; /* Initial position off the screen */
+  width: 30%;
+  height: 100%;
+  background-color: #E1E7FE;
+  transition: left 0.4s ease-in-out; /* Add transition for smooth sliding */
+  z-index: 5;
+}
+
+.sidebar-open {
+  left: 0; /* Slide in to the screen */
+}
+
+.icn-close{
+  position: relative;
+  width: 36px;
+  margin-top: 4rem;
+  margin-left: 90%;
+}
+.sidebar-ul{
+  list-style: none;
+  width: 100%;
+  margin-top: 2rem;
+}
+.sidebar-social{
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+  .sidebar-social-icn{
+    width: 42px;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+
+
 
 
 @media only screen and (max-width: 768px){

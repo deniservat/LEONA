@@ -84,47 +84,49 @@
       <!-- BODY -->
       <section class="section-filters-and-prod-padding row">   
         <!-- FILTERS -->
-        <aside class="container-filters col-xs-12 col-md-3">
+        <aside id="filters" class="container-filters col-xs-12 col-md-3">
+          <div id="filter-exists"></div>
 
-          <div class="filter">
+          <div id="category" class="filter">
             <h2 class="filter-name">CATEGORY</h2>
             <ul class="ul-value">
-              <li class="filter-value">Kits</li>
-              <li class="filter-value">Skin</li>
-              <li class="filter-value">Lips</li>
-              <li class="filter-value">Eyes</li>
+              <li id="kits" class="filter-value category-li">Kits</li>
+              <li id="skin" class="filter-value category-li">Skin</li>
+              <li id="lips" class="filter-value category-li">Lips</li>
+              <li id="eyes" class="filter-value category-li">Eyes</li>
             </ul>
           </div>
 
-          <div class="filter">
+          <div id="price" class="filter">
             <h2 class="filter-name">PRICE</h2>
             <div class="price-value container-fluid">
               <div class="row">
                 <div class="price-value col-xs-6 col-md-6">
                   <h3 class="filter-value-label">Min.</h3>
-                  <input class="input-filter-value" placeholder="£00.00" type="text">
+                  <input id="min-price" class="input-filter-value" placeholder="£00.00" type="text">
                 </div>
                 <div class="price-value col-xs-6 col-md-6">
                   <h3 class="filter-value-label">Max.</h3>
-                  <input class="input-filter-value" placeholder="£00.00" type="text">
+                  <input id="max-price" class="input-filter-value" placeholder="£00.00" type="text">
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="filter">
+          <div id="color" class="filter">
             <h2 class="filter-name">COLOR</h2>
             <ul class="ul-value">
-              <li class="filter-value">Black</li>
-              <li class="filter-value">White</li>
-              <li class="filter-value">Yellow</li>
-              <li class="filter-value">Blue</li>
-              <li class="filter-value">Red</li>
-              <li class="filter-value">Green</li>
-              <li class="filter-value">Orange</li>
-              <li class="filter-value">Purple</li>
-              <li class="filter-value">Sand</li>
-              <li class="filter-value">Grey</li>
+              <!-- Update each color filter item with the amount of products -->
+              <li id="black" class="filter-value category-li">Black (<span id="black-amount">0</span>)</li>
+              <li id="white" class="filter-value category-li">White (<span id="white-amount">0</span>)</li>
+              <li id="yellow" class="filter-value category-li">Yellow (<span id="yellow-amount">0</span>)</li>
+              <li id="blue" class="filter-value category-li">Blue (<span id="blue-amount">0</span>)</li>
+              <li id="red" class="filter-value category-li">Red (<span id="red-amount">0</span>)</li>
+              <li id="green" class="filter-value category-li">Green (<span id="green-amount">0</span>)</li>
+              <li id="orange" class="filter-value category-li">Orange (<span id="orange-amount">0</span>)</li>
+              <li id="purple" class="filter-value category-li">Purple (<span id="purple-amount">0</span>)</li>
+              <li id="sand" class="filter-value category-li">Sand (<span id="sand-amount">0</span>)</li>
+              <li id="grey" class="filter-value category-li">Grey (<span id="grey-amount">0</span>)</li>
             </ul>
           </div>
         </aside>

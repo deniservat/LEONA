@@ -1,4 +1,4 @@
-//SEARCHBAR
+//SORT DROPDOWN
 
 var input = document.querySelector(".input-box");
 input.onclick = function () {
@@ -21,4 +21,8 @@ input.innerHTML = item.nextElementSibling.innerHTML;
 input.click();
 });
 });
+
+
+// ADDING FUNCIONALITY
+
 
