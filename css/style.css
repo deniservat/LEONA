@@ -442,11 +442,11 @@
 }
 
 .section-sort-padding {
-  padding: 3rem 12rem;
+  padding: 1rem 12rem;
 }
 
 .section-filters-and-prod-padding {
-  padding: 3rem 12rem;
+  padding: 1rem 12rem 3rem;
 }
 
 .section-cart-padding {
@@ -479,7 +479,13 @@
   border-radius: 30px;
   margin-bottom: 2rem;
   padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
   cursor: pointer;
+}
+
+.filter-exists {
+  height: 50px;
+  padding: 0 12rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -540,7 +546,7 @@
   font-weight: 200;
   line-height: normal;
   text-align: center;
-  padding-top: 16rem;
+  padding-top: 10rem;
 }
 
 .h5 {
@@ -702,7 +708,7 @@
   color: #F8FCF5;
 }
 
-.category-li {
+.category-li, .color-li {
   cursor: pointer;
 }
 

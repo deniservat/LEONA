@@ -70,11 +70,11 @@
 }
 //PAGE SORT
 .section-sort-padding{
-    padding: 3rem 12rem;
+    padding: 1rem 12rem;
 }
 //PAGE SORT
 .section-filters-and-prod-padding{
-    padding: 3rem 12rem;
+    padding: 1rem 12rem 3rem;
 }
 
 //CART
@@ -110,7 +110,13 @@
     border-radius: 30px;
     margin-bottom: 2rem;
     padding: .5rem 1rem;
+    margin-right: .5rem;
     cursor: pointer;
+}
+
+.filter-exists{
+    height: 50px;
+    padding: 0 12rem;
 }
 
 @media only screen and (max-width: 768px){
