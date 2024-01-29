@@ -1,5 +1,5 @@
 // Event listener for category filter from index
-document.querySelectorAll(".category-filter").forEach((button) => {
+document.querySelectorAll(".btn-category").forEach((button) => {
     button.addEventListener("click", (event) => {
       if (event.target.classList.contains("btn-category")) {
         const selectedCategory = event.target.id;
