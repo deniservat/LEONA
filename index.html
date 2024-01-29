@@ -151,7 +151,11 @@
                 <p class="small-heading text-center p-0 m-0 pb-5">Follow us on Instagram!</p>
                 <a href="https://www.instagram.com/behind_app/" target="_blank"><img class="instafeed-ig-logo" src="./icn/icn-ig-full.svg" alt="instagram logo with link to brand profile"></a>
             </article>    
-            <article id="instafeed-container"></article>
+            <article id="instafeed-container">
+                <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=3" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-1.jpg" /></a>
+                <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=1" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-2.jpg" /></a>
+                <a href="https://www.instagram.com/p/C1P3Z_Dvuh0/" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-3.jpg" /></a>
+            </article>
         </section>
         
         <!-- NESLETTER -->       
@@ -211,7 +215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
     <script>
-    var userFeed = new Instafeed({
+    /* var userFeed = new Instafeed({
     limit: 3,
     get: 'user',
     target: "instafeed-container",
@@ -221,11 +225,10 @@
     template: '<a href="{{link}}" target="_blank"><img class="instafeed-img" title="{{caption}}" src="{{image}}" /></a>',
     templateBoundaries: ['{{','}}']
     });
-    userFeed.run();
+    userFeed.run(); */
     </script>
     <script src="./js/sidebar.js"></script>
     <script src="./js/filterCategory.js"></script>
-    <script src="./js/arrayProducts.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
