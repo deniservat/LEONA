@@ -104,6 +104,8 @@ const renderBtnCart = () => {
   document.getElementById("btn-cart").innerHTML = output;
 }
 
+renderBtnCart();
+
 //agregar item del producto al carrito
 const addItemProd = (id) => {
   const productsCart = loadProdCartLS();

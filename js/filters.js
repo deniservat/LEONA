@@ -200,6 +200,7 @@ document.getElementById("max-price").addEventListener("keydown", (event) => {
 renderProducts(getFilteredProducts());
 
 
+
 //UPDATE COLOR AMOUNT AND CATEGORY AMOUNT
   
 // Function to update the amount of products for each color filter
@@ -217,9 +218,7 @@ renderProducts(getFilteredProducts());
   // Call the function initially and whenever the products array changes
   updateColorAmount();
 
-
-
-
+//BUTTON ACTION FROM INDEX
 // Function to extract query parameters from the URL
 const getQueryParam = (name) => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -236,6 +235,60 @@ if (categoryFromQueryParam) {
   // Render selected filters after filtering products
   renderSelectedFilters();
 }
+
+//SEARCH BAR
+// Event listener for search button click or Enter key press
+document.getElementById("btn-search").addEventListener("click", handleSearch);
+document.getElementById("search-bar").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault(); // Prevent default form submission behavior
+    handleSearch();
+  }
+});
+
+
+// Event listener for search button click or Enter key press
+document.getElementById("btn-search").addEventListener("click", handleSearch);
+document.getElementById("search-bar").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault(); // Prevent default form submission behavior
+    handleSearch();
+  }
+});
+
+
+function handleSearch() {
+
+  // Set dropdown to default
+  document.querySelector(".input-box").value = "default";
+
+  // Reset filters to default
+  selectedFilters = { category: [], color: [], minPrice: undefined, maxPrice: undefined };
+  renderSelectedFilters();
+
+  // Get the search input value
+  const searchInput = document.getElementById("search-bar").value.toLowerCase();
+
+
+  // Filter products based on search input
+  const filteredProducts = products.filter((product) => {
+    const nameMatch = product.name.toLowerCase().includes(searchInput);
+    const descriptionMatch = product.description.toLowerCase().includes(searchInput);
+    const categoryMatch = product.category.toLowerCase().includes(searchInput);
+    const colorMatch = product.color.toLowerCase().includes(searchInput);
+
+    return nameMatch || descriptionMatch || categoryMatch || colorMatch;
+  });
+
+  // Render the filtered products
+  renderProducts(filteredProducts);
+}
+
+
+
+
+
+
 
 
 

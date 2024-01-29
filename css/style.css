@@ -317,7 +317,22 @@
   z-index: 5;
 }
 
+.sidebarPages {
+  position: fixed;
+  top: 0;
+  left: -30%; /* Initial position off the screen */
+  width: 30%;
+  height: 100%;
+  background-color: #F8FCF5;
+  transition: left 0.4s ease-in-out; /* Add transition for smooth sliding */
+  z-index: 5;
+}
+
 .sidebar-open {
+  left: 0; /* Slide in to the screen */
+}
+
+.sidebarPages-open {
   left: 0; /* Slide in to the screen */
 }
 

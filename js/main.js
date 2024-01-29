@@ -53,6 +53,7 @@ renderProducts(products);
 
 
 // Function to handle dropdown change
+// Function to handle dropdown change
 const handleDropdownChange = () => {
   let selectedArray;
 
@@ -73,7 +74,15 @@ const handleDropdownChange = () => {
 
   // Render the selected array
   renderProducts(selectedArray);
+
+  // Close the dropdown after a short delay
+  setTimeout(() => {
+    dropdown.classList.remove("open");
+    list.style.maxHeight = null;
+    list.style.boxShadow = null;
+  }, 100);
 };
+
 
 const dropdownOptions = document.querySelectorAll(".radio");
 dropdownOptions.forEach((option) => {
