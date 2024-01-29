@@ -1,26 +1,25 @@
 // Define a variable to store selected filters
 let selectedFilters = { category: [], color: [], minPrice: undefined, maxPrice: undefined };
 
-
 // Function to render selected filters
 const renderSelectedFilters = () => {
   let filterExists = document.getElementById("filter-exists");
   filterExists.innerHTML = ""; // Clear previous filters
 
   for (const category of selectedFilters.category) {
-    appendFilter("Category", category);
+    appendFilter("category", category);
   }
 
   for (const color of selectedFilters.color) {
-    appendFilter("Color", color);
+    appendFilter("color", color);
   }
 
   if (selectedFilters.minPrice !== undefined) {
-    appendFilter("Min. Price", `£${selectedFilters.minPrice.toFixed(2)}`);
+    appendFilter("min. price", `£${selectedFilters.minPrice.toFixed(2)}`);
   }
 
   if (selectedFilters.maxPrice !== undefined) {
-    appendFilter("Max. Price", `£${selectedFilters.maxPrice.toFixed(2)}`);
+    appendFilter("max. price", `£${selectedFilters.maxPrice.toFixed(2)}`);
   }
 };
 
@@ -29,8 +28,15 @@ const appendFilter = (filterType, filterValue) => {
   let filterExists = document.getElementById("filter-exists");
   let filterLabel = document.createElement("div");
   filterLabel.className = "filter-selected";
-  filterLabel.innerHTML = `<h5 class="filter-selected-name">${filterType}: ${filterValue}</h5>
-      <img class="filter-delete" src="../icn/icn-close.svg" width="24">`;
+
+  if (filterType === "min. price" || filterType === "max. price") {
+    filterLabel.innerHTML = `<h5 class="filter-selected-name">${filterType}: ${filterValue}</h5>
+        <img class="filter-delete" src="../icn/icn-close.svg" width="24">`;
+  } else {
+    filterLabel.innerHTML = `<h5 class="filter-selected-name">${filterValue}</h5>
+        <img class="filter-delete" src="../icn/icn-close.svg" width="24">`;
+  }
+
   filterExists.appendChild(filterLabel);
 
   // Add event listener to delete the filter on click
@@ -49,7 +55,7 @@ const removeFilter = (filterType, filterValue) => {
   let filterExists = document.getElementById("filter-exists");
 
   // Remove only price-related filters
-  if (filterType === "Min. Price" || filterType === "Max. Price") {
+  if (filterType === "min. price" || filterType === "max. price") {
     let priceFilters = filterExists.querySelectorAll('.filter-min-price, .filter-max-price');
     priceFilters.forEach((filter) => {
       filter.remove();
@@ -60,15 +66,18 @@ const removeFilter = (filterType, filterValue) => {
     selectedFilters.maxPrice = undefined;
   } else {
     // Remove other filters
-    let filters = filterExists.querySelectorAll(`.filter-selected-name:contains("${filterValue}")`);
+    let filters = Array.from(filterExists.getElementsByClassName("filter-selected-name"));
     filters.forEach((filter) => {
-      filter.parentElement.remove();
+      const textContent = filter.textContent || filter.innerText;
+      if (textContent.includes(filterValue)) {
+        filter.parentElement.remove();
+      }
     });
 
     // Update selectedFilters object for other filters
-    if (filterType === "Category") {
+    if (filterType === "category") {
       selectedFilters.category = selectedFilters.category.filter((cat) => cat !== filterValue);
-    } else if (filterType === "Color") {
+    } else if (filterType === "color") {
       selectedFilters.color = selectedFilters.color.filter((col) => col !== filterValue);
     }
   }
@@ -78,9 +87,6 @@ const removeFilter = (filterType, filterValue) => {
   // Render products based on updated filters
   renderProducts(getFilteredProducts());
 };
-
-
-
 
 // Function to get filtered products based on selected filters
 const getFilteredProducts = () => {
@@ -112,9 +118,6 @@ const getFilteredProducts = () => {
   return filteredProducts;
 };
 
-
-
-
 // Event listener for category filter
 document.getElementById("ul-category").addEventListener("click", (event) => {
   if (event.target.classList.contains("category-li")) {
@@ -129,6 +132,7 @@ document.getElementById("ul-category").addEventListener("click", (event) => {
     }
   }
 });
+
 // Event listener for color filter
 document.getElementById("ul-color").addEventListener("click", (event) => {
   if (event.target.classList.contains("color-li")) {
@@ -192,18 +196,13 @@ document.getElementById("max-price").addEventListener("keydown", (event) => {
   }
 });
 
-
 // Initial render on page load
-renderProducts(products);
+renderProducts(getFilteredProducts());
 
+
+//UPDATE COLOR AMOUNT AND CATEGORY AMOUNT
   
-
-
-
-  //UPDATE COLOR AMOUNT AND CATEGORY AMOUNT
-  
-  
-  // Function to update the amount of products for each color filter
+// Function to update the amount of products for each color filter
   const updateColorAmount = () => {
     const colorElements = document.querySelectorAll("#color .filter-value");
   
@@ -217,3 +216,28 @@ renderProducts(products);
   
   // Call the function initially and whenever the products array changes
   updateColorAmount();
+
+
+
+
+// Function to extract query parameters from the URL
+const getQueryParam = (name) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+};
+
+// Extract category query parameter from the URL
+const categoryFromQueryParam = getQueryParam("category");
+
+// Filter products based on the category from the query parameter
+if (categoryFromQueryParam) {
+  selectedFilters.category.push(categoryFromQueryParam);
+  renderProducts(getFilteredProducts());
+  // Render selected filters after filtering products
+  renderSelectedFilters();
+}
+
+
+
+
+

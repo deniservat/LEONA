@@ -89,10 +89,8 @@
                             <div class="overlay">
                                 <h3 class="title-overlay">KITS</h3>
                             </div>
-                            <div class="frame-shop">
-                                <a href="./pages/products.html">
-                                    <button class="btn-category" id="btn-catefory">SHOP KITS</button>
-                                </a>
+                            <div class="frame-shop categroy-filter">
+                                <button class="btn-category" id="kits">SHOP KITS</button>
                             </div>
                         </div>
                     </div>
@@ -108,10 +106,8 @@
                                         <div class="overlay height-25">
                                             <h3 class="title-overlay">EYES</h3>
                                         </div>
-                                        <div class="frame-shop height-25">
-                                            <a href="./pages/products.html">
-                                                <button class="btn-category" id="btn-catefory">SHOP EYE PRODUCTS</button>
-                                            </a>
+                                        <div class="frame-shop height-25 categroy-filter">
+                                            <button class="btn-category" id="eyes">SHOP EYES PRODUCTS</button>
                                         </div>
                                     </div>
                                 </div>
@@ -124,10 +120,8 @@
                                         <div class="overlay height-25">
                                             <h3 class="title-overlay">LIPS</h3>
                                         </div>
-                                        <div class="frame-shop height-25">
-                                            <a href="./pages/products.html">
-                                                <button class="btn-category" id="btn-catefory">SHOP LIPS PRODUCTS</button>
-                                            </a>
+                                        <div class="frame-shop height-25 categroy-filter">
+                                            <button class="btn-category" id="lips">SHOP LIPS PRODUCTS</button>
                                         </div>
                                     </div>
                                 </div>
@@ -139,10 +133,8 @@
                                         <div class="overlay height-25">
                                             <h3 class="title-overlay">SKIN</h3>
                                         </div>
-                                        <div class="frame-shop height-25">
-                                            <a href="./pages/products.html">
-                                                <button class="btn-category" id="btn-catefory">SHOP SKIN PRODUCTS</button>
-                                            </a>
+                                        <div class="frame-shop height-25 categroy-filter">
+                                            <button class="btn-category" id="skin">SHOP SKIN PRODUCTS</button>
                                         </div>
                                     </div>
                                 </div>
@@ -152,6 +144,14 @@
                     
                 </div>  
             </article>
+        </section>
+        <!-- SOCIAL: INSTAGRAM -->
+        <section class="container-fluid d-center section-about-padding section-light">  
+            <article class="row title-instafeed">
+                <p class="small-heading text-center p-0 m-0 pb-5">Follow us on Instagram!</p>
+                <a href="https://www.instagram.com/behind_app/" target="_blank"><img class="instafeed-ig-logo" src="./icn/icn-ig-full.svg" alt="instagram logo with link to brand profile"></a>
+            </article>    
+            <article id="instafeed-container"></article>
         </section>
         
         <!-- NESLETTER -->       
@@ -209,7 +209,23 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+    <script>
+    var userFeed = new Instafeed({
+    limit: 3,
+    get: 'user',
+    target: "instafeed-container",
+    resolution: 'low_resolution',
+    accessToken: 'IGQWRPX2xfbHNfOEZABUnlaVnJIdDJyM3JQbllST1I3QzVMM0NIc0liQ1hrYlQ1Y094NTVGM29uT1B0UUJyMUc3WjJZAY3VRbzFra3N5UFlmQXFxMFpEemU2Q0VxblUxUm4tTDZAOeUtnSGphRFBuMElfZAGJaaHBmSnMZD',
+    // Custom rendering template
+    template: '<a href="{{link}}" target="_blank"><img class="instafeed-img" title="{{caption}}" src="{{image}}" /></a>',
+    templateBoundaries: ['{{','}}']
+    });
+    userFeed.run();
+    </script>
     <script src="./js/sidebar.js"></script>
+    <script src="./js/filterCategory.js"></script>
+    <script src="./js/arrayProducts.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

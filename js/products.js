@@ -23,6 +23,3 @@ input.click();
 });
 
 
-// ADDING FUNCIONALITY
-
-
