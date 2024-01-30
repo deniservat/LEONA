@@ -238,17 +238,6 @@ if (categoryFromQueryParam) {
 
 //SEARCH BAR
 // Event listener for search button click or Enter key press
-document.getElementById("btn-search").addEventListener("click", handleSearch);
-document.getElementById("search-bar").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault(); // Prevent default form submission behavior
-    handleSearch();
-  }
-});
-
-
-// Event listener for search button click or Enter key press
-document.getElementById("btn-search").addEventListener("click", handleSearch);
 document.getElementById("search-bar").addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     e.preventDefault(); // Prevent default form submission behavior
@@ -283,13 +272,6 @@ function handleSearch() {
   // Render the filtered products
   renderProducts(filteredProducts);
 }
-
-
-
-
-
-
-
 
 
 

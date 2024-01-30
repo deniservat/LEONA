@@ -1,19 +1,16 @@
 .hero{
-    background: url(../img/img-hero.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    padding: 24rem 0 24rem 0;
+    height: 800px;
+    overflow: hidden;
 }
 
 .hero-text {
     text-align: center;
     position: relative;
-    padding: 18rem 0 12 rem 0;
+    padding: 46rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 0;
+    z-index: 2;
     width: 100%;
 }
 
@@ -24,4 +21,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hero-banner-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
 }
