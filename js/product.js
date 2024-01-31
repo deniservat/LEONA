@@ -1,3 +1,18 @@
+// Map of color names to hex codes
+const colorHexMap = {
+    sand: "#F9E5BF",
+    blue: "#3753E6",
+    black: "#292827" ,
+    white: "#F5F4F3" ,
+    yellow: "#FDFF90" ,
+    red: "#FF3B3B" ,
+    green : "#64C654" ,
+    orange: "#FBBC42" ,
+    purple: "#A474F1" ,
+    grey: "#A4A3A1" ,
+    // Add more color mappings as needed
+  };
+
 function changeImage(imageSrc) {
     document.getElementById('bigImage').src = imageSrc;
 }
@@ -49,16 +64,27 @@ const renderProd = () => {
                     </div>
                     <p class="selected-product-price">£${product.price}</p>
                     <p class="selected-product-description">${product.description}</p>
+                    <div id="select-color"></div>
                     <a href="#" class="mt-5 pt-5" onClick="addCart(${product.id})" title="Add to cart">
                         <button class="btn-hero mt-4" id="btn-hero">ADD TO CART</button>
                     </a>
                 </article>`;
     document.getElementById("view-product").innerHTML = output;
+
+    let selectColor = document.getElementById("select-color");
+    let productColors = product.color.map(color => {
+        const hexCode = colorHexMap[color] || "#000000";
+        return `<div class="d-center" data-color="${color}"><div style="background-color: ${hexCode}"></div><h4>${color}</h4></div>`;
+    }).join('');
+    selectColor.innerHTML += productColors;
+
     let ingredients = document.getElementById("ingredients");
     const ingredientsListItems = product.ingredients.map(ingredient => `<li class="filter-value-label pb-2">- ${ingredient}</li>`).join('');
     ingredients.innerHTML= `<ul style="list-style: none; padding: 0; margin: 0;">${ingredientsListItems}</ul>`;
+    
     let benefits = document.getElementById("benefits");
     benefits.innerHTML= `<p class="filter-value-label pb-2 pt-2">${product.benefits}</p>`;
+
 
 }
 renderProd();
