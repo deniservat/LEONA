@@ -1,85 +1,78 @@
-/* @use './partials/variables';
- */
-.hero-h1{
-    color: #FFF;
-    font-size: 6rem;
-    font-style: normal;
+
+//HEADINGS
+.lg-heading{
+    font-size: 24rem;
     font-weight: 50;
-    line-height: normal;
-    margin-bottom: 2rem;
-    text-align: left;
+    line-height: 80%;
 }
 
+.md-heading{
+    font-size: 9rem;
+    font-weight: 50;
+    line-height: 80%;
+}
+
+.sm-heading{
+    font-size: 3rem;
+    font-weight: 200;
+    line-height: 6rem;
+}
+
+//PAGE TITLE
+.page-title{
+    font-size: 3.5rem;
+    font-weight: 200;
+    line-height: normal;
+    text-align: center;
+    padding-top: 8rem;
+}
+
+//
 .h1{
     color: #FFF;
     font-size: 3rem;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: 50;
     line-height: normal;
     margin-bottom: 1rem;
 }
 
-.h2{
+.h5{
+    //index about icons
+    font-size: 2.3rem;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.p{
+    //p index about
+    font-size: 3rem;
+    font-weight: 200;
+    line-height: normal;
+}
+
+
+//INDEX CATEGORY-CARDS
+.title-overlay{
+    position: absolute;
     color: #FFF;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    margin-bottom: 1rem;
+    opacity: 100;
+    &:hover{
+        opacity: 0;
+    }
 }
 
-.page-title{
-    color: #000;
-    font-size: 3.5rem;
-    font-style: normal;
-    font-weight: 200;
-    line-height: normal;
-    text-align: center;
-    padding-top: 10rem;
-}
 
-.h5{
-    color: #000;
-    font-size: 2.3rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-align: center;
-}
-
-.product-title{
-    font-size: 2.2rem;
-    font-weight: 200;
-    line-height: normal;
-    padding-bottom: 1rem;
-}
-
-.producct-price{
-    font-size: 2.6rem;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0em;
+//FILTERS
+.category-li, .color-li{
+    cursor: pointer;
 }
 
 .filter-name{
-    color: #282828;
     font-size: 2rem;
     font-weight: 600;
-    line-height: normal;
-    padding-bottom: 1rem;
-}
-
-.review-name{
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.6rem;
-}
-
-
-.filter-value{
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: 300;
     line-height: normal;
     padding-bottom: 1rem;
 }
@@ -91,78 +84,48 @@
     line-height: normal;
 }
 
-.h6-footer{
-    color: #282828;
+.filter-value{
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+//PRODUCT CARD
+.product-title{
+    font-size: 2.2rem;
+    font-weight: 200;
+    line-height: normal;
+    padding-bottom: 1rem;
+}
+
+.producct-price{
     font-size: 2.6rem;
     font-weight: 400;
-    padding-bottom: 2rem;
-}
-
-.p-footer{
-    color: #282828;
-    font-size: 2.2rem;
-    font-weight: 400;
     line-height: normal;
-    padding-top: 2rem;
 }
 
-.large-heading{
-    color: #282828;
-    font-size: 24rem;
-    font-weight: 50;
-    line-height: 80%;
-}
-
-.small-heading{
-    font-size: 9rem;
-    font-weight: 50;
-    line-height: 80%;
-}
-
-.xs-heading{
-    font-size: 3rem;
-    font-weight: 200;
-    line-height: 6rem;
-}
-
-.p-about{
-    color: #282828;
-    font-size: 3rem;
-    font-weight: 200;
-    line-height: normal;
-    padding-top: 2rem;
-    text-align: left;
-}
-
-.p{
-    color: #282828;
-    font-size: 3rem;
-    font-weight: 200;
-    line-height: normal;
-    padding-top: 2rem;
-    text-align: center;
-}
-
-
+//PRODUCT PAGE
 .selected-product-title{
     font-size: 4rem;
-    font-weight: 400;
+    font-weight: 200;
     line-height: normal;
     padding-bottom: 2rem;
 }
 
 .selected-product-description{
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 200;
     line-height: normal;
     padding-bottom: 2rem;
-    width: 70%;
 }
 
 .selected-product-price{
     font-size: 2.2rem;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
+    padding-bottom: 2rem;
 }
 
 .filter-selected-name{
@@ -174,53 +137,67 @@
     padding: .5rem 1rem;
 }
 
-@media only screen and (max-width: 990x) {
-
-    .selected-product-description{
-        width: 100%;
-    }
+//REVIEWS
+.review-name{
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6rem;
 }
 
-.cart-product-xbold{
+
+//CART
+.cart-prod-xbold{
     font-size: 2.2rem;
     font-weight: 600;
     line-height: normal;
-    margin: 0;
 }
-.cart-product-bold{
+.cart-prod-bold{
     font-size: 2.2rem;
     font-weight: 400;
     line-height: normal;
-    margin: 0;
 }
 
-.cart-product-reg{
+.cart-prod-reg{
     font-size: 2rem;
     font-weight: 200;
     line-height: normal;
-    margin: 0;
 }
 
+//FOOTER
+.h6-footer{
+    font-size: 2.6rem;
+    font-weight: 400;
+    padding-bottom: 2rem;
+}
+
+.p-footer{
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 2rem;
+}
+
+//SIDEBAR
 .sidebar-li{
     font-size: 2.6rem;
     font-weight: 400;
     line-height: normal;
-    padding: 1rem 3rem;
+    padding: 1rem 1.8rem;
     &:hover{
         background-color: #28282899;
         color: #F8FCF5;
     }
 }
 
-.category-li, .color-li{
-    cursor: pointer;
+a{
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 576px){
-    .small-heading{
-        font-size: 3rem;
+    .md-heading{
+        font-size: 6rem;
     }
-    .large-heading{
+    .lg-heading{
         font-size: 14rem;
         line-height: 90%;
     }
@@ -230,28 +207,35 @@
     }
 }
 
+@media only screen and (max-width: 990x) {
+
+    .selected-product-description{
+        width: 100%;
+    }
+}
+
 @media only screen and (min-width: 320px){
-    .small-heading{
+    .md-heading{
         margin-top: 6rem;
     }
 }
 
 @media only screen and (min-width: 991px) and (max-width: 1200px){
-    .p-about{
+    .p{
         font-size: 2.2rem;
         padding-top: 1rem;
     }
-    .large-heading{
+    .lg-heading{
         font-size: 22rem;
     }
 }
 
 @media only screen and (min-width: 1201px){
-    .p-about{
+    .p{
         font-size: 3rem;
         padding-top: 1rem;
     }
-    .large-heading{
+    .lg-heading{
         font-size: 27rem;
     }
 }

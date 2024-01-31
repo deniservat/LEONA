@@ -99,7 +99,7 @@ const inCart = (id) => {
 const renderBtnCart = () => {
   let output =  `<button type="button" class="btn position-relative">
                   <img class="btn-cart" src="../icn/icn-cart-dark.svg"> 
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${totalItemsCart()}</span>
+                  <span class="position-absolute badge bg-danger">${totalItemsCart()}</span>
                 </button>`;
   document.getElementById("btn-cart").innerHTML = output;
 }

@@ -62,7 +62,7 @@ const renderProd = () => {
                             </form>
                         </div>
                     </div>
-                    <p class="selected-product-price">£${product.price}</p>
+                    <h2 class="selected-product-price">£${product.price}</h2>
                     <p class="selected-product-description">${product.description}</p>
                     <div id="select-color"></div>
                     <a href="#" class="mt-5 pt-5" onClick="addCart(${product.id})" title="Add to cart">
@@ -74,16 +74,16 @@ const renderProd = () => {
     let selectColor = document.getElementById("select-color");
     let productColors = product.color.map(color => {
         const hexCode = colorHexMap[color] || "#000000";
-        return `<div class="d-center" data-color="${color}"><div style="background-color: ${hexCode}"></div><h4>${color}</h4></div>`;
+        return `<div class="each-color d-center" data-color="${color}"><div style="background-color: ${hexCode}"></div><h4>${color}</h4></div>`;
     }).join('');
     selectColor.innerHTML += productColors;
 
     let ingredients = document.getElementById("ingredients");
     const ingredientsListItems = product.ingredients.map(ingredient => `<li class="filter-value-label pb-2">- ${ingredient}</li>`).join('');
-    ingredients.innerHTML= `<ul style="list-style: none; padding: 0; margin: 0;">${ingredientsListItems}</ul>`;
+    ingredients.innerHTML= `<ul style="list-style: none; padding: 0; margin: 0; margin-top: 2rem; margin-bottom: 2rem">${ingredientsListItems}</ul>`;
     
     let benefits = document.getElementById("benefits");
-    benefits.innerHTML= `<p class="filter-value-label pb-2 pt-2">${product.benefits}</p>`;
+    benefits.innerHTML= `<div style="margin-top: 2rem; margin-bottom: 2rem;"><p class="filter-value-label pb-2 pt-2">${product.benefits}</p></div>`;
 
 
 }

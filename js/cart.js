@@ -7,8 +7,8 @@ const renderProdCart = () =>{
     if(totalItemsCart()>0){
       output = `<article class="container-fluid">
                   <div class="row r-end pb-4">
-                      <a href="#" class="r-end-start cart-product-reg" onClick="emptyCart()">
-                          <p class="cart-product-reg pr-2">Empty cart</p>
+                      <a href="#" class="r-end-start cart-prod-reg m-0" onClick="emptyCart()">
+                          <p class="cart-prod-reg m-0 pr-2">Empty cart</p>
                           <img src="../icn/icn-trash.svg" alt="empty cart" width="24"/>
                       </a>
                   </div>`
@@ -18,18 +18,18 @@ const renderProdCart = () =>{
                           <img src="../img/img-prod-${product.id}.jpg" alt="${product.name}" width="120">
                       </div>
                       <div class="col-md-2 r-start">
-                          <p class="cart-product-bold">${product.name}</p>
+                          <p class="cart-prod-bold m-0">${product.name}</p>
                       </div>
                       <div class="col-md-2 r-end">
                           <button class="btn-amount" title="Rest Item" onClick="deleteItemProd(${product.id})"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
-                          <p class="cart-product-reg">${product.amount}</p>
+                          <p class="cart-prod-reg m-0">${product.amount}</p>
                           <button class="btn-amount" title="Add Item" onClick="addItemProd(${product.id})"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
                       </div>
                       <div class="col-md-2 r-end">
-                          <p class="cart-product-reg">${product.amount} X £${product.price}</p>
+                          <p class="cart-prod-reg m-0">${product.amount} X £${product.price}</p>
                       </div>
                       <div class="col-md-2 r-between">
-                        <p class="cart-product-bold">£${(product.amount * product.price).toFixed(2)}</p>
+                        <p class="cart-prod-bold m-0">£${(product.amount * product.price).toFixed(2)}</p>
                         <a class="d-center" href="#" title="Delete product" onClick="deleteProd(${product.id})">
                           <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
                         </a>    
@@ -38,17 +38,17 @@ const renderProdCart = () =>{
       }
       output += `<div class="row line-top pt-5">
                   <div class="col-md-6">
-                      <p class="cart-product-xbold">Total</p>
+                      <p class="cart-prod-xbold m-0">Total</p>
                   </div>
                   <div class="col-md-6 r-end">
-                      <p class="cart-product-xbold">£${(totalPriceCart()).toFixed(2)}</p>
+                      <p class="cart-prod-xbold m-0">£${(totalPriceCart()).toFixed(2)}</p>
                   </div>
                 </div>
               </article>`;
       }else{
         output = `<article class="container-fluid">
                     <div class="d-center">
-                        <p class="cart-product-reg pb-5 text-center">Your cart is empty,<br><br>  time to refresh with natural beauty essentials!</p>
+                        <p class="cart-prod-reg m-0 pb-5 text-center">Your cart is empty,<br><br>  time to refresh with natural beauty essentials!</p>
                         <a href="products.html">
                             <button class="btn-hero" id="btn-hero">SHOP NOW</button>
                         </a>

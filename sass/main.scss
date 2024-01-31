@@ -18,6 +18,8 @@
 @use './partials/reviews';
 @use './partials/accordion';
 @use './partials/img-gallery';
+@use './partials/about';
+@use './partials/social';
 
 
 *{
@@ -33,6 +35,7 @@ html{
     font-size: 62.5%;
     background-color:  #E1E7FE;
     font-family: "primary-font";
+    color: #282828;
 }
 
 

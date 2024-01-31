@@ -1,0 +1,50 @@
+//SOCIAL
+
+#instafeed-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.instafeed-img{
+    width: 330px;
+    padding: 0 1rem;
+}
+
+.instafeed-ig-logo{
+    width: 72px;
+    height: 72px;
+}
+
+.title-instafeed{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 576px){
+
+    .title-instafeed{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 6rem;
+    }
+
+    #instafeed-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+    
+    .instafeed-img{
+        width: 330px;
+        padding: 0;
+    }
+}

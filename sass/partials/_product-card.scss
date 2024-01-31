@@ -8,6 +8,7 @@
 }
 
 .product-card{
+    position: relative;
     margin: 1rem;
 }
 .wrapper{
@@ -85,9 +86,18 @@
     margin-bottom: 1rem;
     margin-right: 1rem; 
     cursor: pointer;
+    
 }
 
 #select-color > div > div {
     width: 56px; 
     height: 56px; 
+}
+
+.each-color{
+    padding: 1rem;
+    &:hover{
+        outline: solid 1px #282828;
+        transition: .5s;
+    }
 }

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
-
 .accordion-item{
     border: none;
 }
@@ -11,6 +9,7 @@
     font-size: 2.2rem;
     font-weight: 200;
     line-height: 4rem;
+    text-align: left;
 }
 
 .accordion-button:not(.collapsed) {
@@ -28,6 +27,7 @@
     right: 15px;
     top: 13px;
     font-size: 24px;
+    color: #282828;
 }
 .accordion-button::after {
     content: "+";
@@ -39,6 +39,7 @@
 
 .accordion-button:not(.collapsed)::after {
     content: "-";
+    color: #282828;
     transform: translate(-5px, -4px);
     transform: rotate(0deg);
 }

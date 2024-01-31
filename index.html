@@ -10,8 +10,7 @@
     <title>Leona</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -25,15 +24,7 @@
                 <div class="col-nav-icn"><img id="menu" class="icn-burger" src="./icn/icn-burger.svg"></div>
                 <a class="col-nav-brand d-center" href="./index.html"><img class="nav-brand" src="./icn/logo.svg"></a>  
                 <div class="col-nav-icn wrapper-search-box">
-                    <!-- <form class="search-box">
-                        <input class='input-search' id="search-bar" placeholder="I'm looking for..." type='text'>
-                        <button id="btn-search" class="btn-search">
-                          <svg class="icn-search" width="34" height="32" viewBox="0 0 34 34">
-                            <path d="M20.3113 20.4271L25.0859 25.2017C25.2031 25.3189 25.269 25.478 25.269 25.6438C25.269 25.8096 25.2031 25.9686 25.0859 26.0859C24.9686 26.2031 24.8096 26.269 24.6438 26.269C24.478 26.269 24.3189 26.2031 24.2017 26.0859L19.4271 21.3113C17.8793 22.6377 15.8869 23.3365 13.844 23.2636C11.7215 23.1878 9.71285 22.2848 8.24723 20.7477C6.78162 19.2106 5.9753 17.1613 6.00058 15.0376C6.02585 12.9139 6.88072 10.8843 8.3825 9.3825C9.88429 7.88072 11.9139 7.02585 14.0376 7.00058C16.1613 6.9753 18.2106 7.78162 19.7477 9.24723C21.2848 10.7128 22.1878 12.7215 22.2636 14.844C22.3365 16.8869 21.6377 18.8793 20.3113 20.4271ZM8.42743 11.3242C7.67202 12.4548 7.26881 13.7839 7.26878 15.1436C7.27073 16.9664 7.99569 18.714 9.28461 20.0029C10.5736 21.2919 12.3212 22.0169 14.144 22.0188C15.5037 22.0187 16.8328 21.6155 17.9633 20.8601C19.0939 20.1047 19.9751 19.031 20.4955 17.7747C21.0158 16.5185 21.152 15.1362 20.8867 13.8025C20.6214 12.4689 19.9666 11.2439 19.0051 10.2824C18.0437 9.32093 16.8186 8.66615 15.485 8.40088C14.1514 8.13561 12.7691 8.27175 11.5128 8.79211C10.2566 9.31246 9.18286 10.1936 8.42743 11.3242Z"/>
-                          </svg>
-                        </button>
-                    </form> -->
-                    <a id="" href="cart.html"><img class="icn-cart" src="./icn/icn-cart.svg"></a>
+                    <a href="./pages/cart.html"><img class="icn-cart" src="./icn/icn-cart.svg"></a>
                 </div>
             </ul>
         </nav> 
@@ -41,74 +32,69 @@
 
     <main id="main">
         <!-- HERO -->
-        <section class="hero section-dark">
+        <section class="container-fluid hero section-fluid-p section-light">
             <article class="hero-text">
-<!--                 <h1 class="hero-h1">Natural Beauty, Fierce Soul</h1> -->
-<!--                 <h2 class="h2">*NEW ARRIVAL* Picante Lip Balm</h2> -->
-                <img class="img-logo" src="./icn/img-logo.svg">
-                <a href="./pages/products.html">
+                <img class="img-logo" src="./icn/img-logo.svg" alt="logo image">
+                <h1 class="h1 pb-5">Embrace your natural beauty</h1>
+                <a class="btn-mobile" href="./pages/products.html">
                     <button class="btn-hero" id="btn-hero">SHOP NOW</button>
                 </a>
             </article>
-            <img src="./img/img-hero-1.jpg" alt="Banner" class="hero-banner-img">
         </section>
 
         <!-- ABOUT -->
-        <section class="container-fluid justify-content-center section-about-padding section-light">
+        <section class="container-fluid section-px section-py section-light">
             <div class="row section-about">
-                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-6 p-0">
-                        <h3 class="large-heading">WE<br>ARE</h3>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 p-0 m-0">
+                        <h2 class="lg-heading about-title">WE<br>ARE</h2>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
-                        <div class="row">
-                            <p class="p-about">At LEONA we are harmonious blend of nature and beauty, offering a natural cosmetic haven. We craft ethically sourced products that celebrate your unique radiance, embracing the essence of organic allure.</p>
-                        </div>
-                        <div class="wrapper-about">
-                            <div class="section-about-item">
-                                <img class="pb-3 icn-about" src="./img/icn-natural.svg">
-                                <h3 class="h5">Natural<br>ingredients</h3>
-                            </div>
-                            <div class="section-about-item">
-                                <img class="pb-3 icn-about" src="./img/icn-cruelty.svg">
-                                <h3 class="h5">Cruelty<br>free</h3>
-                            </div>
-                            <div class="section-about-item">
-                                <img class="pb-3 icn-about" src="./img/icn-fair.svg">
-                                <h3 class="h5">Fair<br>trade</h3>
-                            </div>
-                            <div class="section-about-item">
-                                <img class="pb-3 icn-about" src="./img/icn-recycled.svg">
-                                <h3 class="h5">Recycled<br>packaging</h3>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 p-0 m-0">
+                        <div class="d-flex align-content-between flex-wrap">
+                            <p class="p text-left pt-2 about-description">At LEONA we are harmonious blend of nature and beauty, offering a natural cosmetic haven. We craft ethically sourced products that celebrate your unique radiance, embracing the essence of organic allure.</p>
+                            <div class="row m-0 wrapper-about-items">
+                                <div class="col-xs-6 col-lg-3 section-about-item">
+                                    <img class="icn-about" src="./img/icn-natural.svg">
+                                    <h3 class="h5 text-center">Natural<br>ingredients</h3>
+                                </div>
+                                <div class="col-xs-6 col-lg-3 section-about-item">
+                                    <img class="icn-about" src="./img/icn-cruelty.svg">
+                                    <h3 class="h5 text-center">Cruelty<br>free</h3>
+                                </div>
+                                <div class="col-xs-6 col-lg-3 section-about-item">
+                                    <img class="icn-about" src="./img/icn-fair.svg">
+                                    <h3 class="h5 text-center">Fair<br>trade</h3>
+                                </div>
+                                <div class="col-xs-6 col-lg-3 section-about-item">
+                                    <img class="icn-about" src="./img/icn-recycled.svg">
+                                    <h3 class="h5 text-center">Recycled<br>packaging</h3>
+                                </div>
                             </div>
                         </div>
                     </div>        
         </section>
         <!-- CATEGORIES -->
-        <section class="section-1 container-fluid p-0 section-dark">
+        <section class="container-fluid p-0 section-dark">
             <article class="row">
-
-                <div class="col-xs-12 col-md-6 p-0 m-0">
-                    <div class="category-wrapper">
+                <div class="col-lg-6 p-0 m-0">
+                    <div class="category-wrapper kits">
                         <div class="cover-frame cover-frame-1">
-                            <div class="overlay">
-                                <h3 class="title-overlay">KITS</h3>
+                            <div class="overlay kits">
+                                <h4 class="title-overlay">KITS</h4>
                             </div>
-                            <div class="frame-shop categroy-filter">
+                            <div class="frame-shop categroy-filter kits">
                                 <button class="btn-category" id="kits">SHOP KITS</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xs-12 col-md-6 p-0 m-0">
+                <div class="col-lg-6 p-0 m-0">
                     <div class="container-fluid p-0 m-0">
-                        <div class="row">
-
-                            <div class="col-xs-12 col-md-12 height-25 p-0">
-                                <div class="category-wrapper height-25">
+                        <div class="row p-0 m-0">
+                            <div class="col-lg-12 p-0 m-0">
+                                <div class="category-wrapper height-25 m-0">
                                     <div class="cover-frame cover-frame-2">
                                         <div class="overlay height-25">
-                                            <h3 class="title-overlay">EYES</h3>
+                                            <h4 class="title-overlay">EYES</h4>
                                         </div>
                                         <div class="frame-shop height-25 categroy-filter">
                                             <button class="btn-category" id="eyes">SHOP EYES PRODUCTS</button>
@@ -116,13 +102,11 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-xs-12 col-md-6 height-25 p-0">
-                                
+                            <div class="col-lg-6 p-0 m-0">
                                 <div class="category-wrapper height-25">
                                     <div class="cover-frame cover-frame-3">
                                         <div class="overlay height-25">
-                                            <h3 class="title-overlay">LIPS</h3>
+                                            <h4 class="title-overlay">LIPS</h4>
                                         </div>
                                         <div class="frame-shop height-25 categroy-filter">
                                             <button class="btn-category" id="lips">SHOP LIPS PRODUCTS</button>
@@ -130,12 +114,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-md-6 height-25 p-0">
-                                
+                            <div class="col-lg-6 p-0 m-0">
                                 <div class="category-wrapper height-25">
                                     <div class="cover-frame cover-frame-4">
                                         <div class="overlay height-25">
-                                            <h3 class="title-overlay">SKIN</h3>
+                                            <h4 class="title-overlay">SKIN</h4>
                                         </div>
                                         <div class="frame-shop height-25 categroy-filter">
                                             <button class="btn-category" id="skin">SHOP SKIN PRODUCTS</button>
@@ -145,78 +128,72 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>  
+                </div>
             </article>
         </section>
         <!-- SOCIAL: INSTAGRAM -->
-        <section class="container-fluid d-center section-about-padding section-light">  
-            <article class="row title-instafeed">
-                <p class="small-heading text-center p-0 m-0 pb-5">Follow us on Instagram!</p>
+        <section class="container-fluid d-center section-px section-py-social section-light">  
+            <article class="title-instafeed">
+                <h2 class="md-heading text-center p-0 m-0 pb-5">Follow us on Instagram!</h2>
                 <a href="https://www.instagram.com/behind_app/" target="_blank"><img class="instafeed-ig-logo" src="./icn/icn-ig-full.svg" alt="instagram logo with link to brand profile"></a>
             </article>    
             <article id="instafeed-container">
-                <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=3" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-1.jpg" /></a>
                 <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=1" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-2.jpg" /></a>
                 <a href="https://www.instagram.com/p/C1P3Z_Dvuh0/" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-3.jpg" /></a>
+                <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=3" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-1.jpg" /></a>
             </article>
         </section>
         
         <!-- NESLETTER -->       
-        <section class="container-fluid justify-content-center bg-black section-newsletter-padding section-dark">
-
-                <div class="row section-newsletter">
-                    <p class="col-xs-12 col-lg-6 small-heading color-white p-0 m-0">Join our<br>newsletter!</p>
+        <section class="container-fluid bg-black section-fluid-p section-dark">
+                <div class="row section-newsletter align-items-center">
+                    <h2 class="col-xs-12 col-lg-6 md-heading color-white p-0 m-0">Join our<br>newsletter!</h2>
                      <!-- https://formsubmit.co explore all atributtes on website!! remember to change the brands email-->     
-                     <form class="col-xs-12 col-lg-6 form-subscribe" method="POST" action="https://formsubmit.co/deniservat@gmail.com" enctype="multipart/form-data">
-                        <input class="col-xs-12 col-md-9 input-box-subscribe" type="email" name="email" placeholder="Your email">
-                        <button class="col-xs-12 col-md-3 btn-subscribe" type="submit">SUBSCRIBE</button>
+                     <form class="col-xs-12 col-lg-6" method="POST" action="https://formsubmit.co/deniservat@gmail.com" enctype="multipart/form-data">
+                        <div class="form-subscribe">
+                            <input type="email" class="input-box-subscribe" id="exampleInputEmail1" placeholder="Your email" aria-describedby="emailHelp">
+                            <button class="col-xs-12 col-md-3 col-lg-3 btn-subscribe" type="submit">SUBSCRIBE</button>          
+                        </div>
                     </form>
                 </div>
-
         </section>
-        
     </main>
     <!-- FOOTER --> 
-    <footer class="container-fluid section-dark">
-
-        <section class="row section-footer">
-
-            <article class="col-xs-12 col-md-12 col-xl-6 footer_details">
-                <div class="col-xs-12 col-md-6 footer_contact">
-                        <h3 class="h6-footer">Contact us</h3>
-                        <div class="footer_contact-frame">
-                            <img class="footer_icn" src="./icn/icn-location.svg"alt="location icon" width="40px" height="40px">
-                            <p class="p-footer">Suburb, City, Country</p>
-                        </div>
-                        <div class="footer_contact-frame">
-                            <img class="footer_icn" src="./icn/icn-wsp.svg" alt="whatsapp icon" width="50px" height="50px">
-                            <p class="p-footer">+44 00000000000</p>
-                        </div>
-                        <div class="footer_contact-frame">
-                            <img class="footer_icn" src="./icn/icn-mail.svg" alt="email icon" width="40px" height="40px">
-                            <p class="p-footer">info@mail.com</p>
-                        </div>
+    <footer class="container-fluid section-fluid-p section-dark">
+        <section class="row r-footer">
+            <article class="col-xs-12 col-md-12 col-lg-7 col-xl-6 footer_details p-0">
+                <div class="col-xs-12 col-md-6 col-lg-7 footer_contact">
+                    <h3 class="h6-footer pb-2">Contact us</h3>
+                    <div class="footer_contact-frame">
+                        <img class="footer_icn" src="./icn/icn-location.svg"alt="location icon" width="40px" height="40px">
+                        <p class="p-footer pb-2">Suburb, City, Country</p>
+                    </div>
+                    <div class="footer_contact-frame">
+                        <img class="footer_icn" src="./icn/icn-wsp.svg" alt="whatsapp icon" width="50px" height="50px">
+                        <p class="p-footer pb-2">+44 00000000000</p>
+                    </div>
+                    <div class="footer_contact-frame">
+                        <img class="footer_icn" src="./icn/icn-mail.svg" alt="email icon" width="40px" height="40px">
+                        <p class="p-footer pb-2">info@mail.com</p>
+                    </div>  
                 </div>
-                <div class="col-xs-12 col-md-6 footer_social">
-
-                        <h3 class="h6-footer">Stay connected</h3>
-                        <div class="footer_social-frame">
-                            <a href=""><img class="footer_icn" src="./icn/icn-ig.svg" alt="instagram icon" width="40px"></a>
-                            <a href=""><img class="footer_icn" src="./icn/icn-tw.svg" alt="twitter icon" width="40px"></a>
-                            <a href=""><img class="footer_icn" src="./icn/icn-linkedin.svg" alt="linkedin icon" width="40px"></a>       
-                        </div>
+                <div class="col-xs-12 col-md-6 col-lg-5 footer_social">
+                    <h3 class="h6-footer pb-2">Stay connected</h3>
+                    <div class="footer_social-frame">
+                        <a href=""><img class="footer_icn" src="./icn/icn-ig.svg" alt="instagram icon" width="40px"></a>
+                        <a href=""><img class="footer_icn" src="./icn/icn-tw.svg" alt="twitter icon" width="40px"></a>
+                        <a href=""><img class="footer_icn" src="./icn/icn-linkedin.svg" alt="linkedin icon" width="40px"></a>       
+                    </div>
                 </div>
             </article>
-            <article class="col-xs-12 col-md-12 col-xl-6 footer_logo">
-                <img class="footer_logo" src="./icn/LEONA-logo.svg" alt="Brand logo">
+            <article class="col-xs-12 col-md-12 col-lg-5 col-xl-6 footer-logo">
+                <img class="logo-footer" src="./icn/LEONA-logo.svg" alt="Brand logo">
             </article>
         </section>
     </footer>
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
     <script>
     /* var userFeed = new Instafeed({
