@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -26,40 +26,68 @@
             <div class="col-nav-icn"><img id="menu" class="icn-burger" src="../icn/icn-burger-dark.svg"></div>
             <a class="col-nav-brand d-center" href="../index.html"><img class="nav-brand" src="../icn/logo-dark.svg"></a>  
             <div class="col-nav-icn wrapper-search-box">
-                <!-- <form class="search-box-dark">
-                    <input id="search-bar" class='input-search-dark' placeholder="I'm looking for..." type='text'>
-                    <button id="btn-search" class="btn-search-dark" onclick="handleSearch()">
-                      <svg class="icn-search-dark" width="34" height="32" viewBox="0 0 34 34">
-                        <path d="M20.3113 20.4271L25.0859 25.2017C25.2031 25.3189 25.269 25.478 25.269 25.6438C25.269 25.8096 25.2031 25.9686 25.0859 26.0859C24.9686 26.2031 24.8096 26.269 24.6438 26.269C24.478 26.269 24.3189 26.2031 24.2017 26.0859L19.4271 21.3113C17.8793 22.6377 15.8869 23.3365 13.844 23.2636C11.7215 23.1878 9.71285 22.2848 8.24723 20.7477C6.78162 19.2106 5.9753 17.1613 6.00058 15.0376C6.02585 12.9139 6.88072 10.8843 8.3825 9.3825C9.88429 7.88072 11.9139 7.02585 14.0376 7.00058C16.1613 6.9753 18.2106 7.78162 19.7477 9.24723C21.2848 10.7128 22.1878 12.7215 22.2636 14.844C22.3365 16.8869 21.6377 18.8793 20.3113 20.4271ZM8.42743 11.3242C7.67202 12.4548 7.26881 13.7839 7.26878 15.1436C7.27073 16.9664 7.99569 18.714 9.28461 20.0029C10.5736 21.2919 12.3212 22.0169 14.144 22.0188C15.5037 22.0187 16.8328 21.6155 17.9633 20.8601C19.0939 20.1047 19.9751 19.031 20.4955 17.7747C21.0158 16.5185 21.152 15.1362 20.8867 13.8025C20.6214 12.4689 19.9666 11.2439 19.0051 10.2824C18.0437 9.32093 16.8186 8.66615 15.485 8.40088C14.1514 8.13561 12.7691 8.27175 11.5128 8.79211C10.2566 9.31246 9.18286 10.1936 8.42743 11.3242Z"/>
-                      </svg>
-                    </button>
-                </form> -->
-                <a id="btn-cart" href="cart.html"><img class="icn-cart" src="../icn/icn-cart-dark.svg"></a>
+              <a id="btn-cart" href="./cart.html"></a>
             </div>
         </ul>
     </nav> 
   </header>
 
     <main id="main container">   
-      <!-- PAGE TITLE -->      
-      <section class="section-title-padding d-center">
-        <article class="col-xs-12">
-          <h1 class="page-title">Product</h1>
-        </article>
-      </section>
         <!-- BREADCRUMB & SORT -->
-      <section class="row">
-        <article class="col-xs-6 w-90 r-start">
-          <nav aria-label="breadcrumb">
+      <section class="row section-breadcrumb-padding">
+        <article class="col-xs-12 r-start">
+          <div aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a class="breadcrumb-a" href="./index.html">Home</a></li>
               <li class="breadcrumb-item"><a class="breadcrumb-a" href="./products.html">Products</a></li>
               <li class="breadcrumb-item active" aria-current="page">Product</li>
             </ol>
-          </nav>
+          </div>
         </article>
       </section>
-        <section id="view-product" class="row pt-5 pb-5 mt-5 mb-5"></section>
+
+      <!-- RENDER PRODUCTS -->    
+      <section id="view-product" class="section-padding row"></section>
+
+      <!-- PRODUCT SPECS --> 
+      <section class="accordion accordion-flush section-padding mb-5" id="accordion-list">
+        <!-- Accordion Item 1 collapsed-->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-content-1">
+                Ingredients
+              </button>
+          </h2>
+          <div id="accordion-content-1" class="accordion-collapse collapse" data-bs-parent="#accordion-list">
+            <div class="accordion-body" id="ingredients"></div>
+          </div>
+        </div>
+        <!-- Accordion Item 2 collapsed-->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-content-2">
+                  Benefits and how to use
+              </button>
+          </h2>
+          <div id="accordion-content-2" class="accordion-collapse collapse" data-bs-parent="#accordion-list">
+            <div class="accordion-body" id="benefits"></div>
+          </div>
+        </div>
+        <!-- Accordion Item 3 collapsed-->
+        <div id="reviews-scroll-to" class="accordion-item">
+          <h2 class="accordion-header">
+              <button id="accordion-btn-expand" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-content-3">
+                  Why out clients love it
+              </button>
+          </h2>
+          <div id="accordion-content-3" class="accordion-collapse collapse" data-bs-parent="#accordion-list">
+            <div class="accordion-body reviews-display-all" id="reviews-display-all"></div>
+          </div>
+        </div>
+      </section>
+      
+
+    
 
               <!-- NESLETTER -->       
               <section class="container-fluid justify-content-center bg-black section-newsletter-padding">
@@ -111,13 +139,15 @@
             </footer>   
   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src="../js/search.js"></script>
+
     <script src="../js/sidebarPages.js"></script>
     <script src="../js/arrayProd.js"></script>
     <script src="../js/functions.js"></script>
     <script src="../js/product.js"></script>
+    <script src="../js/reviews.js"></script>
 
 
 </body>

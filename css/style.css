@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
 /* @use '../partials/variables';  */
 .btn-hero {
   color: #282828;
@@ -442,7 +443,7 @@
 }
 
 .section-padding {
-  padding: 12rem;
+  padding: 3rem 12rem;
 }
 
 .p-divider {
@@ -486,6 +487,10 @@
   padding: 3rem 0;
 }
 
+.section-breadcrumb-padding {
+  padding: 12rem 12rem 0 12rem;
+}
+
 .section-sort-padding {
   padding: 1rem 12rem;
 }
@@ -496,6 +501,14 @@
 
 .section-cart-padding {
   padding: 12rem 24rem;
+}
+
+.section-reviews-padding {
+  padding: 3rem 12rem;
+}
+
+#reviews-scroll-to {
+  scroll-margin: 36rem;
 }
 
 .container-not-found {
@@ -635,6 +648,12 @@
   padding-bottom: 1rem;
 }
 
+.review-name {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
+
 .filter-value {
   text-decoration: none;
   font-size: 2rem;
@@ -676,6 +695,12 @@
   font-size: 9rem;
   font-weight: 50;
   line-height: 80%;
+}
+
+.xs-heading {
+  font-size: 3rem;
+  font-weight: 200;
+  line-height: 6rem;
 }
 
 .p-about {
@@ -876,6 +901,11 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.no-product-container {
+  margin: auto;
+  padding-top: 18rem;
 }
 
 .filter {
@@ -1318,6 +1348,110 @@ footer {
     padding: 6rem 6rem;
   }
 }
+.star {
+  width: 30px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+  cursor: pointer;
+}
+
+.full {
+  fill: #282828;
+}
+
+.empty {
+  stroke: #282828;
+  fill: none;
+}
+
+.add-review {
+  display: none;
+}
+
+#total-reviews {
+  cursor: pointer;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 1px #282828;
+  font-size: 2.2rem;
+  font-weight: 200;
+  line-height: 4rem;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #282828;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after,
+.accordion-button::after {
+  width: auto;
+  height: auto;
+  background-image: none;
+  position: absolute;
+  right: 15px;
+  top: 13px;
+  font-size: 24px;
+}
+
+.accordion-button::after {
+  content: "+";
+  font-weight: 100;
+  color: #282828;
+  transform: translateY(-4px);
+  top: 20px;
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: "-";
+  transform: translate(-5px, -4px);
+  transform: rotate(0deg);
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-right: 3rem;
+}
+
+.small-images {
+  width: 15%;
+}
+
+.big-image {
+  width: 85%;
+  padding-left: 1rem;
+}
+
+.small-images img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.small-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 1rem;
+}
+
+.big-image img {
+  width: 100%;
+}
+
+.small-img {
+  margin-bottom: 1.65rem;
+}
+
 * {
   margin: 0;
   padding: 0;

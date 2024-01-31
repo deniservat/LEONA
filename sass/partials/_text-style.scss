@@ -9,6 +9,7 @@
     margin-bottom: 2rem;
     text-align: left;
 }
+
 .h1{
     color: #FFF;
     font-size: 3rem;
@@ -68,6 +69,13 @@
     padding-bottom: 1rem;
 }
 
+.review-name{
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+}
+
+
 .filter-value{
     text-decoration: none;
     font-size: 2rem;
@@ -81,7 +89,6 @@
     font-size: 2rem;
     font-weight: 300;
     line-height: normal;
-
 }
 
 .h6-footer{
@@ -110,6 +117,12 @@
     font-size: 9rem;
     font-weight: 50;
     line-height: 80%;
+}
+
+.xs-heading{
+    font-size: 3rem;
+    font-weight: 200;
+    line-height: 6rem;
 }
 
 .p-about{

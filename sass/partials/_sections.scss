@@ -49,7 +49,7 @@
 }
 
 .section-padding{
-    padding: 12rem;
+    padding: 3rem 12rem;
 }
 
 .p-divider{
@@ -96,11 +96,15 @@
 .section-title-padding{
     padding: 3rem 0;
 }
+//BREADCRUMB 
+.section-breadcrumb-padding{
+    padding: 12rem 12rem 0 12rem;
+}
 //PAGE SORT
 .section-sort-padding{
     padding: 1rem 12rem;
 }
-//PAGE SORT
+//FILTERS
 .section-filters-and-prod-padding{
     padding: 1rem 12rem 3rem;
 }
@@ -108,6 +112,15 @@
 //CART
 .section-cart-padding{
     padding: 12rem 24rem;
+}
+
+//REVIEWS
+.section-reviews-padding{
+    padding: 3rem 12rem;
+}
+
+#reviews-scroll-to{
+    scroll-margin: 36rem;
 }
 
 //PRODUCTS

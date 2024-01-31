@@ -101,9 +101,9 @@ const getFilteredProducts = () => {
 
   // Apply color filters
   if (selectedFilters.color.length > 0) {
-    filteredProducts = filteredProducts.filter((product) =>
-      selectedFilters.color.includes(product.color)
-    );
+  filteredProducts = filteredProducts.filter((product) =>
+    product.color.some((color) => selectedFilters.color.includes(color))
+  );
   }
 
   // Apply price filters
@@ -147,6 +147,7 @@ document.getElementById("ul-color").addEventListener("click", (event) => {
     }
   }
 });
+
 
 // Updated handlePriceFilter function
 const handlePriceFilter = () => {
@@ -204,19 +205,22 @@ renderProducts(getFilteredProducts());
 //UPDATE COLOR AMOUNT AND CATEGORY AMOUNT
   
 // Function to update the amount of products for each color filter
-  const updateColorAmount = () => {
-    const colorElements = document.querySelectorAll("#color .filter-value");
-  
-    colorElements.forEach((element) => {
-      const selectedColor = element.id;
-      const matchingProductsColor = products.filter((product) => product.color === selectedColor);
-      const amountElementColor = document.getElementById(`${selectedColor}-amount`);
-      amountElementColor.textContent = matchingProductsColor.length;
-    });
-  };
-  
-  // Call the function initially and whenever the products array changes
-  updateColorAmount();
+const updateColorAmount = () => {
+  const colorElements = document.querySelectorAll("#color .filter-value");
+
+  colorElements.forEach((element) => {
+    const selectedColor = element.id;
+    const matchingProductsColor = products.filter((product) =>
+      product.color.includes(selectedColor)
+    );
+    const amountElementColor = document.getElementById(`${selectedColor}-amount`);
+    amountElementColor.textContent = matchingProductsColor.length;
+  });
+};
+
+// Call the function initially and whenever the products array changes
+updateColorAmount();
+
 
 //BUTTON ACTION FROM INDEX
 // Function to extract query parameters from the URL

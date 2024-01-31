@@ -1,0 +1,23 @@
+.star{
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    cursor: pointer;
+}
+
+.full{
+    fill: #282828;
+}
+
+.empty{
+    stroke: #282828;
+    fill: none;
+}
+
+.add-review{
+    display: none;
+    //ACTUALIZAR CDO SEPA QUE CARAJOS HACER
+}
+
+#total-reviews{
+    cursor: pointer;
+}

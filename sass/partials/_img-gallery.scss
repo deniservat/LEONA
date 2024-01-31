@@ -1,0 +1,35 @@
+
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-right: 3rem;
+  }
+
+  .small-images{
+    width: 15%;
+  }
+  .big-image{
+    width: 85%;
+    padding-left: 1rem;
+  }
+  
+  .small-images img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .small-images{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 1rem;
+  }
+  
+  .big-image img {
+    width: 100%;
+  }
+
+  .small-img{
+    margin-bottom: 1.65rem;
+  }
