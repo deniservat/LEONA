@@ -1,9 +1,10 @@
 .hero{
-    background-image: url('/img/img-hero.jpg');
+    background-image: url('/img/img-hero\ 1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
+    z-index: 2;
 }
 
 .hero-text {
