@@ -440,7 +440,8 @@
 }
 
 .section-breadcrumb-p {
-  padding-top: 16rem;
+  padding-top: 14rem;
+  padding-bottom: 2rem;
 }
 
 .section-filters-and-prod-padding {
@@ -1434,7 +1435,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-right: 3rem;
+  padding-right: 4rem;
 }
 
 .small-images {
@@ -1442,26 +1443,23 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   width: 20%;
-  padding: 1rem;
-  row-gap: 1.4rem;
+  height: 70rem;
+  margin-right: 0.2rem;
 }
 
 .big-image {
-  width: 700px;
-  height: 700px;
-  padding: 1rem;
+  width: 70rem;
+  height: 70rem;
 }
 
 .small-images img {
-  width: 100%;
+  width: 16rem;
+  height: 16rem;
   cursor: pointer;
 }
 
-.small-images {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-right: 1rem;
+.small-images img:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .big-image img {
