@@ -251,7 +251,6 @@ document.getElementById("search-bar").addEventListener("keypress", function (e) 
 
 
 function handleSearch() {
-
   // Set dropdown to default
   document.querySelector(".input-box").value = "default";
 
@@ -262,13 +261,12 @@ function handleSearch() {
   // Get the search input value
   const searchInput = document.getElementById("search-bar").value.toLowerCase();
 
-
   // Filter products based on search input
   const filteredProducts = products.filter((product) => {
     const nameMatch = product.name.toLowerCase().includes(searchInput);
     const descriptionMatch = product.description.toLowerCase().includes(searchInput);
     const categoryMatch = product.category.toLowerCase().includes(searchInput);
-    const colorMatch = product.color.toLowerCase().includes(searchInput);
+    const colorMatch = product.color.some((color) => color.toLowerCase().includes(searchInput));
 
     return nameMatch || descriptionMatch || categoryMatch || colorMatch;
   });
@@ -276,6 +274,7 @@ function handleSearch() {
   // Render the filtered products
   renderProducts(filteredProducts);
 }
+
 
 
 

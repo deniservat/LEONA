@@ -1,20 +1,18 @@
+// FUNCIONES.js
 
-  // FUNCIONES.js
-  
-  // agregar products al carrito: creo otra LS de los prod q el usuario agrega
-  
-  const productsCart = [];
+// Declare productsCart in a broader scope
+let productsCart = [];
 
-  // funcion para guardar
-  const saveProdCartLS = (productsCart) => {
+// Function to save productsCart to localStorage
+const saveProdCartLS = () => {
     localStorage.setItem("cart", JSON.stringify(productsCart));
-  }
-  
-  // funcion para cargar del json
-  const loadProdCartLS = () => {
-  return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+// funcion para cargar del json
+const loadProdCartLS = () => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
     // si no existe que me tire un array vacío
-  }
+}
 
   const seeSelectedProd = (id) => {
     const product = searchSelectedProd(id);
@@ -78,6 +76,8 @@ const inCart = (id) => {
       renderBtnCart();
     //al vaciar puede mostrar cartel q diga q no se encontraron products: hay q validar renderProdCart
     }
+
+
 
 
 // Agrego carrito en la navbar
