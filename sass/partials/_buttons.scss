@@ -74,6 +74,75 @@
     background-color: transparent;
 }
 
+.btn-product-add{
+    width: 100%;
+    color: #282828;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #CCFF00;
+    border: none;
+    border-radius: 40px;
+    padding: 24px 36px;
+
+    &:hover{
+        background-color: #00FF85;
+        color: #282828;
+    }
+}
+.btn-product-added{
+    width: 100%;
+    color: #282828;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #DDE4C1;
+    border: none;
+    border-radius: 40px;
+    padding: 24px 36px;
+}
+
+.btn-after-add-1{
+    width: 100%;
+    color: #282828;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #00FF85;
+    border: solid 2px #00FF85;
+    border-radius: 40px;
+    padding: 20px 36px;
+    margin-right: .5rem;
+
+    &:hover{
+        background-color: #05E0E0;
+        border: solid 2px #05E0E0;
+        color: #282828;
+    }
+}
+.btn-after-add-2{
+    width: 100%;
+    color: #282828;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: transparent;
+    border: solid 2px #282828;
+    border-radius: 40px;
+    padding: 20px 36px;
+    margin-left: .5rem;
+
+    &:hover{
+        background-color: #E1E7FE;
+        border: solid 2px #E1E7FE;
+        color: #282828;
+    }
+}
+
 //badge with total amount items
 
 .bg-danger {

@@ -137,3 +137,15 @@
     box-shadow: .2rem .2rem #28282822;
     padding: 1rem 1.5rem;
 }
+
+#after-adding{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+    
+}
+
+.btn-after{
+    width: 100%;
+}

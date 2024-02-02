@@ -77,11 +77,11 @@ const renderProd = () => {
                     <p class="selected-product-description">${product.description}</p>
 
                     <div id="color-picker">
-                        <p class="selected-product-adding pt-3">Pick a color:</p>
+                        <p class="selected-product-adding">Pick a color:</p>
                         <div id="select-color"></div>
                     </div>
 
-                    <div id="amount-picker" class="mt-3 mb-3">
+                    <div id="amount-picker" class="mb-1">
                         <p class="selected-product-adding pt-3">Pick an amount:</p>
                         <div id="select-amount" class="r-start">
                             <button id="btn-amount-rest" class="btn-amount" title="Rest Item"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
@@ -90,9 +90,10 @@ const renderProd = () => {
                         </div>
                     </div>
 
-                    <a href="#" class="" onClick="addCart(${product.id})" title="Add to cart">
-                        <button class="btn-hero mt-4" id="btn-add-cart">ADD TO CART</button>
+                    <a href="#" class="btn-product" onClick="addCart(${product.id})" title="Add to cart">
+                        <button class="btn-product-add mt-4" id="btn-add-cart">ADD TO CART</button>
                     </a>
+                    <div id="after-adding"></div>
                 </article>`;
     document.getElementById("view-product").innerHTML = output;
 
@@ -177,6 +178,16 @@ document.getElementById("btn-amount-add").addEventListener("click", (e) => {
 });
 
 document.getElementById("btn-add-cart").addEventListener("click", () => {
-    renderCart(); // Render the cart when #btn-hero is clicked
+    const btnAddCart = document.getElementById("btn-add-cart");
+    btnAddCart.classList.remove("btn-product-add");
+    btnAddCart.classList.add("btn-product-added");
+    const afterAdding = document.getElementById("after-adding");
+    afterAdding.innerHTML =`<a href="products.html" class="btn-after" title="Continue shopping">
+                                <button class="btn-after-add-1">Continue shopping</button>
+                            </a>
+                            <a href="cart.html" class="btn-after" title="Go to cart">
+                                <button class="btn-after-add-2">Go to cart</button>
+                            </a>`;
+   /*  renderCart(); */ // Render the cart when #btn-hero is clicked
     renderBtnCart();
 });
