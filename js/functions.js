@@ -38,7 +38,7 @@ const inCart = (id) => {
 //ATENCION! necesito antes poner el inCart
   // funcion con parametro id del product, para que busque en el array y devuelva para agregarlo al array
   
-  const addCart = (id) => {
+const addCart = (id) => {
     // recupero el array del carrito
     const products = loadProdLS();
     const productsCart = loadProdCartLS();
@@ -58,7 +58,8 @@ const inCart = (id) => {
     saveProdCartLS(productsCart);
     // agregar
     renderBtnCart();
-  }
+  } 
+
 
   const deleteProd = (id) => {
     const productsCart = loadProdCartLS();
@@ -66,7 +67,7 @@ const inCart = (id) => {
     saveProdCartLS(products);
     renderProdCart();
     renderBtnCart();
-  }
+}
 
 
   const emptyCart = () => {
@@ -76,8 +77,6 @@ const inCart = (id) => {
       renderBtnCart();
     //al vaciar puede mostrar cartel q diga q no se encontraron products: hay q validar renderProdCart
     }
-
-
 
 
 // Agrego carrito en la navbar
@@ -117,7 +116,7 @@ const addItemProd = (id) => {
 }
 
 //eliminar producto del carrito
-
+/* 
 const deleteItemProd= (id) => {
   //q me devuelva un nuevo array con todos los elementos q sean distintos al id
   const addItemProd = (id) => {
@@ -139,9 +138,25 @@ const deleteItemProd= (id) => {
       renderProdCart();
       renderBtnCart();
   }    
+} */
+
+const deleteItemProd = (id) => {
+  const productsCart = loadProdCartLS();
+  let pos = productsCart.findIndex(item => item.id === id);
+  productsCart[pos].amount -= 1;
+
+  if (productsCart[pos].amount === 0) {
+    deleteProd(id);
+  } else {
+    saveProdCartLS(productsCart);
+    renderProdCart();
+    renderBtnCart();
+  }
 }
 
 const searchSelectedProd = (id) => {
   const products = loadProdLS();
   return products.find(item => item.id === id);
 }
+
+

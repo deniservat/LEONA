@@ -1,13 +1,10 @@
-function getProductById(productId) {
-    const foundProduct = productsCart.find(product => product.id === productId);
-    return foundProduct;
-}
+//CART
+
+
 
 const renderProdCart = () => {
-    product = loadSelectedProd();
-    productsCart = loadProdCartLS();
+    const productsCart = loadProdCartLS();
     let output = "";
-
     if (totalItemsCart() > 0) {
         output = `<article class="container-fluid">
                       <div class="row r-end pb-4">
@@ -17,7 +14,7 @@ const renderProdCart = () => {
                           </a>
                       </div>`;
         for (let product of productsCart) {
-            let backgroundColor = colorHexMap[product.color] || "#000000";
+            let backgroundColor = colorHexMap[product.color] || "#000000"; // Get the background color from colorHexMap
             output += `<div class="r-between line-top pt-4 pb-4">
                           <div class="col-md-1 r-start">
                               <img src="../img/img-prod-${product.id}.jpg" alt="${product.name}" width="120">
@@ -28,16 +25,16 @@ const renderProdCart = () => {
                               <p class="cart-prod-bold m-0">${product.color}</p>
                           </div>
                           <div id="select-amount" class="r-start">
-                              <button id="btn-amount-rest-${product.id}" class="btn-amount" title="Rest Item"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
-                              <h4 id="product-amount-${product.id}" class="m-0 box-amount">${product.amount}</h4>
-                              <button id="btn-amount-add-${product.id}" class="btn-amount" title="Add Item"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
-                          </div>
+                          <button id="btn-amount-rest" class="btn-amount" title="Rest Item"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
+                          <h4 id="product-amount" class="m-0 box-amount">${product.amount}</h4>
+                          <button id="btn-amount-add" class="btn-amount" title="Add Item"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
+                            </div>
                           <div class="col-md-1 r-end">
                               <p class="cart-prod-reg m-0">${product.amount} X £${product.price}</p>
                           </div>
                           <div class="col-md-2 r-between">
                               <p class="cart-prod-bold m-0">£${(product.amount * product.price).toFixed(2)}</p>
-                              <a class="d-center" href="#" class="delete-product-cart" title="Delete product">
+                              <a class="d-center" href="#" class="delete-product-cart" title="Delete product" onClick="deleteProd(${product.id})">
                                   <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
                               </a>    
                           </div>
@@ -52,6 +49,8 @@ const renderProdCart = () => {
                       </div>
                     </div>
                 </article>`;
+
+
     } else {
         output = `<article class="container-fluid">
                       <div class="d-center">
@@ -61,44 +60,11 @@ const renderProdCart = () => {
                           </a>
                       </div>
                   </article>`;
-    }     
+    }
+
     document.getElementById("selected-products").innerHTML = output;
 }
 
-document.getElementById("selected-products").addEventListener("click", (e) => {
-    const targetId = e.target.id;
-    const closestButton = e.target.closest("button");
-    const buttonId = closestButton ? closestButton.id : null;
-
-    if (buttonId) {
-        if (buttonId.startsWith("btn-amount-rest-")) {
-            const productId = buttonId.replace("btn-amount-rest-", "");
-            const productIndex = productsCart.findIndex(product => product.id === Number(productId));
-
-            if (productIndex !== -1 && productsCart[productIndex].amount > 0) {
-                productsCart[productIndex].amount -= 1;
-                saveProdCartLS();
-                renderProdCart();
-                renderBtnCart();
-            }
-        } else if (buttonId.startsWith("btn-amount-add-")) {
-            const productId = buttonId.replace("btn-amount-add-", "");
-            const productIndex = productsCart.findIndex(product => product.id === Number(productId));
-
-            if (productIndex !== -1) {
-                productsCart[productIndex].amount += 1;
-                saveProdCartLS();
-                renderProdCart();
-                renderBtnCart();
-            }
-        }
-    } else if (targetId.startsWith("delete-product-cart")) {
-        const productId = targetId.replace("delete-product-cart", "");
-        deleteProd(productId);
-        renderProdCart();
-        renderBtnCart();
-    }
-});
-
 renderProdCart();
 renderBtnCart();
+
