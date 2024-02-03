@@ -8,30 +8,23 @@ const saveProdCartLS = () => {
     localStorage.setItem("cart", JSON.stringify(productsCart));
 }
 
-/* // funcion para cargar del json
-const loadProdCartLS = () => {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-    // si no existe que me tire un array vacío
-} */
-
 const loadProdCartLS = () => {
   const loadedData = JSON.parse(localStorage.getItem("cart")) || [];
-  console.log("Loaded Data from localStorage:", loadedData);
   return loadedData;
 }
 
 
-  const seeSelectedProd = (id) => {
-    const product = searchSelectedProd(id);
-    localStorage.setItem("product", JSON.stringify(product));
-    location.href = "product.html";
+const seeSelectedProd = (id) => {
+  const product = searchSelectedProd(id);
+  localStorage.setItem("product", JSON.stringify(product));
+  location.href = "product.html";
 }
 
-  // funcion para cargar del json
-  const loadSelectedProd = () => {
-    return JSON.parse(localStorage.getItem("product"));
-    // si no existe que me tire un array vacío
-  }
+// funcion para cargar del json
+const loadSelectedProd = () => {
+  return JSON.parse(localStorage.getItem("product"));
+  // si no existe que me tire un array vacío
+}
 
 //si esta el item en el carrito sumar 1 a cantidad, sino, q lo agregue x primera vez
 
@@ -67,28 +60,16 @@ const addCart = (id) => {
     renderBtnCart();
   } 
 
-
-
 const deleteProd = (id) => {
-  console.log("Deleting product with ID:", id);
-
   const updatedProductsCart = productsCart.filter(item => {
       const match = item.id === Number(id);
-      console.log(`Product ID ${item.id} - Match: ${match}`);
       return !match;
   });
-
   productsCart = updatedProductsCart;
   saveProdCartLS();
   renderProdCart();
   renderBtnCart();
-  
-  console.log("Updated Products Cart:", updatedProductsCart);
 }
-
-
-
-
 
   const emptyCart = () => {
     //al clickear deberia llamar al metodo renderProdCart y actualizar el carrito
@@ -116,13 +97,11 @@ const deleteProd = (id) => {
   }
 
 const renderBtnCart = () => {
-  console.log("Rendering Product Cart");
   let output =  `<button type="button" class="btn position-relative">
                   <img class="btn-cart" src="../icn/icn-cart-dark.svg"> 
                   <span class="position-absolute badge bg-danger">${totalItemsCart()}</span>
                 </button>`;
   document.getElementById("btn-cart").innerHTML = output;
-  console.log("Rendered Product Cart");
 }
 
 renderBtnCart();
@@ -136,31 +115,6 @@ const addItemProd = (id) => {
   renderProdCart();
   renderBtnCart();
 }
-
-//eliminar producto del carrito
-/* 
-const deleteItemProd= (id) => {
-  //q me devuelva un nuevo array con todos los elementos q sean distintos al id
-  const addItemProd = (id) => {
-    const productsCart = loadProdCartLS();
-    let pos = productsCart.findIndex(item => item.id === id);
-    productsCart[pos].amount += 1;
-    saveProdCartLS(productsCart);
-    renderProdCart();
-    renderBtnCart();
-  }
-  const productsCart = loadProdCartLS();
-  let pos = productsCart.findIndex(item => item.id === id);
-  productsCart[pos].amount -= 1;
-
-  if (productsCart[pos].amount == 0) {
-      deleteProd(id);
-  } else {
-      saveProdCartLS(productsCart);
-      renderProdCart();
-      renderBtnCart();
-  }    
-} */
 
 const deleteItemProd = (id) => {
   const productsCart = loadProdCartLS();

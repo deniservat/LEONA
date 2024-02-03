@@ -143,6 +143,43 @@
     }
 }
 
+.btn-checkout{
+    width: 100%;
+    color: #282828;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #CCFF00;
+    border: none;
+    border-radius: 40px;
+    padding: 24px 36px;
+
+    &:hover{
+        background-color: #00FF85;
+        color: #282828;
+    }
+}
+.btn-checkout-back{
+    width: 100%;
+    color: #282828;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: transparent;
+    border: solid 2px #282828;
+    border-radius: 40px;
+    padding: 20px 36px;
+    margin-left: .5rem;
+
+    &:hover{
+        background-color: #E1E7FE;
+        border: solid 2px #E1E7FE;
+        color: #282828;
+    }
+}
+
 //badge with total amount items
 
 .bg-danger {
