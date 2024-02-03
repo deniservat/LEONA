@@ -8,11 +8,18 @@ const saveProdCartLS = () => {
     localStorage.setItem("cart", JSON.stringify(productsCart));
 }
 
-// funcion para cargar del json
+/* // funcion para cargar del json
 const loadProdCartLS = () => {
     return JSON.parse(localStorage.getItem("cart")) || [];
     // si no existe que me tire un array vacío
+} */
+
+const loadProdCartLS = () => {
+  const loadedData = JSON.parse(localStorage.getItem("cart")) || [];
+  console.log("Loaded Data from localStorage:", loadedData);
+  return loadedData;
 }
+
 
   const seeSelectedProd = (id) => {
     const product = searchSelectedProd(id);
@@ -61,13 +68,26 @@ const addCart = (id) => {
   } 
 
 
-  const deleteProd = (id) => {
-    const productsCart = loadProdCartLS();
-    const products = productsCart.filter(item => item.id !== id);
-    saveProdCartLS(products);
-    renderProdCart();
-    renderBtnCart();
+
+const deleteProd = (id) => {
+  console.log("Deleting product with ID:", id);
+
+  const updatedProductsCart = productsCart.filter(item => {
+      const match = item.id === Number(id);
+      console.log(`Product ID ${item.id} - Match: ${match}`);
+      return !match;
+  });
+
+  productsCart = updatedProductsCart;
+  saveProdCartLS();
+  renderProdCart();
+  renderBtnCart();
+  
+  console.log("Updated Products Cart:", updatedProductsCart);
 }
+
+
+
 
 
   const emptyCart = () => {
@@ -96,11 +116,13 @@ const addCart = (id) => {
   }
 
 const renderBtnCart = () => {
+  console.log("Rendering Product Cart");
   let output =  `<button type="button" class="btn position-relative">
                   <img class="btn-cart" src="../icn/icn-cart-dark.svg"> 
                   <span class="position-absolute badge bg-danger">${totalItemsCart()}</span>
                 </button>`;
   document.getElementById("btn-cart").innerHTML = output;
+  console.log("Rendered Product Cart");
 }
 
 renderBtnCart();

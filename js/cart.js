@@ -3,10 +3,12 @@ function getProductById(productId) {
     return foundProduct;
 }
 
+/* const renderProdCart = () => { */
 const renderProdCart = () => {
     product = loadSelectedProd();
     productsCart = loadProdCartLS();
     let output = "";
+    console.log("Products Cart before rendering:", productsCart);
 
     if (totalItemsCart() > 0) {
         output = `<article class="container-fluid">
@@ -37,9 +39,11 @@ const renderProdCart = () => {
                           </div>
                           <div class="col-md-2 r-between">
                               <p class="cart-prod-bold m-0">£${(product.amount * product.price).toFixed(2)}</p>
-                              <a class="d-center" href="#" class="delete-product-cart" title="Delete product">
-                                  <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
-                              </a>    
+                            <a class="d-center delete-product-cart" href="#" title="Delete product" data-product-id="${product.id}">
+                              <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
+                          </a>
+                          
+                          
                           </div>
                       </div>`;
         }
@@ -62,10 +66,14 @@ const renderProdCart = () => {
                       </div>
                   </article>`;
     }     
+    console.log("Products Cart after rendering:", productsCart);
     document.getElementById("selected-products").innerHTML = output;
 }
 
-document.getElementById("selected-products").addEventListener("click", (e) => {
+renderProdCart();
+renderBtnCart();
+
+/* document.getElementById("selected-products").addEventListener("click", (e) => {
     const targetId = e.target.id;
     const closestButton = e.target.closest("button");
     const buttonId = closestButton ? closestButton.id : null;
@@ -92,13 +100,49 @@ document.getElementById("selected-products").addEventListener("click", (e) => {
                 renderBtnCart();
             }
         }
-    } else if (targetId.startsWith("delete-product-cart")) {
-        const productId = targetId.replace("delete-product-cart", "");
-        deleteProd(productId);
-        renderProdCart();
-        renderBtnCart();
-    }
-});
 
-renderProdCart();
-renderBtnCart();
+         
+    };}) */
+
+    document.getElementById("selected-products").addEventListener("click", (e) => {
+        const targetId = e.target.id;
+        const clickedElement = e.target.closest(".delete-product-cart");
+        const closestButton = e.target.closest("button");
+        const buttonId = closestButton ? closestButton.id : null;
+    
+        if (clickedElement) {
+            console.log("Delete button clicked!");
+            const productId = clickedElement.dataset.productId;
+            console.log("Product ID:", productId);
+            console.log("Deleting product with ID:", productId);
+            deleteProd(productId);
+
+            console.log("Updated Products Cart:", productsCart);
+    
+        } else if (buttonId) {
+            if (buttonId.startsWith("btn-amount-rest-")) {
+                const productId = buttonId.replace("btn-amount-rest-", "");
+                const productIndex = productsCart.findIndex(product => product.id === Number(productId));
+    
+                if (productIndex !== -1 && productsCart[productIndex].amount > 0) {
+                    productsCart[productIndex].amount -= 1;
+                    saveProdCartLS();
+                    renderProdCart();
+                    renderBtnCart();
+                }
+            } else if (buttonId.startsWith("btn-amount-add-")) {
+                const productId = buttonId.replace("btn-amount-add-", "");
+                const productIndex = productsCart.findIndex(product => product.id === Number(productId));
+    
+                if (productIndex !== -1) {
+                    productsCart[productIndex].amount += 1;
+                    saveProdCartLS();
+                    renderProdCart();
+                    renderBtnCart();
+                }
+            }
+        }
+    });    
+     
+
+
