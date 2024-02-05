@@ -49,46 +49,28 @@ filters.innerHTML = `<div class="container-icn-close-filters"><img class="icn-cl
 
 let containerFilters = document.querySelector("#filters-laptop");
 
-// Function to render filters for laptop
-const renderFiltersLaptop = () => {
+const renderFilters = () => {
   containerFilters.innerHTML = ""; // Clear previous filters
   containerFilters.appendChild(filters);
-};
-
-let filterButton = document.getElementById("icn-filter");
-let sideFilters = document.querySelector("#filters-mobile");
-
-// Function to render filters for mobile
-const renderFiltersMobile = () => {
-  sideFilters.innerHTML = ""; // Clear previous filters
-  sideFilters.className = "sideFilters p-5";
-  // Assuming filters for mobile are the same as filters for laptop
-  let filtersMobile = filters.cloneNode(true);
-  sideFilters.appendChild(filtersMobile);
-
-};
-
-// Function to handle window resize and render filters accordingly
-const handleWindowResize = () => {
-  const screenWidth = window.innerWidth;
-
-  if (screenWidth >= 769) {
-    renderFiltersLaptop();
-  } else {
-    renderFiltersMobile();
-  }
-};
+  } 
 
 // Initial render on page load
-handleWindowResize();
-
-// Listen for window resize events
-window.addEventListener("resize", handleWindowResize);
-
+renderFilters();
 
 
 //MOBILE SIDE FILTERS
 
+let filterButton = document.getElementById("icn-filter");
+
+let sideFilters = document.querySelector("#filters-mobile");
+
+const renderSideFilters = () => {
+  sideFilters.innerHTML = ""; // Clear previous filters
+  sideFilters.className = "sideFilters p-5";
+  sideFilters.appendChild(filters.cloneNode(true));
+  }
+
+renderSideFilters();
 
 const openSideFilters = () => {
   sideFilters.className = "sideFilters p-5";
@@ -135,3 +117,4 @@ document.addEventListener("click", (event) => {
         closeSideFilters();
     }
 });
+
