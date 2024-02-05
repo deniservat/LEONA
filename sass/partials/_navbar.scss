@@ -28,16 +28,27 @@
   background-color: transparent;
 }
 
-.col-nav-icn{
+.col-nav-menu-laptop{
   width: 25%;
 }
+
 .col-nav-brand{
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-brand{
   width: 100%;
 }
+
+.wrapper-search-box{
+  //es la ultima columna de la navbar q en mobile pasa a 100%
+  width: 25%;
+}
+
   
 //NAVBAR PRODUCTOS
   
@@ -55,6 +66,7 @@
   background-color: #E1E7FE;
   transition: left 0.4s ease-in-out; /* Add transition for smooth sliding */
   z-index: 5;
+  padding: 2rem 0; /* 0 on sides for hover on li */
 }
 .sidebarPages {
   position: fixed;
@@ -65,6 +77,7 @@
   background-color: #F8FCF5;
   transition: left 0.4s ease-in-out; /* Add transition for smooth sliding */
   z-index: 5;
+  padding: 2rem 0; /* 0 on sides for hover on li */
 }
 
 .sidebar-open {
@@ -74,21 +87,29 @@
   left: 0; /* Slide in to the screen */
 }
 
-.icn-close{
+.icn-close-sidebar, .icn-close-sidebar-pages{
   position: relative;
   width: 36px;
-  margin-top: 4rem;
-  margin-left: 90%;
 }
+
+.container-icn-close{
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .sidebar-ul{
   list-style: none;
   width: 100%;
-  margin-top: 2rem;
+  padding-left: 0; /* IMPORTANTE! fix bootstrap default */
 }
+
 .sidebar-social{
   display: flex;
   flex-direction: row;
-  margin-left: 3rem;
+  padding: 1rem 3rem;
   .sidebar-social-icn{
     width: 42px;
     margin-top: 1rem;
@@ -96,19 +117,78 @@
   }
 }
 
+.sidebar-li{
+  width: 100%;
+  margin-left: 0;
+  padding: 1.5rem 3rem;
+
+}
+
+.sidebar-closing {
+  transition: transform 0.4s ease-out; 
+  transform: translateX(-100%);
+}
 
 
 @media only screen and (max-width: 576px){
   .navbar-ul{
+    margin: .3rem 0;
     padding: 0;
-    margin: .5rem 0;
+  }
+  .sidebar {
+    left: 0; 
+    width: 100%;
+  }
+  .sidebarPages {
+    left: 0; 
+    width: 100%;
   }
 }
 
-
 @media only screen and (max-width: 768px){
-  .nav-brand{
-    width: 100%;
+
+.col-nav-brand{
+  display: none;
+}
+.col-nav-menu-laptop{
+  display: none;
+}
+.wrapper-search-box{
+  //es la ultima columna de la navbar q en mobile pasa a 100%
+  width: 100%;
+}
+.col-nav-menu-mobile, .col-nav-cart-mobile{
+  width: 25%;
+}
+.search-box-dark{
+  width: fit-content;
+}
+.input-search-dark{
+  width: 100%;
+}
+.col-nav-cart-mobile{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+}
+
+@media only screen and (min-width: 769px){
+
+.col-nav-menu-mobile{
+  display: none;
+}
+}
+
+@media only screen and (min-width: 577px) and (max-width: 990px){
+  .sidebar{
+    left: 0;
+    width: 50%;
+  }
+.sidebarPages {
+    left: 0;
+    width: 50%;
   }
 }
 
@@ -118,12 +198,7 @@
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 768px){
-  .col-nav-icn{
-    width: 30%;
-  }
-  .col-nav-brand{
-    width: 30%;
-  }
+
 }
 
 @media only screen and (min-width: 991px) and (max-width: 1200px){

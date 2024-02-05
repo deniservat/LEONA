@@ -101,6 +101,3 @@ dropdownOptions.forEach((option) => {
 
 renderBtnCart();
 
-
-
-

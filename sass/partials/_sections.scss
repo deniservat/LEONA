@@ -3,7 +3,7 @@
 }
 
 .color-white{
-    color: #E1E7FE;
+    color: #F8FCF5;
 }
 
 .section-light{
@@ -12,6 +12,10 @@
 
 //SECTIONS-GENERAL
 .section-p{
+    padding: 6rem 12rem;
+}
+
+.section-p-title{
     padding: 6rem 12rem;
 }
 
@@ -30,8 +34,6 @@
 .m-bottom{
     margin-bottom: 12rem;
 }
-
-
 
 //SOCIAL
 .section-py-social{
@@ -114,8 +116,14 @@
         padding-top: 12rem;
         padding-bottom: 0;
     }
-
-
+    .m-top{
+        margin-top: 9rem;
+        padding-bottom: 1rem;
+        position: fixed;
+        z-index: 5;
+        background-color: #F8FCF5;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 576px){
@@ -123,6 +131,18 @@
     .section-padding{
         padding: 6rem 1.4rem;
     }
+
+    .section-p{
+        padding: 6rem 12rem;
+    }    
+
+    .section-p-title{
+    padding: 6rem 12rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
     .section-fluid-p{
         padding: 6rem 1.4rem;
@@ -136,8 +156,15 @@
         padding-top: 12rem;
         padding-bottom: 12rem;
     }
-    
 
+    .m-top{
+        margin-top: 7rem;
+        padding-bottom: 1rem;
+        position: fixed;
+        z-index: 5;
+        background-color: #F8FCF5;
+        width: 100%;
+    }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 990px){
@@ -146,6 +173,12 @@
         padding: 3rem 3rem;
     }
 
+}
+
+@media only screen and (max-width: 768px){
+    .section-p-title{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 990px){

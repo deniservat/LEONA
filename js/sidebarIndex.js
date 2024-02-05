@@ -4,7 +4,7 @@ let sidebar;
 const openSidebar = () => {
     sidebar = document.createElement("div");
     sidebar.className = "sidebar";
-    sidebar.innerHTML = `<img class="icn-close" src="./icn/icn-close.svg">
+    sidebar.innerHTML = `<div class="container-icn-close"><img class="icn-close-sidebar" src="./icn/icn-close.svg"></div>
     <ul class="sidebar-ul">
         <a href="./index.html"><li class="sidebar-li">Home</li></a>
         <a href="./pages/products.html"><li class="sidebar-li">Shop</li></a>
@@ -12,18 +12,14 @@ const openSidebar = () => {
         <a href="./pages/products.html"><li class="sidebar-li">Our partner stores</li></a>
         <a href="./index.html"><li class="sidebar-li">FAQ</li></a>
         <a href="./index.html"><li class="sidebar-li">Contact</li></a>
-    </ul>
-    <div class="sidebar-social">
+        <div class="sidebar-social">
         <a href=""><img class="sidebar-social-icn" src="./icn/icn-ig.svg" alt="instagram icon"></a>
         <a href=""><img class="sidebar-social-icn" src="./icn/icn-tw.svg" alt="twitter icon"></a>
         <a href=""><img class="sidebar-social-icn" src="./icn/icn-linkedin.svg" alt="linkedin icon"></a>       
-    </div>`;
+    </div>
+    </ul>`;
 
     document.body.appendChild(sidebar);
-
-    // Add a click event listener to the close button
-    const closeButton = sidebar.querySelector(".icn-close");
-    closeButton.addEventListener("click", closeSidebar);
 
     // Use setTimeout to ensure the sliding effect works
     setTimeout(() => {
@@ -33,15 +29,26 @@ const openSidebar = () => {
 };
 
 const closeSidebar = () => {
-    // Reset the menu button class and remove the sidebar element
+    // Reset the menu button class
     menuButton.className = "icn-burger";
-    sidebar.classList.remove("sidebar-open");
     
+    // Add the 'sidebar-closing' class to trigger the sliding-out animation
+    sidebar.classList.add("sidebar-closing");
+
     // Wait for the transition to complete before removing the element
     sidebar.addEventListener("transitionend", () => {
         document.body.removeChild(sidebar);
     }, { once: true });
 };
+
+document.addEventListener("click", (event) => {
+    const closeButton = event.target.closest(".icn-close-sidebar");
+    if (closeButton) {
+        event.preventDefault();
+        console.log("Close button clicked");
+        closeSidebar();
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     menuButton.addEventListener("click", (e) => {

@@ -91,6 +91,11 @@
     line-height: normal;
     padding-bottom: 1rem;
 }
+.filter{
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: normal;
+}
 
 //PRODUCT CARD
 .product-title{
@@ -188,7 +193,6 @@
     font-size: 2.6rem;
     font-weight: 400;
     line-height: normal;
-    padding: 1rem 1.8rem;
     &:hover{
         background-color: #28282899;
         color: #F8FCF5;
@@ -211,18 +215,27 @@ a{
         font-size: 2rem;
         font-weight: 200;
     }
+    .page-title{
+        padding-top: 3rem;
+    }
 }
 
-@media only screen and (max-width: 990x) {
+
+
+@media only screen and (min-width: 320px){
+    .md-heading{
+        margin-top: 6rem;
+    }
+}
+@media only screen and (max-width: 990px) {
 
     .selected-product-description{
         width: 100%;
     }
 }
-
-@media only screen and (min-width: 320px){
-    .md-heading{
-        margin-top: 6rem;
+@media only screen and (max-width: 768px) {
+    .page-title{
+        display: none;
     }
 }
 

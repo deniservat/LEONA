@@ -86,13 +86,6 @@
     width: fit-content;
 }
 
-/* #color-picker{
-    padding: 1rem;
-    background-color: #F2F6EE;
-    border: solid 1px #282828;
-    width: fit-content;
-} */
-
 #select-color {
     display: flex; 
     flex-direction: row;
@@ -148,4 +141,20 @@
 
 .btn-after{
     width: 100%;
+}
+
+@media only screen and (max-width: 576px) {
+    .product-list{
+        margin-top: 24rem;
+    }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .product-list{
+        margin-top: 28rem;
+    }
+}
+@media only screen and (min-width: 769px){
+    .product-list{
+        margin-top: 0;
+    }
 }
