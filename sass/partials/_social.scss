@@ -41,10 +41,12 @@
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 2rem;
+        width: 100%;
+        padding-left: 0;
     }
     
     .instafeed-img{
-        width: 330px;
+        width: 100%;
         padding: 0;
     }
 }

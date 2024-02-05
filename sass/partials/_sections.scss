@@ -23,6 +23,10 @@
     padding: 6rem 6rem;
 }
 
+.section-fluid-p-social{
+    padding: 12rem 6rem;
+}
+
 .section-px{
     padding-left: 12rem;
     padding-right: 12rem;
@@ -164,6 +168,9 @@
         z-index: 5;
         background-color: #F8FCF5;
         width: 100%;
+    }
+    .section-fluid-p-social{
+        padding: 12rem 0 0;
     }
 }
 

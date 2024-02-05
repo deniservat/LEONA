@@ -223,9 +223,9 @@ a{
 
 
 @media only screen and (min-width: 320px){
-    .md-heading{
+/*     .md-heading{
         margin-top: 6rem;
-    }
+    } */
 }
 @media only screen and (max-width: 990px) {
 
@@ -239,6 +239,12 @@ a{
     }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 990px){
+    .p{
+        font-size: 2rem;
+        padding-top: 1rem;
+    }
+}
 @media only screen and (min-width: 991px) and (max-width: 1200px){
     .p{
         font-size: 2.2rem;

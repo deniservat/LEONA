@@ -86,13 +86,10 @@ handleWindowResize();
 window.addEventListener("resize", handleWindowResize);
 
 
-
-//MOBILE SIDE FILTERS
-
+//FUNCTIONS FOR MOBILE SIDE FILTERS
 
 const openSideFilters = () => {
   sideFilters.className = "sideFilters p-5";
-
   document.body.appendChild(sideFilters);
   console.log("filters should open");
 
