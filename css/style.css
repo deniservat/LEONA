@@ -1702,15 +1702,14 @@ footer {
 .icn-about .icn-about {
   width: 200px;
   height: 200px;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .wrapper-about-items {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0;
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 
 @media only screen and (max-width: 576px) {
@@ -1718,7 +1717,7 @@ footer {
     width: 150px;
     height: 150px;
     padding: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 }
 @media only screen and (min-width: 577px) and (max-width: 768px) {
@@ -1726,7 +1725,7 @@ footer {
     width: 150px;
     height: 150px;
     padding: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 990px) {

@@ -3,6 +3,10 @@ function getProductById(productId) {
     return foundProduct;
 }
 
+const goHome = () =>{
+    window.location.href = "../index.html";
+}
+
 /* const renderProdCart = () => { */
 const renderProdCart = () => {
     product = loadSelectedProd();
@@ -68,8 +72,8 @@ const renderProdCart = () => {
         output = `<article class="container-fluid">
                       <div class="d-center">
                           <p class="cart-prod-reg m-0 pb-5 text-center">Your cart is empty,<br><br>  time to refresh with natural beauty essentials!</p>
-                          <a href="products.html">
-                              <button class="btn-hero" id="btn-hero">SHOP NOW</button>
+                          <a href="">
+                              <button class="btn-hero" onClick="goHome()">SHOP NOW</button>
                           </a>
                       </div>
                   </article>`;
@@ -118,7 +122,10 @@ document.getElementById("selected-products").addEventListener("click", (e) => {
                 }
             }
         }
-    });    
-     
+    });
 
 
+
+
+
+    

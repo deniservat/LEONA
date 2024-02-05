@@ -8,7 +8,7 @@ const openSidebarPages = () => {
     sidebarPages.className = "sidebarPages";
     sidebarPages.innerHTML = `<div class="container-icn-close"><img class="icn-close-sidebar" src="../icn/icn-close.svg"></div>
     <ul class="sidebar-ul">
-        <a href="./index.html"><li class="sidebar-li">Home</li></a>
+        <a href="../index.html"><li class="sidebar-li">Home</li></a>
         <a href="./pages/products.html"><li class="sidebar-li">Shop</li></a>
         <a href="#about"><li class="sidebar-li">About us</li></a>
         <a href="./pages/products.html"><li class="sidebar-li">Our partner stores</li></a>
