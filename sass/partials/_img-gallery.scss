@@ -1,35 +1,211 @@
 
 .gallery-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-right: 2rem;
+  height: fit-content;
+  margin-bottom: 2rem;
+}
+
+.small-images{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 20%;
+  margin-right: 0;
+  padding-right: 1rem;
+  order: 1;
+
+}
+
+.big-image{
+  width: 80%;
+  order: 2;
+}
+
+.small-images img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+}
+
+.small-images img:not(:last-child) {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.big-image img {
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 576px) {
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 0;
+}
+  .small-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-right: 0;
+    order: 2;
+    margin-top: 1rem;
+    overflow-x: scroll;
+    padding-right: 0;
+  }
+
+  .big-image{
+    width: 100%;
+    height: 100%;
+    order: 1;
+  }
+  
+  .small-images img {
+    width: 25%;
+    height: 25%;
+    cursor: pointer;
+  }
+
+  .small-images img:not(:last-child) {
+    margin-right: 0;
+}
+
+  .big-image img {
+    width: 100%;
+  }
+}
+    
+@media only screen and (min-width: 577px) and (max-width: 768px){
+  .gallery-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-right: 4rem;
-  }
+    padding-right: 0;
+    height: fit-content;
+    margin-bottom: 2rem;
+}
 
   .small-images{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 20%;
-    height: 70rem;
-    margin-right: .2rem;
+    margin-right: 0;
+    padding-right: 1rem;
+    order: 1;
+
   }
 
   .big-image{
-    width: 70rem;
-    height: 70rem;
+    width: 80%;
+    order: 2;
   }
   
   .small-images img {
-    width: 16rem;
-    height: 16rem;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
+
   }
 
   .small-images img:not(:last-child) {
-    margin-bottom: calc(6rem / 3);
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
   .big-image img {
     width: 100%;
   }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px){
+  .gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 2rem;
+  }
+  .small-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    margin-right: 0;
+    padding-right: 0;
+    order: 2;
+    margin-top: 1rem;
+  }
+
+  .big-image{
+    width: 100%;
+    height: 100%;
+    order: 1;
+  }
+  
+  .small-images img {
+    width: 25%;
+    height: 25%;
+    cursor: pointer;
+  }
+
+  .small-images img:not(:last-child) {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+  .big-image img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1200px){
+
+   .gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 2rem;
+  }
+
+  .small-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    margin-right: 0;
+    order: 2;
+    margin-top: 1rem;
+  }
+
+  .big-image{
+    width: 100%;
+    height: 100%;
+    order: 1;
+  }
+  
+  .small-images img {
+    width: 23%;
+    height: 23%;
+    cursor: pointer;
+  }
+
+  .small-images img:not(:last-child) {
+    margin-right: 0;
+}
+
+  .big-image img {
+    width: 100%;
+  }
+}
+    
+@media only screen and (min-width: 1201px){
+
+}

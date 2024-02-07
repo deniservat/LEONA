@@ -107,28 +107,6 @@
     padding: 0 12rem;
 }
 
-@media only screen and (max-width: 768px){
-    .wrapper-about{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        }
-    .section-about-item{
-        width: 100%;
-    }
-    .section-py-social{
-        padding-top: 12rem;
-        padding-bottom: 0;
-    }
-    .m-top{
-        margin-top: 9rem;
-        padding-bottom: 1rem;
-        position: fixed;
-        z-index: 5;
-        background-color: #F8FCF5;
-        width: 100%;
-    }
-}
 
 @media only screen and (max-width: 576px){
 
@@ -174,10 +152,42 @@
     }
 }
 
-@media only screen and (min-width: 577px) and (max-width: 990px){
+@media only screen and (max-width: 768px){
+    .wrapper-about{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    .section-about-item{
+        width: 100%;
+    }
+    .section-py-social{
+        padding-top: 12rem;
+        padding-bottom: 0;
+    }
+    .m-top{
+        margin-top: 9rem;
+        padding-bottom: 1rem;
+        position: fixed;
+        z-index: 5;
+        background-color: #F8FCF5;
+        width: 100%;
+    }
+}
 
+@media only screen and (min-width: 577px) and (max-width: 990px){
     .section-padding{
         padding: 3rem 3rem;
+    }
+
+}
+@media only screen and (min-width: 320px) and (max-width: 576px){
+    .section-px{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .section-p{
+        padding: 6rem 1.5rem;
     }
 
 }
@@ -186,6 +196,7 @@
     .section-p-title{
         display: none;
     }
+
 }
 
 @media only screen and (max-width: 990px){
@@ -196,6 +207,17 @@
         width: 50%;
     }
 }
+
+@media only screen and (min-width: 576px) and (max-width: 990px){
+    .section-px{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .section-p{
+        padding: 6rem 3rem;
+    }
+}
+
 @media only screen and (min-width: 321px){
     .wrapper-about{
     padding: 3rem 0;
@@ -208,5 +230,7 @@
     .wrapper-about{
         padding: 3rem 0;
         }
+
+        
 }
 

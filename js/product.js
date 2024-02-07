@@ -26,9 +26,6 @@ const renderProductAmount = (productsCart) => {
 };
 
 
-
-
-
 function changeImage(imageSrc) {
     document.getElementById('bigImage').src = imageSrc;
 }
@@ -43,7 +40,7 @@ const renderProd = () => {
         productsCart.push(product);
     }
 
-    let output = `<article class="col-xs-12 col-md-8 p-0">
+    let output = `<article class="col-xs-12 col-md-7 col-lg-8 p-0">
                     <div class="gallery-container">
                         <div class="small-images">
                             <img class="small-img" src="../img/img-prod-${product.id}.jpg" alt="Image 1" onclick="changeImage('../img/img-prod-${product.id}.jpg')">
@@ -57,7 +54,7 @@ const renderProd = () => {
                         </div>
                     </div>
                 </article>
-                <article class="col-xs-12 col-md-4">
+                <article class="col-xs-12 col-md-5 col-lg-4 p-0">
                     <h1 class="selected-product-title">${product.name}</h1>
                     <div class="container-fluid p-0 pb-5" id="reviews">
                         <div class="r-start">

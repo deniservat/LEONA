@@ -3,9 +3,10 @@ function getProductById(productId) {
     return foundProduct;
 }
 
-const goHome = () =>{
-    window.location.href = "../index.html";
+const goProducts = () =>{
+    window.location.href = "./products.html";
 }
+
 
 /* const renderProdCart = () => { */
 const renderProdCart = () => {
@@ -13,7 +14,7 @@ const renderProdCart = () => {
     productsCart = loadProdCartLS();
     let output = "";
     if (totalItemsCart() > 0) {
-        output = `<article class="container-fluid">
+        output = `<article class="container-fluid pt-5 ps-0 pe-0">
                       <div class="row r-end pb-4">
                           <a href="#" class="r-end-start cart-prod-reg m-0" onClick="emptyCart()">
                               <p class="cart-prod-reg m-0 pe-3">Empty cart</p>
@@ -22,34 +23,40 @@ const renderProdCart = () => {
                       </div>`;
         for (let product of productsCart) {
             let backgroundColor = colorHexMap[product.color] || "#000000";
-            output += `<div class="r-between line-top pt-4 pb-4">
-                          <div class="col-md-1 r-start">
-                              <img src="../img/img-prod-${product.id}.jpg" alt="${product.name}" width="120">
-                          </div>
-                          <div class="col-md-2 r-start">
-                              <p class="cart-prod-bold m-0 me-5">${product.name}</p>
-                          </div>
-                          <div class="col-md-1 r-start">
-                          <div id="cart-selected-color" class="me-2" style="background-color: ${backgroundColor}; height: 32px; width: 32px;"></div>
-                          <p class="cart-prod-bold m-0">${product.color}</p>
+            output += `<div class="row-cart">
+                            <div class="cart-col-1 pe-3">
+                                <img class="cart-image" src="../img/img-prod-${product.id}.jpg" alt="${product.name}">
                             </div>
-                          <div id="select-amount" class="r-start">
-                              <button id="btn-amount-rest-${product.id}" class="btn-amount" title="Rest Item"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
-                              <h4 id="product-amount-${product.id}" class="m-0 box-amount">${product.amount}</h4>
-                              <button id="btn-amount-add-${product.id}" class="btn-amount" title="Add Item"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
-                          </div>
-                          <div class="col-md-1 r-end">
-                              <p class="cart-prod-reg m-0">${product.amount} X £${product.price}</p>
-                          </div>
-                          <div class="col-md-2 r-between">
-                              <p class="cart-prod-bold m-0">£${(product.amount * product.price).toFixed(2)}</p>
-                            <a class="d-center delete-product-cart" href="#" title="Delete product" data-product-id="${product.id}">
-                              <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
-                          </a>
-                          
-                          
-                          </div>
-                      </div>`;
+
+                            <div class="cart-col-2">
+
+                                <div class="cart-name">
+                                    <p class="cart-prod-bold m-0">${product.name}</p>
+                                </div>
+
+                                <div class="cart-color">
+                                    <div id="cart-selected-color" class="me-2" style="background-color: ${backgroundColor}; height: 32px; width: 32px;"></div>
+                                    <p class="cart-prod-bold m-0">${product.color}</p>
+                                </div>
+                            
+                                <div class="cart-amount" id="select-amount">
+                                    <button id="btn-amount-rest-${product.id}" class="btn-amount" title="Rest Item"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
+                                    <h4 id="product-amount-${product.id}" class="m-0 box-amount">${product.amount}</h4>
+                                    <button id="btn-amount-add-${product.id}" class="btn-amount" title="Add Item"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
+                                </div>
+
+                                <div class="cart-amountxprice">
+                                    <p class="cart-prod-reg m-0">${product.amount} x £${product.price}</p>
+                                </div>
+
+                                <div class="cart-price r-between">
+                                    <p class="cart-prod-bold m-0 pe-5">£${(product.amount * product.price).toFixed(2)}</p>
+                                    <a class="d-center delete-product-cart" href="#" title="Delete product" data-product-id="${product.id}">
+                                    <img src="../icn/icn-trash.svg" alt="Delete product" width="20"/>
+                                    </a> 
+                                </div>
+                            </div>
+                        </div>`;
         }
         output += `<div class="row line-top pt-5">
                       <div class="col-md-6">
@@ -60,10 +67,10 @@ const renderProdCart = () => {
                       </div>
                     </div>
                     <div class="row pt-5 justify-content-between pe-0 m-0">
-                    <a class="col-md-3 checkout" href="checkout.html" title="Checkout">
+                    <a class="col-md-3 checkout p-0" href="products.html" title="Checkout">
                     <button class="btn-checkout-back mt-4" id="btn-checkout">ADD MORE PRODUCTS</button>
                     </a>
-                    <a class="col-md-3 checkout" href="checkout.html" title="Checkout">
+                    <a class="col-md-3 checkout p-0" href="checkout.html" title="Checkout">
                         <button class="btn-checkout mt-4" id="btn-checkout">GO TO CHECKOUT</button>
                     </a>
                     </div>
@@ -73,7 +80,7 @@ const renderProdCart = () => {
                       <div class="d-center">
                           <p class="cart-prod-reg m-0 pb-5 text-center">Your cart is empty,<br><br>  time to refresh with natural beauty essentials!</p>
                           <a href="">
-                              <button class="btn-hero" onClick="goHome()">SHOP NOW</button>
+                              <button class="btn-hero" onClick="goProducts()">SHOP NOW</button>
                           </a>
                       </div>
                   </article>`;
