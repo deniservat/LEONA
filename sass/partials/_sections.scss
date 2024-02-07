@@ -19,6 +19,11 @@
     padding: 6rem 12rem;
 }
 
+.section-progress-p{
+    padding: 12rem 12rem 1.5rem 12rem;
+    margin-bottom: 2rem;
+}
+
 .section-fluid-p{
     padding: 6rem 6rem;
 }
@@ -37,6 +42,10 @@
 }
 .m-bottom{
     margin-bottom: 12rem;
+}
+
+.p-top{
+    padding-top: 22rem;
 }
 
 //SOCIAL
@@ -138,7 +147,6 @@
         padding-top: 12rem;
         padding-bottom: 12rem;
     }
-
     .m-top{
         margin-top: 7rem;
         padding-bottom: 1rem;
@@ -149,6 +157,10 @@
     }
     .section-fluid-p-social{
         padding: 12rem 0 0;
+    }
+    .section-progress-p{
+        padding: 9rem 1.5rem 1.5rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -165,6 +177,16 @@
         padding-top: 12rem;
         padding-bottom: 0;
     }
+    .section-progress-p{
+        padding: 12rem 1.5rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 990px){
+    .section-padding{
+        padding: 3rem 3rem;
+    }
     .m-top{
         margin-top: 9rem;
         padding-bottom: 1rem;
@@ -174,8 +196,7 @@
         width: 100%;
     }
 }
-
-@media only screen and (min-width: 577px) and (max-width: 990px){
+@media only screen and (min-width: 577px) and (max-width: 768px){
     .section-padding{
         padding: 3rem 3rem;
     }
@@ -229,8 +250,6 @@
     }
     .wrapper-about{
         padding: 3rem 0;
-        }
-
-        
+    }   
 }
 

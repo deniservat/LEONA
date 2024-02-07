@@ -107,7 +107,17 @@
         background-color: #F8FCF5;
         width: 100%;
         padding-top: 1rem;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
+    }
+    .filter-exists{
+        margin-top: 1.5rem;
+        height: 4rem;
+        z-index: 6;
+        background-color: #F8FCF5;
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        overflow-x: scroll;
     }
 
 }

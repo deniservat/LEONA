@@ -28,8 +28,8 @@ const renderProducts = (selectedArray) => {
   } else {
     for (const product of selectedArray) {
       let card = document.createElement("div");
-      card.className = "col-xs-12 col-md-4 p-0 m-0";
-      card.innerHTML = `<div class="product-card">
+      card.className = "product-card";
+      card.innerHTML = `
         <div class="container-image">
           <a class="wrapper">
             <div class="parent d-center" onClick="seeSelectedProd(${product.id})">
@@ -47,8 +47,7 @@ const renderProducts = (selectedArray) => {
         <div class="product-details">
           <h2 class="product-title">${product.name}</h2>
           <h3 class="product-price">£${product.price}</h3>
-        </div>
-      </div>`;
+        </div>`;
 
       container.appendChild(card);
     }

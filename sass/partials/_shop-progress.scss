@@ -1,0 +1,34 @@
+#shop-progress{
+    position: fixed;
+    width: 100%;
+    background-color: #E1E7FE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-progress{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.inactive{
+    opacity: 50%;
+}
+
+
+
+@media only screen and (max-width: 768px){
+    .row-progress{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+

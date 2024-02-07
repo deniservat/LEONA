@@ -183,6 +183,7 @@
     margin-right: 0;
     order: 2;
     margin-top: 1rem;
+    padding-right: 0;
   }
 
   .big-image{
@@ -192,13 +193,14 @@
   }
   
   .small-images img {
-    width: 23%;
-    height: 23%;
+    width: 25%;
+    height: 25%;
     cursor: pointer;
   }
 
   .small-images img:not(:last-child) {
     margin-right: 0;
+    padding-right: 0;
 }
 
   .big-image img {

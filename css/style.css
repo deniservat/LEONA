@@ -522,6 +522,11 @@
   padding: 6rem 12rem;
 }
 
+.section-progress-p {
+  padding: 12rem 12rem 1.5rem 12rem;
+  margin-bottom: 2rem;
+}
+
 .section-fluid-p {
   padding: 6rem 6rem;
 }
@@ -542,6 +547,10 @@
 
 .m-bottom {
   margin-bottom: 12rem;
+}
+
+.p-top {
+  padding-top: 22rem;
 }
 
 .section-py-social {
@@ -641,6 +650,10 @@
   .section-fluid-p-social {
     padding: 12rem 0 0;
   }
+  .section-progress-p {
+    padding: 9rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 @media only screen and (max-width: 768px) {
   .wrapper-about {
@@ -655,6 +668,15 @@
     padding-top: 12rem;
     padding-bottom: 0;
   }
+  .section-progress-p {
+    padding: 12rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 990px) {
+  .section-padding {
+    padding: 3rem 3rem;
+  }
   .m-top {
     margin-top: 9rem;
     padding-bottom: 1rem;
@@ -664,7 +686,7 @@
     width: 100%;
   }
 }
-@media only screen and (min-width: 577px) and (max-width: 990px) {
+@media only screen and (min-width: 577px) and (max-width: 768px) {
   .section-padding {
     padding: 3rem 3rem;
   }
@@ -959,6 +981,13 @@ a {
     font-size: 27rem;
   }
 }
+/* Apply flexbox layout to product cards container */
+#products-js {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust alignment as needed */
+}
+
 .product-image {
   width: 100%;
 }
@@ -969,44 +998,35 @@ a {
 
 .product-card {
   position: relative;
-  margin: 1rem;
+  width: 100%;
 }
 
 .wrapper {
   position: relative;
 }
 
-/* Image zoom on hover + Overlay colour */
+.btn-add {
+  width: 100%;
+}
+
+/* Image zoom on hover*/
 .parent {
   width: 100%;
-  height: 330px;
+  height: 100%;
   overflow: hidden;
   position: relative;
   cursor: pointer;
 }
 
 .child {
-  height: 100%;
   width: 100%;
+  height: 33rem;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
-}
-
-/* Several different images */
-.bg-1 {
-  background-image: url(../img/image-product-1.jpg);
-}
-
-.bg-2 {
-  background-image: url(../img/image-product-2.jpg);
-}
-
-.bg-3 {
-  background-image: url(../img/image-product-3.jpg);
 }
 
 .parent:hover .child, .parent:focus .child {
@@ -1017,19 +1037,11 @@ a {
   transform: scale(1.2);
 }
 
-.parent:hover .child:before, .parent:focus .child:before {
-  display: block;
-}
-
-.parent:hover a, .parent:focus a {
-  display: block;
-}
-
 .child:before {
   content: "";
   display: none;
-  height: 100%;
-  width: 100%;
+  width: 330px;
+  height: 330px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1122,9 +1134,23 @@ a {
     margin-top: 28rem;
   }
 }
+@media only screen and (min-width: 577px) and (max-width: 1200px) {
+  .product-card {
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 @media only screen and (min-width: 769px) {
   .product-list {
     margin-top: 0;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  .product-card {
+    width: 30%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 .filter {
@@ -1232,7 +1258,17 @@ a {
     background-color: #F8FCF5;
     width: 100%;
     padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+  .filter-exists {
+    margin-top: 1.5rem;
+    height: 4rem;
+    z-index: 6;
+    background-color: #F8FCF5;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow-x: scroll;
   }
 }
 .filters-and-products {
@@ -2042,6 +2078,7 @@ footer {
     margin-right: 0;
     order: 2;
     margin-top: 1rem;
+    padding-right: 0;
   }
   .big-image {
     width: 100%;
@@ -2049,12 +2086,13 @@ footer {
     order: 1;
   }
   .small-images img {
-    width: 23%;
-    height: 23%;
+    width: 25%;
+    height: 25%;
     cursor: pointer;
   }
   .small-images img:not(:last-child) {
     margin-right: 0;
+    padding-right: 0;
   }
   .big-image img {
     width: 100%;
@@ -2292,6 +2330,37 @@ footer {
   .sidebarPages {
     left: 0;
     width: 50%;
+  }
+}
+#shop-progress {
+  position: fixed;
+  width: 100%;
+  background-color: #E1E7FE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-progress {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.inactive {
+  opacity: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .row-progress {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
   }
 }
 * {

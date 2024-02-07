@@ -4,7 +4,7 @@ function getProductById(productId) {
 }
 
 const goProducts = () =>{
-    window.location.href = "./products.html";
+    window.location.href = "products.html";
 }
 
 
@@ -41,12 +41,12 @@ const renderProdCart = () => {
                             
                                 <div class="cart-amount" id="select-amount">
                                     <button id="btn-amount-rest-${product.id}" class="btn-amount" title="Rest Item"><img src="../icn/icn-minus.svg" alt="rest item" width="20"></button>
-                                    <h4 id="product-amount-${product.id}" class="m-0 box-amount">${product.amount}</h4>
+                                    <h4 id="product-amount-${product.id}" class="cart-prod-bold m-0 box-amount">${product.amount}</h4>
                                     <button id="btn-amount-add-${product.id}" class="btn-amount" title="Add Item"><img src="../icn/icn-plus.svg" alt="rest item" width="20"></button>
                                 </div>
 
                                 <div class="cart-amountxprice">
-                                    <p class="cart-prod-reg m-0">${product.amount} x £${product.price}</p>
+                                    <p class="cart-prod-bold m-0">${product.amount} x £${product.price}</p>
                                 </div>
 
                                 <div class="cart-price r-between">
@@ -67,12 +67,15 @@ const renderProdCart = () => {
                       </div>
                     </div>
                     <div class="row pt-5 justify-content-between pe-0 m-0">
-                    <a class="col-md-3 checkout p-0" href="products.html" title="Checkout">
-                    <button class="btn-checkout-back mt-4" id="btn-checkout">ADD MORE PRODUCTS</button>
+
+                    <a href="" class="col-md-3 p-0">
+                    <button class="btn-checkout-back mt-4" onClick="goProducts()">ADD MORE PRODUCTS</button>
                     </a>
+
                     <a class="col-md-3 checkout p-0" href="checkout.html" title="Checkout">
                         <button class="btn-checkout mt-4" id="btn-checkout">GO TO CHECKOUT</button>
                     </a>
+
                     </div>
                 </article>`;
     } else {
