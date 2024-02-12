@@ -38,7 +38,39 @@ const inCart = (id) => {
 //ATENCION! necesito antes poner el inCart
   // funcion con parametro id del product, para que busque en el array y devuelva para agregarlo al array
   
-const addCart = (id) => {
+  const addCart = (id) => {
+    // Retrieve the array of products from local storage
+    const products = loadProdLS();
+    productsCart = loadProdCartLS(); // Retrieve the cart from local storage
+
+    console.log("Products from LS:", products);
+    console.log("Cart from LS before adding:", productsCart);
+
+    // Check if the product is already in the cart
+    const existingProduct = productsCart.find(item => item.id === id);
+
+    if (existingProduct) {
+        // If the product is already in the cart, increment its amount
+        existingProduct.amount += 1;
+    } else {
+        // If the product is not in the cart, find it in the products array
+        const productToAdd = products.find(item => item.id === id);
+        // Set its amount to 1
+        productToAdd.amount = 1;
+        // Add it to the cart
+        productsCart.push(productToAdd);
+    }
+
+    console.log("Cart after adding:", productsCart);
+
+    // Save the updated cart back to local storage
+    saveProdCartLS(productsCart);
+
+    // Update the UI to reflect the changes
+    renderBtnCart();
+}
+
+/* const addCart = (id) => {
     // recupero el array del carrito
     const products = loadProdLS();
     const productsCart = loadProdCartLS();
@@ -58,7 +90,45 @@ const addCart = (id) => {
     saveProdCartLS(productsCart);
     // agregar
     renderBtnCart();
-  } 
+  }  */
+
+
+/*   const addFastCart = (id) => {
+    // Load the current products in the cart from local storage
+    let productsCart = loadProdCartLS();
+    // Retrieve all products
+    const products = loadProdLS();
+
+    // Find the product with the matching ID
+    const productToAdd = products.find(item => item.id === id);
+    console.log("should have found the product with the same id")
+
+    // Check if the product exists
+    if (productToAdd) {
+        // Check if the product is already in the cart
+        const existingProductIndex = productsCart.findIndex(item => item.id === id);
+        
+
+        if (existingProductIndex !== -1) {
+            // If the product is already in the cart, increase its amount
+            productsCart[existingProductIndex].amount += 1;
+        } else {
+            // If the product is not in the cart, add it with amount 1
+            productToAdd.amount = 1;
+            productsCart.push(productToAdd);
+        }
+
+        // Save the updated cart to local storage
+        saveProdCartLS(productsCart);
+
+        // Update the UI
+        renderBtnCart();
+    } else {
+        console.error(`Product with ID ${id} not found.`);
+    }
+}; */
+
+
 
 const deleteProd = (id) => {
   const updatedProductsCart = productsCart.filter(item => {

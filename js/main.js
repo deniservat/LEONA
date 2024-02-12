@@ -36,30 +36,86 @@ const renderProducts = (selectedArray) => {
               <div class="child" style="background-image: url(../img/img-prod-${product.id}.jpg);"></div>
             </div>
           </a>
-          <a class="btn-add d-center" onClick="addCart(${product.id})">
+          <a id="btn-fast-add" class="btn-add d-center" data-product-id="${product.id}" onClick="addCart(${product.id})">
             <svg width="53" height="45" viewBox="0 0 53 45" xmlns="http://www.w3.org/2000/svg">
-              <path class="btn-add-bg" d="M0 18C0 8.05887 8.05888 0 18 0H34.6829C44.6241 0 52.6829 8.05888 52.6829 18V45H0V18Z" fill="#CCFF00"/>
-              <path d="M26 16V34" stroke="#282828" stroke-width="2"/>
-              <path d="M17 25H35" stroke="#282828" stroke-width="2"/>
+                <path class="btn-add-bg" d="M0 18C0 8.05887 8.05888 0 18 0H34.6829C44.6241 0 52.6829 8.05888 52.6829 18V45H0V18Z" fill="#CCFF00"/>
+                <path d="M26 16V34" stroke="#282828" stroke-width="2"/>
+                <path d="M17 25H35" stroke="#282828" stroke-width="2"/>
             </svg>
-          </a> 
+          </a>
         </div>
         <div class="product-details">
           <h2 class="product-title">${product.name}</h2>
           <h3 class="product-price">£${product.price}</h3>
         </div>`;
+        
 
       container.appendChild(card);
     }
     container.appendChild(fragment);
   }
+
 };
 
 // Initial render on page load
 renderProducts(products);
 
-//FILTERS
+//BUTTON FAST ADD
 
+
+
+
+
+
+/* document.addEventListener("DOMContentLoaded", function() {
+const fastAddBtn = document.querySelectorAll(".btn-add");
+
+fastAddBtn.forEach(button => {
+  button.addEventListener("click", function(event) {
+      const productToAdd = searchSelectedProd(id);
+  
+      // Check if the product exists
+      if (productToAdd) {
+          // Check if the product is already in the cart
+          const existingProductIndex = productsCart.findIndex(item => item.id === productId);
+          console.log("Existing product index:", existingProductIndex);
+          
+          if (existingProductIndex !== -1) {
+              // If the product is already in the cart, increase its amount
+              productsCart[existingProductIndex].amount += 1;
+          } else {
+              // If the product is not in the cart, add it with amount 1
+              productToAdd.amount = 1;
+              productsCart.push(productToAdd);
+          }
+  
+          // Save the updated cart to local storage
+          saveProdCartLS(productsCart);
+  
+          // Update the UI
+          renderBtnCart();
+      } else {
+          console.error(`Product with ID ${productId} not found.`);
+          
+      }
+  });
+});
+}); */
+
+  
+/* document.addEventListener("DOMContentLoaded", function() {
+  const addButtonElements = document.querySelectorAll(".btn-add");
+
+  addButtonElements.forEach(button => {
+      button.addEventListener("click", function(event) {
+          const productId = event.currentTarget.dataset.productId;
+          addFastCart(productId);
+      });
+  });
+}); */
+
+
+//FILTERS
 
 // Function to handle dropdown change
 // Function to handle dropdown change
