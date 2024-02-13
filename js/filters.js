@@ -1,7 +1,7 @@
+
 // Define a variable to store selected filters
 let selectedFilters = { category: [], color: [], minPrice: undefined, maxPrice: undefined };
 
-// Function to render selected filters
 const renderSelectedFilters = () => {
   let filterExists = document.getElementById("filter-exists");
   filterExists.innerHTML = ""; // Clear previous filters
@@ -20,6 +20,12 @@ const renderSelectedFilters = () => {
 
   if (selectedFilters.maxPrice !== undefined) {
     appendFilter("max. price", `£${selectedFilters.maxPrice.toFixed(2)}`);
+  }
+
+  // Append search input value if it exists
+  const searchInput = document.getElementById("search-bar").value.toLowerCase();
+  if (searchInput) {
+    appendFilter("search", searchInput);
   }
 };
 
@@ -43,38 +49,22 @@ const appendFilter = (filterType, filterValue) => {
   filterLabel.querySelector(".filter-delete").addEventListener("click", () => {
     // Remove the filter from selectedFilters
     removeFilter(filterType, filterValue);
-    // Re-render the products based on updated filters
-    renderProducts(getFilteredProducts());
-    // Re-render selected filters
+    // Re-render selected filters and products based on updated filters
     renderSelectedFilters();
   });
 };
 
-// Updated removeFilter function
+// Function to remove filter
 const removeFilter = (filterType, filterValue) => {
   let filterExists = document.getElementById("filter-exists");
 
-  // Remove only price-related filters
-  if (filterType === "min. price" || filterType === "max. price") {
-    let priceFilters = filterExists.querySelectorAll('.filter-min-price, .filter-max-price');
-    priceFilters.forEach((filter) => {
-      filter.remove();
-    });
-
-    // Update selectedFilters object with minPrice and maxPrice
+  // Remove filter from selectedFilters
+  if (filterType === "search") {
+    document.getElementById("search-bar").value = ""; // Clear search input
+  } else if (filterType === "min. price" || filterType === "max. price") {
     selectedFilters.minPrice = undefined;
     selectedFilters.maxPrice = undefined;
   } else {
-    // Remove other filters
-    let filters = Array.from(filterExists.getElementsByClassName("filter-selected-name"));
-    filters.forEach((filter) => {
-      const textContent = filter.textContent || filter.innerText;
-      if (textContent.includes(filterValue)) {
-        filter.parentElement.remove();
-      }
-    });
-
-    // Update selectedFilters object for other filters
     if (filterType === "category") {
       selectedFilters.category = selectedFilters.category.filter((cat) => cat !== filterValue);
     } else if (filterType === "color") {
@@ -82,11 +72,15 @@ const removeFilter = (filterType, filterValue) => {
     }
   }
 
-  // Render selected filters
+  // Re-render selected filters and products based on updated filters
   renderSelectedFilters();
-  // Render products based on updated filters
-  renderProducts(getFilteredProducts());
+
+    // Re-render products based on updated filters
+    renderProducts(getFilteredProducts());
 };
+
+
+
 
 // Function to get filtered products based on selected filters
 const getFilteredProducts = () => {
@@ -147,7 +141,6 @@ document.getElementById("ul-color").addEventListener("click", (event) => {
     }
   }
 });
-
 
 // Updated handlePriceFilter function
 const handlePriceFilter = () => {
@@ -241,23 +234,9 @@ if (categoryFromQueryParam) {
 }
 
 //SEARCH BAR
-// Event listener for search button click or Enter key press
-document.getElementById("search-bar").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault(); // Prevent default form submission behavior
-    handleSearch();
-  }
-});
 
-
+// Function to handle search
 function handleSearch() {
-  // Set dropdown to default
-  document.querySelector(".input-box").value = "default";
-
-  // Reset filters to default
-  selectedFilters = { category: [], color: [], minPrice: undefined, maxPrice: undefined };
-  renderSelectedFilters();
-
   // Get the search input value
   const searchInput = document.getElementById("search-bar").value.toLowerCase();
 
@@ -273,7 +252,25 @@ function handleSearch() {
 
   // Render the filtered products
   renderProducts(filteredProducts);
+
+  // Render selected filters including the search input
+  renderSelectedFilters();
 }
+
+
+// Event listener for search button click
+document.getElementById("btn-search").addEventListener("click", function (e) {
+  e.preventDefault();
+  handleSearch();
+})
+
+// Event listener for Enter key press on search input
+document.getElementById("search-bar").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleSearch();
+  }
+});
 
 
 

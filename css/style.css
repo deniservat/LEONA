@@ -380,7 +380,7 @@
   position: fixed;
   justify-content: center;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
   padding: 0;
   padding-bottom: 1rem;
   background-color: transparent;
@@ -668,10 +668,6 @@
     padding-top: 12rem;
     padding-bottom: 0;
   }
-  .section-progress-p {
-    padding: 12rem 1.5rem 1.5rem;
-    margin-bottom: 2rem;
-  }
 }
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .m-top {
@@ -681,6 +677,10 @@
     z-index: 5;
     background-color: #F8FCF5;
     width: 100%;
+  }
+  .section-progress-p {
+    padding: 12rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 @media only screen and (min-width: 577px) and (max-width: 768px) {
@@ -1671,18 +1671,40 @@ footer {
   width: 20%;
 }
 .cart-col-2 .cart-color {
-  width: 10%;
+  width: 15%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding-right: 2rem;
+  z-index: 1;
 }
 .cart-col-2 .cart-amount {
   width: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  outline: 1px solid #282828;
+  height: 5rem;
+  background: white;
+  position: relative;
+  padding: 0 !important;
+  z-index: 0;
+}
+.cart-col-2 .cart-amount .box-amount-cart {
+  background-color: #fff;
+  padding: 0.5rem;
+}
+.cart-col-2 .cart-amount .btn-amount {
+  padding: 0.5rem;
 }
 .cart-col-2 .cart-amountxprice {
-  width: 20%;
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .cart-col-2 .cart-price {
   width: 20%;
@@ -1703,7 +1725,7 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 50%;
+    width: 20%;
   }
   .cart-col-1 .cart-image {
     width: 100%;
@@ -1713,7 +1735,7 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 50%;
+    width: 80%;
     padding-left: 1rem;
   }
   .cart-col-2 .cart-name {
@@ -1726,22 +1748,30 @@ footer {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding-right: 0;
     margin-bottom: 1rem;
+    padding-left: 1rem;
   }
   .cart-col-2 .cart-amount {
-    width: 30%;
-    margin-bottom: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
   }
   .cart-col-2 .cart-amountxprice {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+    outline: 1px solid #DDE4C1;
+    height: 5rem;
+    background: #DDE4C1;
   }
   .cart-col-2 .cart-price {
     width: 100%;
+    outline: 1px solid #D0ED5D;
+    height: 5rem;
+    background: #D0ED5D;
+    padding: 1rem;
   }
 }
-@media only screen and (min-width: 577px) and (max-width: 768px) {
+@media only screen and (min-width: 577px) and (max-width: 990px) {
   .row-cart {
     display: flex;
     flex-direction: row;
@@ -1779,22 +1809,30 @@ footer {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding-right: 0;
     margin-bottom: 1rem;
+    padding-left: 1rem;
   }
   .cart-col-2 .cart-amount {
-    width: 30%;
-    margin-bottom: 2rem;
+    width: 100%;
+    margin-bottom: 1rem;
   }
   .cart-col-2 .cart-amountxprice {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    justify-content: space-evenly;
+    outline: 1px solid #DDE4C1;
+    height: 5rem;
+    background: #DDE4C1;
   }
   .cart-col-2 .cart-price {
     width: 100%;
+    outline: 1px solid #D0ED5D;
+    height: 5rem;
+    background: #D0ED5D;
+    padding: 1rem;
   }
 }
-@media only screen and (min-width: 769px) and (max-width: 1200px) {
+@media only screen and (min-width: 991px) {
   .row-cart {
     display: flex;
     flex-direction: row;
@@ -1819,28 +1857,26 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 90%;
     padding-left: 0;
   }
   .cart-col-2 .cart-name {
     width: 20%;
+    padding-left: 3rem;
   }
   .cart-col-2 .cart-color {
-    width: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    width: 20%;
     padding-right: 0;
   }
   .cart-col-2 .cart-amount {
-    width: 15%;
+    width: 20%;
   }
   .cart-col-2 .cart-amountxprice {
-    width: 20%;
+    width: 15%;
+    justify-content: center;
   }
   .cart-col-2 .cart-price {
-    width: 20%;
+    width: 15%;
   }
 }
 .star {
@@ -2337,6 +2373,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .row-progress {
@@ -2360,6 +2397,120 @@ footer {
     align-items: flex-start;
   }
 }
+/* basic reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.dropdownCart {
+  outline: 1px solid #282828;
+  width: 100%;
+  height: 5rem;
+  background: white;
+  position: relative;
+  top: 0;
+}
+
+.input-box-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* arrow CSS icon */
+.dropdownCart::before {
+  content: "";
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  z-index: 9999;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #282828;
+  border-top: transparent;
+  border-right: transparent;
+  transform: rotate(-45deg);
+  pointer-events: none;
+  transition: all 0.3s linear;
+}
+
+.input-color {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  user-select: none;
+  cursor: pointer;
+}
+
+.input-color::placeholder {
+  color: #282828;
+}
+
+.dropdownCart .options {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: white;
+  border: none;
+  outline: 1px solid rgba(40, 40, 40, 0.2666666667);
+  overflow: hidden;
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 300;
+  top: 5rem;
+  left: 0;
+  transition: all 0.7s ease;
+  /* default state of dropdownCart list */
+  /* it is not visible */
+  opacity: 0;
+  transform: translateY(-50px);
+  visibility: hidden;
+}
+
+.dropdownCart .options .option {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dropdownCart .options .option:hover {
+  background: #00FF85;
+}
+
+.input-color:checked + option {
+  color: #282828;
+  background: #E1E7FE;
+}
+
+/* opened state of dropdownCart list */
+.dropdownCart.opened .options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownCart.opened::before {
+  transform: rotate(-225deg);
+  top: 2rem;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -177,10 +177,7 @@
         padding-top: 12rem;
         padding-bottom: 0;
     }
-    .section-progress-p{
-        padding: 12rem 1.5rem 1.5rem;
-        margin-bottom: 2rem;
-    }
+
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px){
@@ -191,6 +188,10 @@
         z-index: 5;
         background-color: #F8FCF5;
         width: 100%;
+    }
+    .section-progress-p{
+        padding: 12rem 1.5rem 1.5rem;
+        margin-bottom: 2rem;
     }
 }
 @media only screen and (min-width: 577px) and (max-width: 768px){

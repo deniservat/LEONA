@@ -34,18 +34,41 @@
         width: 20%;
     }
     .cart-color{
-        width: 10%;
+        width: 15%;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         padding-right: 2rem;
+        z-index: 1;
     }
     .cart-amount{
         width: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        outline: 1px solid #282828;
+        height: 5rem;
+        background: white;
+        position: relative;
+        padding: 0 !important;
+        z-index: 0;
+
+        .box-amount-cart{
+            background-color: #fff;
+            padding: .5rem;
+        }
+        .btn-amount{
+            padding: .5rem;
+        }
     }
     .cart-amountxprice{
-        width: 20%;
+        width: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     .cart-price{
         width: 20%;
@@ -69,7 +92,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 50%;
+        width: 20%;
         .cart-image{
             width: 100%;
             }
@@ -80,7 +103,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 50%;
+        width: 80%;
         padding-left: 1rem;
 
         .cart-name{
@@ -93,25 +116,34 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            padding-right: 0;
             margin-bottom: 1rem;
+            padding-left: 1rem;
         }
         .cart-amount{
-            width: 30%;
-            margin-bottom: 2rem;
+            width: 100%;
+            margin-bottom: 1rem;
         }
         .cart-amountxprice{
             width: 100%;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            justify-content: space-evenly;
+            outline: 1px solid  #DDE4C1;
+            height: 5rem;
+            background: #DDE4C1;
         }
         .cart-price{
             width: 100%;
+            outline: 1px solid #D0ED5D;
+            height: 5rem;
+            background: #D0ED5D;
+            padding: 1rem;
+            
         }
     }
 }
 
 
-@media only screen and (min-width: 577px) and (max-width: 768px){
+@media only screen and (min-width: 577px) and (max-width: 990px){
     .row-cart{
         display: flex;
         flex-direction: row;
@@ -151,25 +183,34 @@
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            padding-right: 0;
             margin-bottom: 1rem;
+            padding-left: 1rem;
         }
         .cart-amount{
-            width: 30%;
-            margin-bottom: 2rem;
+            width: 100%;
+            margin-bottom: 1rem;
         }
         .cart-amountxprice{
             width: 100%;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            justify-content: space-evenly;
+            outline: 1px solid  #DDE4C1;
+            height: 5rem;
+            background: #DDE4C1;
         }
         .cart-price{
             width: 100%;
+            outline: 1px solid #D0ED5D;
+            height: 5rem;
+            background: #D0ED5D;
+            padding: 1rem;
+            
         }
     }
 }
 
 
-@media only screen and (min-width: 769px) and (max-width: 1200px){
+@media only screen and (min-width: 991px){
     .row-cart{
         display: flex;
         flex-direction: row;
@@ -196,27 +237,25 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 80%;
+        width: 90%;
         padding-left: 0;
         .cart-name{
             width: 20%;
+            padding-left: 3rem;
         }
         .cart-color{
-            width: 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            width: 20%;
             padding-right: 0;
         }
         .cart-amount{
-            width: 15%;
+            width: 20%;
         }
         .cart-amountxprice{
-            width: 20%;
+            width: 15%;
+            justify-content: center;
         }
         .cart-price{
-            width: 20%;
+            width: 15%;
         }
     }
 }

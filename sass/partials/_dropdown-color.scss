@@ -1,0 +1,115 @@
+/* basic reset */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.dropdownCart{
+  outline: 1px solid #282828;
+  width: 100%;
+  height: 5rem;
+  background: white;
+  position: relative;
+  top: 0;
+}
+
+.input-box-cart{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* arrow CSS icon */
+
+.dropdownCart::before {
+  content: "";
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  z-index: 9999;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #282828;
+  border-top: transparent;
+  border-right: transparent;
+  transform: rotate(-45deg);
+  pointer-events: none;
+  transition: all 0.3s linear;
+}
+
+.input-color{
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  user-select: none;
+  cursor: pointer;
+}
+
+.input-color::placeholder {
+  color: #282828;
+}
+
+.dropdownCart .options {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background: white;
+  border: none;
+  outline: 1px solid #28282844;
+  overflow: hidden;
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 300;
+  top: 5rem;
+  left: 0;
+  transition: all 0.7s ease;  
+
+  /* default state of dropdownCart list */
+  /* it is not visible */
+  opacity: 0;
+  transform: translateY(-50px);
+  visibility: hidden;
+}
+.dropdownCart .options .option {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 300;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.dropdownCart .options .option:hover {
+  background: #00FF85;
+}
+
+.input-color:checked + option {
+  color: #282828;
+  background: #E1E7FE;
+}
+
+
+/* opened state of dropdownCart list */
+.dropdownCart.opened .options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdownCart.opened::before {
+  transform: rotate(-225deg);
+  top: 2rem;
+}

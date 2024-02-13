@@ -70,66 +70,6 @@ const inCart = (id) => {
     renderBtnCart();
 }
 
-/* const addCart = (id) => {
-    // recupero el array del carrito
-    const products = loadProdLS();
-    const productsCart = loadProdCartLS();
-  
-    //ATENCION! tengo q haber cargado la fn inCart()
-    if (inCart(id)) {
-      //obtener el indice de un elemento del array. Parametro: el elemento q queremos buscar. miArray.indexOf('objeto de mi array')
-        let pos = productsCart.findIndex(item => item.id === id);
-        productsCart[pos].amount += 1;
-    } else {
-        // agrego el prod id
-        const product = products.find(item => item.id === id);
-        product.amount = 1;
-        productsCart.push(product);
-    }
-  
-    saveProdCartLS(productsCart);
-    // agregar
-    renderBtnCart();
-  }  */
-
-
-/*   const addFastCart = (id) => {
-    // Load the current products in the cart from local storage
-    let productsCart = loadProdCartLS();
-    // Retrieve all products
-    const products = loadProdLS();
-
-    // Find the product with the matching ID
-    const productToAdd = products.find(item => item.id === id);
-    console.log("should have found the product with the same id")
-
-    // Check if the product exists
-    if (productToAdd) {
-        // Check if the product is already in the cart
-        const existingProductIndex = productsCart.findIndex(item => item.id === id);
-        
-
-        if (existingProductIndex !== -1) {
-            // If the product is already in the cart, increase its amount
-            productsCart[existingProductIndex].amount += 1;
-        } else {
-            // If the product is not in the cart, add it with amount 1
-            productToAdd.amount = 1;
-            productsCart.push(productToAdd);
-        }
-
-        // Save the updated cart to local storage
-        saveProdCartLS(productsCart);
-
-        // Update the UI
-        renderBtnCart();
-    } else {
-        console.error(`Product with ID ${id} not found.`);
-    }
-}; */
-
-
-
 const deleteProd = (id) => {
   const updatedProductsCart = productsCart.filter(item => {
       const match = item.id === Number(id);

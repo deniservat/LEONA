@@ -142,7 +142,15 @@ const renderProd = () => {
             const existingProduct = productsCart.find(item => item.id === product.id);
 
             if (existingProduct) {
-                existingProduct.color = selectedColor;
+                /* EN CASO Q NO FUNCIONEEE existingProduct.color = selectedColor; */
+                // Check if the selected color is already in the existing product's colors
+                const colorIndex = existingProduct.color.indexOf(selectedColor);
+                if (colorIndex !== -1) {
+                    // Remove the selected color from its current position
+                    existingProduct.color.splice(colorIndex, 1);
+                    // Add the selected color to the first position in the array
+                    existingProduct.color.unshift(selectedColor);
+    }
 
                 // Save the updated cart to sessionStorage
                 saveProdCartSS();
