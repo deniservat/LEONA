@@ -75,8 +75,8 @@ const removeFilter = (filterType, filterValue) => {
   // Re-render selected filters and products based on updated filters
   renderSelectedFilters();
 
-    // Re-render products based on updated filters
-    renderProducts(getFilteredProducts());
+  // Re-render products based on updated filters
+  renderProducts(getFilteredProducts());
 };
 
 

@@ -3,6 +3,7 @@
 
 let product;
 let productAmount = 0;
+let isColorSelected = false;
 
 // Function to save productsCart to sessionStorage
 const saveProdCartSS = () => {
@@ -101,11 +102,12 @@ const renderProd = () => {
                     </div>
 
                     <a href="#" class="btn-product" onClick="addCart(${product.id})" title="Add to cart">
-                        <button class="btn-product-add mt-4" id="btn-add-cart">ADD TO CART</button>
+                        <button class="btn-product-added mt-4" id="btn-add-cart">ADD TO CART</button>
                     </a>
                     <div id="after-adding"></div>
                 </article>`;
     document.getElementById("view-product").innerHTML = output;
+
 
     let selectColor = document.getElementById("select-color");
     let productColors = product.color.map(color => {
@@ -122,54 +124,61 @@ const renderProd = () => {
     benefits.innerHTML = `<div style="margin-top: 2rem; margin-bottom: 2rem;"><p class="filter-value-label pb-2 pt-2">${product.benefits}</p></div>`;
 
      // Call renderProductAmount to update the product amount on the page
-     renderProductAmount(productsCart);
+    renderProductAmount(productsCart);
 
      // Declare colorElements after the product is loaded
-     const colorElements = document.querySelectorAll(".each-color");
- 
-     colorElements.forEach((colorElement) => {
+    const colorElements = document.querySelectorAll(".each-color");
+
+    colorElements.forEach((colorElement) => {
         colorElement.addEventListener("click", (e) => {
             // Remove the "color-selected" class from all elements
             colorElements.forEach((element) => {
                 element.classList.remove("color-selected");
             });
-
+    
             // Add the "color-selected" class to the clicked color element
             colorElement.classList.add("color-selected");
+            isColorSelected = true;
 
             // Update the color of the existing product in productsCart
             const selectedColor = colorElement.getAttribute("data-color");
             const existingProduct = productsCart.find(item => item.id === product.id);
-
+    
             if (existingProduct) {
-                /* EN CASO Q NO FUNCIONEEE existingProduct.color = selectedColor; */
-                // Check if the selected color is already in the existing product's colors
-                const colorIndex = existingProduct.color.indexOf(selectedColor);
-                if (colorIndex !== -1) {
-                    // Remove the selected color from its current position
-                    existingProduct.color.splice(colorIndex, 1);
-                    // Add the selected color to the first position in the array
-                    existingProduct.color.unshift(selectedColor);
-    }
-
+                existingProduct.color = [selectedColor]; // Update selected color
+    
                 // Save the updated cart to sessionStorage
                 saveProdCartSS();
-
                 // Render the updated product amount on the page
                 renderProductAmount(productsCart);
             }
         });
     });
-}
+}    
 
 renderProd();
 
+const btnAddCart = document.getElementById("btn-add-cart");
+
+const disableBtnAdd = () =>{
+    if(productAmount > 0 && isColorSelected === true ){
+        btnAddCart.classList.remove("btn-product-added");
+        btnAddCart.classList.add("btn-product-add");
+    }
+
+    if(productAmount === 0){
+        btnAddCart.classList.remove("btn-product-add");
+        btnAddCart.classList.add("btn-product-added");
+    }
+}
 
 document.getElementById("btn-amount-rest").addEventListener("click", (e) => {
     if (product) {
         if (productAmount > 0) {
             productAmount -= 1;
             updateCart(productAmount);
+            disableBtnAdd();
+            console.log(productAmount);
         }
     }
 });
@@ -178,25 +187,25 @@ document.getElementById("btn-amount-add").addEventListener("click", (e) => {
     if (product) {
         productAmount += 1;
         updateCart(productAmount);
+        disableBtnAdd();
+        console.log(productAmount);
     }
 });
 
 function updateCart(amount) {
     if (product) {
         product.amount = amount;
-
         // Save the updated cart to sessionStorage
         saveProdCartSS();
-
         // Render the updated product amount on the page
         renderProductAmount(productsCart);
+        console.log(productAmount);
     }
 }
 
-
-
 const updateCartFromSessionStorage = () => {
     const preCartData = loadProdCartSS();
+    renderProductAmount(productsCart);
 
     productsCart.forEach((productInCart) => {
         const matchingProductInPreCart = preCartData.find(item => item.id === productInCart.id);
@@ -205,26 +214,26 @@ const updateCartFromSessionStorage = () => {
             productInCart.amount = matchingProductInPreCart.amount;
             productInCart.color = matchingProductInPreCart.color;
         }
+
     });
 
     // Update the productAmount based on the first item in productsCart
     if (productsCart.length > 0) {
         productAmount = productsCart[0].amount;
     }
-
     // Save the updated cart to localStorage
     saveProdCartLS();
+    console.log(productAmount);
 };
 
-
-
-
-document.getElementById("btn-add-cart").addEventListener("click", () => {
+btnAddCart.addEventListener("click", () => {
     // Load productsCart from sessionStorage
     productsCart = loadProdCartSS();
+    console.log(productAmount);
 
     // Call the function to update the cart from sessionStorage
     updateCartFromSessionStorage();
+    console.log(productAmount);
 
     // Reset color and amount to default as when first loading the page
     product.color = product.defaultColor;
@@ -239,7 +248,6 @@ document.getElementById("btn-add-cart").addEventListener("click", () => {
     // Set the product amount on the page to 0
     document.getElementById("product-amount").innerText = 0;
 
-    const btnAddCart = document.getElementById("btn-add-cart");
     btnAddCart.classList.remove("btn-product-add");
     btnAddCart.classList.add("btn-product-added");
 
