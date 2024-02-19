@@ -42,6 +42,7 @@
         padding-right: 2rem;
         z-index: 1;
     }
+
     .cart-amount{
         width: 10%;
         display: flex;
@@ -219,6 +220,10 @@
         width: 100%;
         padding: 4rem 0;
         border-top: solid 1px #282828;
+    }
+
+    #cart-selected-color{
+        margin-left: 1rem;
     }
     
     .cart-col-1{

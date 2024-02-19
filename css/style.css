@@ -1842,6 +1842,9 @@ footer {
     padding: 4rem 0;
     border-top: solid 1px #282828;
   }
+  #cart-selected-color {
+    margin-left: 1rem;
+  }
   .cart-col-1 {
     display: flex;
     flex-direction: column;

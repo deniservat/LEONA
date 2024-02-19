@@ -26,7 +26,6 @@ const renderProductAmount = (productsCart) => {
     }
 };
 
-
 function changeImage(imageSrc) {
     document.getElementById('bigImage').src = imageSrc;
 }
@@ -101,7 +100,7 @@ const renderProd = () => {
                         </div>
                     </div>
 
-                    <a href="#" class="btn-product" onClick="addCart(${product.id})" title="Add to cart">
+                    <a href="#" class="btn-product" title="Add to cart">
                         <button class="btn-product-added mt-4" id="btn-add-cart">ADD TO CART</button>
                     </a>
                     <div id="after-adding"></div>
@@ -135,17 +134,18 @@ const renderProd = () => {
             colorElements.forEach((element) => {
                 element.classList.remove("color-selected");
             });
-    
             // Add the "color-selected" class to the clicked color element
             colorElement.classList.add("color-selected");
             isColorSelected = true;
 
             // Update the color of the existing product in productsCart
             const selectedColor = colorElement.getAttribute("data-color");
+
             const existingProduct = productsCart.find(item => item.id === product.id);
     
             if (existingProduct) {
-                existingProduct.color = [selectedColor]; // Update selected color
+                /* existingProduct.color = [selectedColor]; */ // Update selected color
+                existingProduct.color = [selectedColor].concat(existingProduct.color.filter(color => color !== selectedColor));
     
                 // Save the updated cart to sessionStorage
                 saveProdCartSS();
@@ -158,20 +158,22 @@ const renderProd = () => {
 
 renderProd();
 
+//BUTTON ADD TO CART
 const btnAddCart = document.getElementById("btn-add-cart");
 
 const disableBtnAdd = () =>{
     if(productAmount > 0 && isColorSelected === true ){
         btnAddCart.classList.remove("btn-product-added");
         btnAddCart.classList.add("btn-product-add");
-    }
-
-    if(productAmount === 0){
+        btnAddCart.disabled = false;
+    }else{
         btnAddCart.classList.remove("btn-product-add");
         btnAddCart.classList.add("btn-product-added");
+        btnAddCart.disabled = true;
     }
 }
 
+//AMOUNT PICKER
 document.getElementById("btn-amount-rest").addEventListener("click", (e) => {
     if (product) {
         if (productAmount > 0) {
@@ -203,7 +205,7 @@ function updateCart(amount) {
     }
 }
 
-const updateCartFromSessionStorage = () => {
+/* const updateCartFromSessionStorage = () => {
     const preCartData = loadProdCartSS();
     renderProductAmount(productsCart);
 
@@ -211,8 +213,20 @@ const updateCartFromSessionStorage = () => {
         const matchingProductInPreCart = preCartData.find(item => item.id === productInCart.id);
 
         if (matchingProductInPreCart) {
-            productInCart.amount = matchingProductInPreCart.amount;
-            productInCart.color = matchingProductInPreCart.color;
+            if (productInCart[color][0] === matchingProductInPreCart[color][0]){
+                productInCart.amount = matchingProductInPreCart.amount;
+
+            }else{
+                productsCart.push({
+                    id: matchingProductInPreCart.id,
+                    name: matchingProductInPreCart.name,
+                    price: matchingProductInPreCart.price,
+                    category: matchingProductInPreCart.category,
+                    amount: matchingProductInPreCart.amount,
+                    color: matchingProductInPreCart.color
+                });
+            }
+            
         }
 
     });
@@ -224,7 +238,45 @@ const updateCartFromSessionStorage = () => {
     // Save the updated cart to localStorage
     saveProdCartLS();
     console.log(productAmount);
+}; */
+
+const updateCartFromSessionStorage = () => {
+    const preCartData = loadProdCartSS();
+    renderProductAmount(productsCart);
+
+    preCartData.forEach((matchingProductInPreCart) => {
+        const existingProductInCart = productsCart.find(item => item.id === matchingProductInPreCart.id);
+
+        if (existingProductInCart) {
+            if (existingProductInCart.color[0] !== matchingProductInPreCart.color[0]) {
+                // If the colors don't match, add a new object to the cart
+                productsCart.push({
+                    id: matchingProductInPreCart.id,
+                    name: matchingProductInPreCart.name,
+                    price: matchingProductInPreCart.price,
+                    category: matchingProductInPreCart.category,
+                    amount: matchingProductInPreCart.amount,
+                    color: matchingProductInPreCart.color
+                    
+                });
+                console.log("added new product to cart");
+            } else {
+                // If the colors match, update the amount in the existing cart item
+                existingProductInCart.amount = matchingProductInPreCart.amount;
+                console.log("added amount");
+            }
+        }
+    });
+
+    // Update the productAmount based on the first item in productsCart
+    if (productsCart.length > 0) {
+        productAmount = productsCart[0].amount;
+    }
+    // Save the updated cart to localStorage
+    saveProdCartLS();
+    console.log(productAmount);
 };
+
 
 btnAddCart.addEventListener("click", () => {
     // Load productsCart from sessionStorage
