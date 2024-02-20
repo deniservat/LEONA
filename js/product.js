@@ -140,7 +140,6 @@ const renderProd = () => {
 
             // Update the color of the existing product in productsCart
             const selectedColor = colorElement.getAttribute("data-color");
-
             const existingProduct = productsCart.find(item => item.id === product.id);
     
             if (existingProduct) {
@@ -151,6 +150,7 @@ const renderProd = () => {
                 saveProdCartSS();
                 // Render the updated product amount on the page
                 renderProductAmount(productsCart);
+                console.log("Selected Color:", selectedColor);
             }
         });
     });
@@ -180,7 +180,6 @@ document.getElementById("btn-amount-rest").addEventListener("click", (e) => {
             productAmount -= 1;
             updateCart(productAmount);
             disableBtnAdd();
-            console.log(productAmount);
         }
     }
 });
@@ -190,7 +189,6 @@ document.getElementById("btn-amount-add").addEventListener("click", (e) => {
         productAmount += 1;
         updateCart(productAmount);
         disableBtnAdd();
-        console.log(productAmount);
     }
 });
 
@@ -201,54 +199,33 @@ function updateCart(amount) {
         saveProdCartSS();
         // Render the updated product amount on the page
         renderProductAmount(productsCart);
-        console.log(productAmount);
     }
 }
 
-/* const updateCartFromSessionStorage = () => {
-    const preCartData = loadProdCartSS();
-    renderProductAmount(productsCart);
-
-    productsCart.forEach((productInCart) => {
-        const matchingProductInPreCart = preCartData.find(item => item.id === productInCart.id);
-
-        if (matchingProductInPreCart) {
-            if (productInCart[color][0] === matchingProductInPreCart[color][0]){
-                productInCart.amount = matchingProductInPreCart.amount;
-
-            }else{
-                productsCart.push({
-                    id: matchingProductInPreCart.id,
-                    name: matchingProductInPreCart.name,
-                    price: matchingProductInPreCart.price,
-                    category: matchingProductInPreCart.category,
-                    amount: matchingProductInPreCart.amount,
-                    color: matchingProductInPreCart.color
-                });
-            }
-            
-        }
-
-    });
-
-    // Update the productAmount based on the first item in productsCart
-    if (productsCart.length > 0) {
-        productAmount = productsCart[0].amount;
+// Function to check if two arrays are equal
+function arraysEqual(arr1, arr2) {
+    if (arr1.length !== arr2.length) return false;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) return false;
     }
-    // Save the updated cart to localStorage
-    saveProdCartLS();
-    console.log(productAmount);
-}; */
+    return true;
+}
+
+
 
 const updateCartFromSessionStorage = () => {
     const preCartData = loadProdCartSS();
     renderProductAmount(productsCart);
 
     preCartData.forEach((matchingProductInPreCart) => {
-        const existingProductInCart = productsCart.find(item => item.id === matchingProductInPreCart.id);
+        const existingProduct = productsCart.find(item => item.id === matchingProductInPreCart.id);
 
-        if (existingProductInCart) {
-            if (existingProductInCart.color[0] !== matchingProductInPreCart.color[0]) {
+        if (existingProduct) {
+            console.log("Existing Product Found:", existingProduct);
+            console.log("Matching Product in Pre Cart:", matchingProductInPreCart);
+            
+            if (existingProduct.color[0] !== matchingProductInPreCart.color[0]) {
+                console.log("Different colors detected. Adding new product to cart...");
                 // If the colors don't match, add a new object to the cart
                 productsCart.push({
                     id: matchingProductInPreCart.id,
@@ -257,14 +234,16 @@ const updateCartFromSessionStorage = () => {
                     category: matchingProductInPreCart.category,
                     amount: matchingProductInPreCart.amount,
                     color: matchingProductInPreCart.color
-                    
                 });
-                console.log("added new product to cart");
             } else {
+                console.log("Matching colors. Adding amount to existing product...");
                 // If the colors match, update the amount in the existing cart item
-                existingProductInCart.amount = matchingProductInPreCart.amount;
-                console.log("added amount");
+                existingProduct.amount = matchingProductInPreCart.amount;
             }
+        } else {
+            console.log("No existing product found. Adding new product to cart...");
+            // If no matching product exists, add it to the cart
+            productsCart.push(matchingProductInPreCart);
         }
     });
 
@@ -272,20 +251,22 @@ const updateCartFromSessionStorage = () => {
     if (productsCart.length > 0) {
         productAmount = productsCart[0].amount;
     }
+
     // Save the updated cart to localStorage
     saveProdCartLS();
-    console.log(productAmount);
+    console.log("Updated product amount:", productAmount);
 };
+
+
+
 
 
 btnAddCart.addEventListener("click", () => {
     // Load productsCart from sessionStorage
     productsCart = loadProdCartSS();
-    console.log(productAmount);
 
     // Call the function to update the cart from sessionStorage
     updateCartFromSessionStorage();
-    console.log(productAmount);
 
     // Reset color and amount to default as when first loading the page
     product.color = product.defaultColor;

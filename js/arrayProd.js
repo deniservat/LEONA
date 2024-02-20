@@ -9,7 +9,8 @@ const products = [
     description: "Illuminate your skin with this all-natural kit for a radiant and healthy complexion. Perfect for everyday use.", 
     color: ["sand"],
     ingredients: ["Argan Oil", "Shea Butter", "Rose Extract", "Vitamin E", "Jojoba Oil"],
-    benefits: "Enhance your natural beauty with a luminous glow. Apply daily for a radiant complexion."
+    benefits: "Enhance your natural beauty with a luminous glow. Apply daily for a radiant complexion.",
+    discount: 0
   },
   { 
     id: 2, 
@@ -20,7 +21,8 @@ const products = [
     description: "Nourish and rejuvenate your skin with our revitalizing serum. Experience a natural glow and hydration every day.", 
     color: ["blue"],
     ingredients: ["Hyaluronic Acid", "Vitamin C", "Green Tea Extract", "Aloe Vera", "Chamomile"],
-    benefits: "Achieve a hydrated and radiant look. Apply a small amount in the morning and evening for best results."
+    benefits: "Achieve a hydrated and radiant look. Apply a small amount in the morning and evening for best results.",
+    discount: 20
   },
   { 
     id: 3, 
@@ -31,7 +33,8 @@ const products = [
     description: "Create mesmerizing eye looks with our enchanting eyes palette. Natural shades for stunning and long-lasting beauty.", 
     color: ["black"],
     ingredients: ["Mica", "Iron Oxides", "Talc", "Kaolin", "Jojoba Oil"],
-    benefits: "Define and highlight your eyes. Mix and match shades for versatile and long-lasting eye looks."
+    benefits: "Define and highlight your eyes. Mix and match shades for versatile and long-lasting eye looks.",
+    discount: 10
   },
   { 
     id: 4, 
@@ -42,7 +45,8 @@ const products = [
     description: "Achieve soft and luscious lips with our natural lip balm. Hydrate and enhance your smile effortlessly.", 
     color: ["green"],
     ingredients: ["Coconut Oil", "Shea Butter", "Beeswax", "Almond Oil", "Vitamin E"],
-    benefits: "Nourish and moisturize lips for a soft and kissable pout. Apply as needed throughout the day."
+    benefits: "Nourish and moisturize lips for a soft and kissable pout. Apply as needed throughout the day.",
+    discount: 10
   },
   { 
     id: 5, 
@@ -53,7 +57,8 @@ const products = [
     description: "Experience the ultimate hydration with our skin elixir. Lock in moisture for a supple and healthy complexion.", 
     color: ["red"],
     ingredients: ["Hyaluronic Acid", "Rosehip Oil", "Vitamin C", "Aloe Vera", "Glycerin"],
-    benefits: "Quench skin's thirst and achieve a radiant glow. Apply a few drops morning and night for best results."
+    benefits: "Quench skin's thirst and achieve a radiant glow. Apply a few drops morning and night for best results.",
+    discount: 20
   },
   { 
     id: 6, 
@@ -64,7 +69,8 @@ const products = [
     description: "Discover the essentials for a natural beauty routine. Achieve a flawless look with our curated beauty kit.", 
     color: ["purple"],
     ingredients: ["Jojoba Oil", "Shea Butter", "Green Tea Extract", "Argan Oil", "Vitamin E"],
-    benefits: "Elevate your beauty routine with natural essentials. Perfect for a complete and radiant makeup look."
+    benefits: "Elevate your beauty routine with natural essentials. Perfect for a complete and radiant makeup look.",
+    discount: 0
   },
   { 
     id: 7, 
