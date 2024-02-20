@@ -35,20 +35,6 @@
   height: fit-content;
 }
 
-.discount-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0.5rem;
-  right: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 100%;
-  height: fit-content;
-  z-index: 1;
-}
-
 .btn-category {
   color: #282828;
   font-size: 1.2rem;
@@ -574,6 +560,11 @@
 .section-py {
   padding-top: 12rem;
   padding-bottom: 12rem;
+}
+
+.section-py-sm {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .m-bottom {
@@ -1164,6 +1155,21 @@ a {
 
 .btn-after {
   width: 100%;
+}
+
+.discount-container {
+  position: absolute;
+  width: 100%;
+  padding-left: 0;
+  height: fit-content;
+  z-index: 1;
+}
+
+.discount-tag {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 @media only screen and (max-width: 576px) {
@@ -1969,10 +1975,6 @@ footer {
   margin: 0.5rem 0;
 }
 
-.w-50 {
-  width: 50%;
-}
-
 .accordion-item {
   border: none;
 }
@@ -2213,8 +2215,8 @@ footer {
 }
 
 .icn-about .icn-about {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 4rem;
 }
 
@@ -2222,7 +2224,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 6rem;
+  width: 100%;
+  padding: 0 18rem;
 }
 
 @media only screen and (max-width: 576px) {
@@ -2232,6 +2235,9 @@ footer {
     padding: 1rem;
     margin-bottom: 6rem;
   }
+  .wrapper-about-items {
+    padding: 0 0;
+  }
 }
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .icn-about {
@@ -2240,12 +2246,18 @@ footer {
     padding: 1rem;
     margin-bottom: 6rem;
   }
+  .wrapper-about-items {
+    padding: 0 0;
+  }
 }
 @media only screen and (min-width: 769px) and (max-width: 990px) {
   .icn-about {
     width: 150px;
     height: 150px;
     padding: 2rem;
+  }
+  .wrapper-about-items {
+    padding: 0 0;
   }
 }
 @media only screen and (min-width: 991px) and (max-width: 1200px) {
@@ -2257,55 +2269,8 @@ footer {
 }
 @media only screen and (min-width: 1201px) {
   .icn-about {
-    width: 150px;
-    height: 150px;
-  }
-}
-#instafeed-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 5rem;
-}
-
-.instafeed-img {
-  width: 330px;
-  padding: 0 1rem;
-}
-
-.instafeed-ig-logo {
-  width: 72px;
-  height: 72px;
-}
-
-.title-instafeed {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-@media only screen and (max-width: 576px) {
-  .title-instafeed {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 6rem;
-  }
-  #instafeed-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 2rem;
-    width: 100%;
-    padding-left: 0;
-  }
-  .instafeed-img {
-    width: 100%;
-    padding: 0;
+    width: 100px;
+    height: 100px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2582,6 +2547,87 @@ ul {
   top: 2rem;
 }
 
+/* Slider container */
+.slider-ig {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+/* Slides */
+.slide-ig {
+  width: 100%;
+}
+
+/* Navigation buttons */
+.prev-ig, .next-ig {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next-ig {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev-ig:hover, .next-ig:hover {
+  background-color: #05E0E0;
+}
+
+.instafeed-img {
+  width: 100%;
+  height: auto;
+}
+
+.instafeed-ig-logo {
+  width: 72px;
+  height: 72px;
+}
+
+.title-instafeed {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 576px) {
+  .title-instafeed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .slide-ig {
+    width: 100%;
+  }
+}
+/* Display 3 images per row on desktop */
+@media (min-width: 768px) {
+  .slide-ig {
+    width: 33.3333333333%;
+  }
+}
 * {
   margin: 0;
   padding: 0;

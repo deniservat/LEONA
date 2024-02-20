@@ -69,9 +69,9 @@ const renderProducts = (selectedArray) => {
 
       // Add discount tag if applicable
       if (product.discount === 20) {
-        discountContainer.innerHTML = `<img src="../icn/icn-discount-20.svg" alt="20% discount">`;
+        discountContainer.innerHTML = `<img class="discount-tag" src="../icn/icn-discount-20.svg" alt="20% discount">`;
       } else if (product.discount === 10) {
-        discountContainer.innerHTML = `<img src="../icn/icn-discount-10.svg" alt="10% discount">`;
+        discountContainer.innerHTML = `<img class="discount-tag" src="../icn/icn-discount-10.svg" alt="10% discount">`;
       }
     }
   }

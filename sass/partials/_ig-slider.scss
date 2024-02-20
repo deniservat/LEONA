@@ -1,0 +1,83 @@
+/* Slider container */
+.slider-ig {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+  }
+
+  /* Slides */
+  .slide-ig {
+    width: 100%;
+  }
+
+  /* Navigation buttons */
+  .prev-ig, .next-ig {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next-ig {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a grey background color */
+  .prev-ig:hover, .next-ig:hover {
+    background-color: #05E0E0;
+  }
+
+  .instafeed-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .instafeed-ig-logo{
+    width: 72px;
+    height: 72px;
+}
+
+.title-instafeed{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 576px){
+    .title-instafeed{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 6rem;
+    }
+}
+@media only screen and (max-width: 576px){
+    .slide-ig {
+        width: 100%;
+      }
+}
+
+
+    /* Display 3 images per row on desktop */
+    @media (min-width: 768px) {
+        .slide-ig {
+          width: calc(100% / 3);
+        }
+      }

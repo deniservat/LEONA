@@ -62,22 +62,6 @@ const renderProd = () => {
                             <span class="h4" id="total-reviews" onclick="scrollToReviews()">(0)</span>
                             <span class="h4 ps-2" style="text-decoration: underline; color: #398DF0; cursor: pointer" onclick="addReview()">Add a review</span>
                         </div>
-                        
-                        <div class="no-display">
-                            <form id="review-form">
-                                <label for="username">Username:</label>
-                                <input type="text" id="username" required><br>
-
-                                <label for="rating">Rating:</label>
-                                <div class="r-start" id="rating-stars" onclick="handleStarClick(event)"></div>
-                                <input type="hidden" id="rating" name="rating">
-
-                                <label for="comment">Review:</label>
-                                <textarea id="comment" required></textarea><br>
-
-                                <button type="button" onclick="submitReview()">Submit Review</button>
-                            </form>
-                        </div>
                     </div>
                     <h2 class="selected-product-price">${getFormattedPrice(product)}</h2>
                     <p class="selected-product-description">${product.description}</p>
@@ -285,9 +269,6 @@ const updateCartFromSessionStorage = () => {
     saveProdCartLS();
     console.log("Updated product amount:", productAmount);
 };
-
-
-
 
 
 btnAddCart.addEventListener("click", () => {

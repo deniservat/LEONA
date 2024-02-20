@@ -181,7 +181,7 @@ const addReview = () =>{
             </button>
         </h2>
         <div id="accordion-content-4" class="accordion-collapse collapsed d-center section-p" data-bs-parent="#accordion-list">
-            <div class="accordion-body w-50">
+            <div class="accordion-body">
                 <form id="review-form">
                     <label class="form-label" for="username">Name</label>
                     <input class="form-input" type="text" id="username-review" required>

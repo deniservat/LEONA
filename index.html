@@ -41,17 +41,8 @@
                 </a>
             </article>
         </section>
-
-        <!-- ABOUT -->
-        <section class="container-fluid section-px section-py section-light">
-            <div class="row section-about">
-                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 p-0 m-0">
-                        <h2 class="md-heading about-title">at LEONA</h2>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 p-0 m-0">
-                        <p class="p text-left about-description">we craft ethically sourced products that celebrate your unique radiance, embracing the essence of organic allure.</p>
-                    </div>
-            </div>
+        <!-- ABOUT-ICONS-->
+        <section class="container-fluid section-px section-py-sm section-dark bg-black">
             <div class="row wrapper-about-items">
                 <div class="container-icn-about col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
                     <img class="icn-about" src="./img/icn-natural.svg">
@@ -66,8 +57,12 @@
                     <img class="icn-about" src="./img/icn-recycled.svg">
                 </div>
             </div>
-
         </section>
+        <!-- ABOUT-DESCRIPTION -->
+        <section class="container-fluid section-px section-py section-light">
+            <h2 class="md-heading about-title pb-2">LEONA</h2>
+            <p class="p text-left about-description">embodies a harmonious fusion of nature and beauty, curating a sanctuary of natural cosmetics. Our products are meticulously crafted with ethically sourced ingredients, celebrating individual radiance while honoring the earth. Embrace the essence of organic allure with LEONA, where beauty meets sustainability in every application.</p>
+        </section> 
         <!-- CATEGORIES -->
         <section class="container-fluid p-0 section-dark">
             <article class="row">
@@ -130,14 +125,32 @@
         <!-- SOCIAL: INSTAGRAM -->
         <section class="container-fluid d-center section-fluid-p-social section-light">  
             <article class="title-instafeed">
-                <h2 class="md-heading text-center p-0 m-0 pb-5">Follow us on Instagram!</h2>
+                <h2 class="md-heading text-center p-0 m-0 pb-5 pe-2">Follow us!</h2>
                 <a href="https://www.instagram.com/behind_app/" target="_blank"><img class="instafeed-ig-logo" src="./icn/icn-ig-full.svg" alt="instagram logo with link to brand profile"></a>
             </article>    
-            <article id="instafeed-container">
-                <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=1" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-2.jpg" /></a>
-                <a href="https://www.instagram.com/p/C1P3Z_Dvuh0/" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-3.jpg" /></a>
-                <a href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=3" target="_blank"><img class="instafeed-img" alt="" src="./img/img-social-1.jpg" /></a>
-            </article>
+            <article id="instafeed-container" class="slider-ig">
+                <a class="slide-ig" href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=1" target="_blank">
+                    <img class="instafeed-img" alt="" src="./img/img-social-1.jpg" />
+                </a>
+                <a class="slide-ig" href="https://www.instagram.com/p/C1P3Z_Dvuh0/" target="_blank">
+                    <img class="instafeed-img" alt="" src="./img/img-social-2.jpg" />
+                </a>
+                <a class="slide-ig" href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=3" target="_blank">
+                    <img class="instafeed-img" alt="" src="./img/img-social-3.jpg" />
+                </a>
+                <a class="slide-ig" href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=1" target="_blank">
+                    <img class="instafeed-img" alt="" src="./img/img-social-4.jpg" />
+                </a>
+                <a class="slide-ig" href="https://www.instagram.com/p/C1P3Z_Dvuh0/" target="_blank">
+                    <img class="instafeed-img" alt="" src="./img/img-social-5.jpg" />
+                </a>
+                <a class="slide-ig" href="https://www.instagram.com/p/C1-htg8vwUR/?img_index=3" target="_blank">
+                    <img class="instafeed-img" alt="" src="./img/img-social-6.jpg" />
+                </a>
+                <!-- Navigation buttons -->
+                <a class="prev-ig" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next-ig" onclick="plusSlides(1)">&#10095;</a>
+              </article>
         </section>
         
         <!-- NESLETTER -->       
@@ -207,6 +220,7 @@
     <script src="./js/sidebarIndex.js"></script>
     <script src="./js/arrayProd.js"></script>
     <script src="./js/filterCategory.js"></script>
+    <script src="./js/ig-slider.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
