@@ -60,14 +60,10 @@ const renderProd = () => {
                         <div class="r-start">
                             <div class="r-start" id="average-rating"></div>
                             <span class="h4" id="total-reviews" onclick="scrollToReviews()">(0)</span>
+                            <span class="h4 ps-2" style="text-decoration: underline; color: #398DF0; cursor: pointer" onclick="addReview()">Add a review</span>
                         </div>
-
-                        <div class="add-review">
-                            <div class="r-start">
-                                <h3>Add Review</h3>
-                                <img class="m-1" src="../icn/icn-plus.svg" alt="add" width="16"/>
-                            </div>
-
+                        
+                        <div class="no-display">
                             <form id="review-form">
                                 <label for="username">Username:</label>
                                 <input type="text" id="username" required><br>
@@ -83,7 +79,7 @@ const renderProd = () => {
                             </form>
                         </div>
                     </div>
-                    <h2 class="selected-product-price">£${product.price}</h2>
+                    <h2 class="selected-product-price">${getFormattedPrice(product)}</h2>
                     <p class="selected-product-description">${product.description}</p>
 
                     <div id="color-picker">
@@ -124,6 +120,8 @@ const renderProd = () => {
 
      // Call renderProductAmount to update the product amount on the page
     renderProductAmount(productsCart);
+    // Logic for rendering discounted prices
+    renderDiscountedPrice(product);
 
      // Declare colorElements after the product is loaded
     const colorElements = document.querySelectorAll(".each-color");
@@ -156,7 +154,38 @@ const renderProd = () => {
     });
 }    
 
+//DISCOUNTS
+// Function to get formatted price with discount if applicable
+const getFormattedPrice = (product) => {
+    if (product.discount) {
+        const discountedPrice = calculateDiscountedPrice(product);
+        return `
+            <span class="original-price" style="text-decoration: line-through;">£${product.price.toFixed(2)}</span>
+            <span class="discounted-price">£${discountedPrice}</span>
+        `;
+    } else {
+        return `£${product.price.toFixed(2)}`;
+    }
+};
+
+// Function to calculate discounted price
+const calculateDiscountedPrice = (product) => {
+    const discountPercentage = product.discount / 100;
+    const discountedPrice = product.price * (1 - discountPercentage);
+    return discountedPrice.toFixed(2);
+};
+
+// Function to render discounted price if applicable
+const renderDiscountedPrice = (product) => {
+    if (product.discount) {
+        const priceElement = document.querySelector('.selected-product-price');
+        priceElement.innerHTML = getFormattedPrice(product);
+    }
+};
+
 renderProd();
+
+
 
 //BUTTON ADD TO CART
 const btnAddCart = document.getElementById("btn-add-cart");

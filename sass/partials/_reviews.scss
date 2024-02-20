@@ -1,6 +1,6 @@
 .star{
-    width: 30px; /* Adjust the size as needed */
-    height: 30px; /* Adjust the size as needed */
+    width: 32px; /* Adjust the size as needed */
+    height: 32px; /* Adjust the size as needed */
     cursor: pointer;
 }
 
@@ -13,11 +13,33 @@
     fill: none;
 }
 
-.add-review{
+.no-display{
     display: none;
     //ACTUALIZAR CDO SEPA QUE CARAJOS HACER
 }
-
 #total-reviews{
     cursor: pointer;
+}
+
+.form-input{
+    width: 100%;
+    height: fit-content;
+    border: solid 1px #282828;
+    font-size: 1.6rem;
+    font-weight: 200;
+    line-height: 2rem;
+    padding: 1rem;
+    margin: .5rem 0;
+}
+
+.form-label{
+    margin-top: 2rem;
+}
+
+#review-stars{
+    margin: .5rem 0;
+}
+
+.w-50{
+    width: 50%;
 }

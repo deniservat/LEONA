@@ -154,6 +154,23 @@
   color: #282828;
 }
 
+.btn-submit {
+  width: 100%;
+  color: #282828;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #CCFF00;
+  border: none;
+  border-radius: 40px;
+  padding: 24px 36px;
+}
+.btn-submit:hover {
+  background-color: #00FF85;
+  color: #282828;
+}
+
 .btn-checkout {
   width: 100%;
   color: #282828;
@@ -836,6 +853,13 @@
   line-height: normal;
 }
 
+.no-product {
+  width: 100%;
+  font-size: 2.3rem;
+  font-weight: 300;
+  line-height: normal;
+}
+
 .product-title {
   font-size: 2.2rem;
   font-weight: 200;
@@ -887,6 +911,12 @@
 }
 
 .review-name {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
+
+.form-label {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.6rem;
@@ -1059,6 +1089,7 @@ a {
 }
 
 .no-product-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1897,8 +1928,8 @@ footer {
   }
 }
 .star {
-  width: 30px; /* Adjust the size as needed */
-  height: 30px; /* Adjust the size as needed */
+  width: 32px; /* Adjust the size as needed */
+  height: 32px; /* Adjust the size as needed */
   cursor: pointer;
 }
 
@@ -1911,12 +1942,35 @@ footer {
   fill: none;
 }
 
-.add-review {
+.no-display {
   display: none;
 }
 
 #total-reviews {
   cursor: pointer;
+}
+
+.form-input {
+  width: 100%;
+  height: fit-content;
+  border: solid 1px #282828;
+  font-size: 1.6rem;
+  font-weight: 200;
+  line-height: 2rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.form-label {
+  margin-top: 2rem;
+}
+
+#review-stars {
+  margin: 0.5rem 0;
+}
+
+.w-50 {
+  width: 50%;
 }
 
 .accordion-item {

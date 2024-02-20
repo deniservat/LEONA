@@ -1,3 +1,6 @@
+let accordionList = document.getElementById("accordion-list");
+let addReviewItem;
+
 // Sample reviews array (you may fetch this from a server/database)
 let reviewsData = [
     { usernameEntered: "Martha", rating: 4, comment: "Radiant Lip Glow adds a natural, luminous touch. Effortless beauty for daily radiance, truly illuminating!" },
@@ -57,20 +60,6 @@ function displayStarRating(averageRating, element) {
     element.innerHTML = ratingHTML;
 }
 
-//Update the createRatingStars function to use the correct class for the stars -->
-function createRatingStars() {
-    const ratingStars = document.getElementById('rating-stars');
-    ratingStars.innerHTML = '';
-
-    for (let i = 1; i <= 5; i++) {
-        ratingStars.innerHTML += `<div class="star" data-rating="${i}" onclick="handleStarClick(event)">
-        <svg class="star-path empty" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
-        </svg>
-        </div>`;
-    }
-}
-
 //Update the handleStarClick function to correctly identify the clicked star -->
 function handleStarClick(event) {
     const selectedRating = event.currentTarget.getAttribute('data-rating');
@@ -101,7 +90,7 @@ function highlightSelectedStars(selectedRating) {
 }
 
 // Initialize star rating for the review form
-createRatingStars();
+
 
 // Display initial reviews statistics
 displayReviewsStatistics();
@@ -157,16 +146,83 @@ function generateStarsHTML(rating) {
     return starsHTML;
 }
 
-
 // Display initial reviews statistics and render existing reviews
 displayReviewsStatistics();
 renderAllReviews();
 
+//Update the createRatingStars function to use the correct class for the stars -->
+function createRatingStars() {
+    const ratingStars = document.getElementById("review-stars");
+    ratingStars.innerHTML = "";
+
+    for (let i = 1; i <= 5; i++) {
+        ratingStars.innerHTML += `<div class="star" data-rating="${i}" onclick="handleStarClick(event)">
+        <svg class="star-path" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path class="empty" d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+        </svg>
+    </div>`;
+
+        console.log("stars generated");
+    }
+}
+
+let isReviewAdded = false; 
+
+const addReview = () =>{
+    if (!isReviewAdded) {
+        let accordionList = document.getElementById("accordion-list");
+        addReviewItem =document.createElement("div");
+        addReviewItem.className = "accordion-item";
+        addReviewItem.setAttribute("id", "add-review-scroll-to"); 
+        addReviewItem.innerHTML = `
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-content-4">
+            Add a review
+            </button>
+        </h2>
+        <div id="accordion-content-4" class="accordion-collapse collapsed d-center section-p" data-bs-parent="#accordion-list">
+            <div class="accordion-body w-50">
+                <form id="review-form">
+                    <label class="form-label" for="username">Name</label>
+                    <input class="form-input" type="text" id="username-review" required>
+
+                    <label class="form-label" for="rating">Rating</label>
+                    <div class="r-start" id="review-stars" onclick="handleStarClick(event)"></div>
+                    <input type="hidden" id="rating" name="rating">
+
+                    <label class="form-label" for="comment">Review</label>
+                    <textarea class="form-input" id="comment-review" required></textarea>
+
+                    <button class="btn-submit mt-4" type="button" onclick="submitReview()">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    `
+        accordionList.appendChild(addReviewItem);
+        createRatingStars();
+        console.log("creating starts called");
+        isReviewAdded = true;
+        const reviewsSection = document.getElementById('add-review-scroll-to');
+        reviewsSection.scrollIntoView({ behavior: 'smooth'}, true);
+
+    }
+}
+
+// Define a function to remove the review item
+const removeReview = () => {
+    accordionList.removeChild(addReviewItem);
+    isReviewAdded = false; // Reset the flag when the item is removed
+};
+
 // Function to submit a new review
 function submitReview() {
-    const usernameEntered = document.getElementById('username').value;
-    const rating = document.getElementById('rating').value;
-    const comment = document.getElementById('comment').value;
+    const usernameEntered = document.getElementById("username-review").value;
+    const rating = document.getElementById("rating").value;
+    const comment = document.getElementById("comment-review").value;
+
+    console.log("Username:", usernameEntered);
+    console.log("Rating:", rating);
+    console.log("Comment:", comment);
 
     // Validate input
     if (!usernameEntered || !rating || !comment) {
@@ -174,8 +230,11 @@ function submitReview() {
         return;
     }
 
+    // Convert rating to an integer
+    const ratingInt = parseInt(rating);
+
     // Add the new review to the array
-    const newReview = { usernameEntered, rating, comment };
+    const newReview = { usernameEntered, rating: ratingInt, comment };
     reviewsData.push(newReview);
 
     // Display updated reviews statistics
@@ -185,10 +244,14 @@ function submitReview() {
     renderAllReviews();
 
     // Clear the form
-    document.getElementById('username').value = '';
+    document.getElementById('username-review').value = '';
     document.getElementById('rating').value = '';
-    document.getElementById('comment').value = '';
+    document.getElementById('comment-review').value = '';
+
+    // Remove Add Review from HTML
+    removeReview();
 }
+
 
 // Function to render all reviews in the #reviews-display-all section
 function renderAllReviews() {
@@ -206,3 +269,5 @@ function renderAllReviews() {
         reviewsDisplayAll.innerHTML += reviewHTML;
     });
 }
+
+
