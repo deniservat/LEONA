@@ -2600,6 +2600,14 @@ ul {
 }
 
 /* Slider container */
+.carousel-item-ig {
+  width: 25%;
+}
+
+#instafeed-container {
+  margin-bottom: 12rem;
+}
+
 .slider-ig {
   width: 100%;
   overflow: hidden;
@@ -2608,7 +2616,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 5rem;
+  padding-top: 1rem;
 }
 
 /* Slides */
@@ -2649,8 +2657,9 @@ ul {
 }
 
 .instafeed-ig-logo {
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
+  padding-top: 1.6rem;
 }
 
 .title-instafeed {
