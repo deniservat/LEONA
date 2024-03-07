@@ -15,7 +15,7 @@ const renderProducts = () => {
             <div class="discount-container"></div>
             <a class="wrapper">
               <div class="parent d-center" onClick="seeSelectedProd(${product.id})">
-                <div class="child" style="background-image: url(../img/img-prod-${product.id}.jpg);"></div>
+                <div class="child" style="background-image: url(./img/img-prod-${product.id}.jpg);"></div>
               </div>
             </a>
             <a class="btn-add d-center" data-product-id="${product.id}" onClick="addCart(${product.id})">
@@ -44,9 +44,9 @@ const renderProducts = () => {
   
         // Add discount tag if applicable
         if (product.discount === 20) {
-          discountContainer.innerHTML = `<img class="discount-tag" src="../icn/icn-discount-20.svg" alt="20% discount">`;
+          discountContainer.innerHTML = `<img class="discount-tag" src="./icn/icn-discount-20.svg" alt="20% discount">`;
         } else if (product.discount === 10) {
-          discountContainer.innerHTML = `<img class="discount-tag" src="../icn/icn-discount-10.svg" alt="10% discount">`;
+          discountContainer.innerHTML = `<img class="discount-tag" src="./icn/icn-discount-10.svg" alt="10% discount">`;
         }
     }
 
@@ -58,7 +58,7 @@ const renderProducts = () => {
             <div class="discount-container"></div>
             <a class="wrapper">
               <div class="parent d-center" onClick="seeSelectedProd(${product.id})">
-                <div class="child" style="background-image: url(../img/img-prod-${product.id}.jpg);"></div>
+                <div class="child" style="background-image: url(./img/img-prod-${product.id}.jpg);"></div>
               </div>
             </a>
             <a class="btn-add d-center" data-product-id="${product.id}" onClick="addCart(${product.id})">
@@ -87,9 +87,9 @@ const renderProducts = () => {
   
         // Add discount tag if applicable
         if (product.discount === 20) {
-          discountContainer.innerHTML = `<img class="discount-tag" src="../icn/icn-discount-20.svg" alt="20% discount">`;
+          discountContainer.innerHTML = `<img class="discount-tag" src="./icn/icn-discount-20.svg" alt="20% discount">`;
         } else if (product.discount === 10) {
-          discountContainer.innerHTML = `<img class="discount-tag" src="../icn/icn-discount-10.svg" alt="10% discount">`;
+          discountContainer.innerHTML = `<img class="discount-tag" src="./icn/icn-discount-10.svg" alt="10% discount">`;
         }
     }
       }
