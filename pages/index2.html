@@ -32,72 +32,38 @@
 
     <main id="main">
         <!-- HERO -->
-        <section id="carouselExampleAutoplaying" class="carousel slide hero-banner" data-bs-ride="carousel">
-            <article class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <section class="container-fluid hero section-fluid-p section-light" style="background-image: url('./img/img-hero.jpg');">
+            <article class="hero-text">
+                <img class="img-logo" src="./icn/img-logo.svg" alt="logo image">
+                <h1 class="h1 pb-5">Embrace your natural beauty</h1>
+                <a class="btn-mobile" href="./pages/products.html">
+                    <button class="btn-hero" id="btn-hero">SHOP NOW</button>
+                </a>
             </article>
-            <article class="carousel-inner carousel-hero">
-                <div class="carousel-item active" style="background-image: url(./img/hero-1.jpg);">
-                    <div class="hero-text">
-                        <h1 class="h1-banner pb-5">NEW *PICANTE* LIP BALM</h1>
-                        <h2 class="h2-banner pb-5">Infused with chilli flakes for a spicy night</h2>
-                        <a class="btn-mobile" href="./pages/products.html">
-                            <button class="btn-hero" id="btn-hero">SHOP NOW</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url(./img/hero-2.jpg);">
-                    <div class="hero-text">
-                        <h1 class="h1-banner pb-5">NEW *PICANTE* LIP BALM</h1>
-                        <h2 class="h2-banner pb-5">Infused with chilli flakes for a spicy night</h2>
-                        <a class="btn-mobile" href="./pages/products.html">
-                            <button class="btn-hero" id="btn-hero">SHOP NOW</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url(./img/hero-3.jpg);">
-                    <div class="hero-text">
-                        <h1 class="h1-banner pb-5">NEW *PICANTE* LIP BALM</h1>
-                        <h2 class="h2-banner pb-5">Infused with chilli flakes for a spicy night</h2>
-                        <a class="btn-mobile" href="./pages/products.html">
-                            <button class="btn-hero" id="btn-hero">SHOP NOW</button>
-                        </a>
-                    </div>
-                </div>
-            </article>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </section>
-
-
-
-        <!-- PROMO STRIP -->
-        <section class="container-fluid section-py-sm section-px section-dark bg-lila">
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
-                    <h3 class="h3">30% OFF</h3>
+        <!-- ABOUT-ICONS-->
+        <section class="container-fluid section-px section-py-sm section-dark bg-black">
+            <div class="row wrapper-about-items">
+                <div class="container-icn-about col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+                    <img class="icn-about" src="./img/icn-natural.svg">
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-6">
-                    <h3 class="h3-oblique">TODAY IN NEW ARRIVALS!</h3>
+                <div class="container-icn-about col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+                    <img class="icn-about" src="./img/icn-cruelty.svg">
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-4">
-                    <h3 class="h3">30% OFF</h3>
+                <div class="container-icn-about col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+                    <img class="icn-about" src="./img/icn-fair.svg">
+                </div>
+                <div class="container-icn-about col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+                    <img class="icn-about" src="./img/icn-recycled.svg">
                 </div>
             </div>
         </section>
-        <!-- NEW ARRIVALS -->
-        <section class="container-fluid section-px section-py-sm section-light">
-            <h4 class="subheading">New arrivals</h4>
-            <article class="container-cards-index" id="products-new-arrivals"></article>
-        </section>
+        <!-- ABOUT-DESCRIPTION -->
+        <section class="container-fluid section-px section-py section-light">
+            <h2 class="md-heading about-title pb-5">LEONA</h2>
+            <p class="p text-left about-description pb-5">Embodies a harmonious fusion of nature and beauty, curating a sanctuary of natural cosmetics. Our products are meticulously crafted with ethically sourced ingredients, celebrating individual radiance while honoring the earth. Embrace the essence of organic allure with LEONA, where beauty meets sustainability in every application.</p>
+            <p class="p text-left about-description">Based in Newquay, Cornwall, UK, LEONA is a creation of Sophie, a mindfulness coach, and Mariana, a Kundalini Yoga instructor, and communication coach. Rooted in our holistic backgrounds, LEONA blends nature's essence into ethically sourced cosmetics, promoting mindful beauty practices.</p>
+        </section> 
         <!-- CATEGORIES -->
         <section class="container-fluid p-0 section-dark">
             <article class="row">
@@ -156,11 +122,6 @@
                     </div>
                 </div>
             </article>
-        </section>
-         <!-- MOST POPULAR -->
-         <section class="container-fluid section-px section-py-sm section-light">
-            <h4 class="subheading">Most Popular</h4>
-            <article class="container-cards-index" id="products-most-popular"></article>
         </section>
         <!-- SOCIAL: INSTAGRAM -->
         <section class="container-fluid d-center section-fluid-p-social section-light">  
@@ -258,9 +219,7 @@
     userFeed.run();
     </script> -->
     <script src="./js/sidebarIndex.js"></script>
-    <script src="./js/hero.js"></script>
     <script src="./js/arrayProd.js"></script>
-    <script src="./js/productCardsIndex.js"></script>
     <script src="./js/filterCategory.js"></script>
     <script src="./js/ig-slider.js"></script>
     <script src="./js/index.js"></script>

@@ -10,7 +10,9 @@ const products = [
     color: ["sand"],
     ingredients: ["Argan Oil", "Shea Butter", "Rose Extract", "Vitamin E", "Jojoba Oil"],
     benefits: "Enhance your natural beauty with a luminous glow. Apply daily for a radiant complexion.",
-    discount: 0
+    discount: 0,
+    new: false,
+    popular: false
   },
   { 
     id: 2, 
@@ -22,7 +24,9 @@ const products = [
     color: ["blue"],
     ingredients: ["Hyaluronic Acid", "Vitamin C", "Green Tea Extract", "Aloe Vera", "Chamomile"],
     benefits: "Achieve a hydrated and radiant look. Apply a small amount in the morning and evening for best results.",
-    discount: 20
+    discount: 20,
+    new: false,
+    popular: false
   },
   { 
     id: 3, 
@@ -34,7 +38,9 @@ const products = [
     color: ["black"],
     ingredients: ["Mica", "Iron Oxides", "Talc", "Kaolin", "Jojoba Oil"],
     benefits: "Define and highlight your eyes. Mix and match shades for versatile and long-lasting eye looks.",
-    discount: 10
+    discount: 10,
+    new: true,
+    popular: true
   },
   { 
     id: 4, 
@@ -46,7 +52,9 @@ const products = [
     color: ["green"],
     ingredients: ["Coconut Oil", "Shea Butter", "Beeswax", "Almond Oil", "Vitamin E"],
     benefits: "Nourish and moisturize lips for a soft and kissable pout. Apply as needed throughout the day.",
-    discount: 10
+    discount: 10,
+    new: false,
+    popular: false
   },
   { 
     id: 5, 
@@ -58,7 +66,9 @@ const products = [
     color: ["red"],
     ingredients: ["Hyaluronic Acid", "Rosehip Oil", "Vitamin C", "Aloe Vera", "Glycerin"],
     benefits: "Quench skin's thirst and achieve a radiant glow. Apply a few drops morning and night for best results.",
-    discount: 20
+    discount: 20,
+    new: false,
+    popular: false
   },
   { 
     id: 6, 
@@ -70,7 +80,9 @@ const products = [
     color: ["purple"],
     ingredients: ["Jojoba Oil", "Shea Butter", "Green Tea Extract", "Argan Oil", "Vitamin E"],
     benefits: "Elevate your beauty routine with natural essentials. Perfect for a complete and radiant makeup look.",
-    discount: 0
+    discount: 0,
+    new: false,
+    popular: false
   },
   { 
     id: 7, 
@@ -81,7 +93,9 @@ const products = [
     description: "Define and highlight your eyes with our vibrant eyes liner. Achieve a bold and natural look effortlessly.", 
     color: ["sand", "black"],
     ingredients: ["Jojoba Oil", "Shea Butter", "Beeswax", "Iron Oxides", "Carnauba Wax"],
-    benefits: "Create precise lines for a bold eye look. Glide smoothly for a defined and long-lasting result."
+    benefits: "Create precise lines for a bold eye look. Glide smoothly for a defined and long-lasting result.",
+    new: false,
+    popular: false
   },
   { 
     id: 8, 
@@ -92,7 +106,9 @@ const products = [
     description: "Add a touch of color with our organic lip tint. Nourish your lips while enhancing your natural beauty.", 
     color: ["blue", "pink"],
     ingredients: ["Cocoa Butter", "Beetroot Extract", "Jojoba Oil", "Coconut Oil", "Vitamin E"],
-    benefits: "Achieve a hint of color and moisture. Glide on lips for a natural and effortless beauty boost."
+    benefits: "Achieve a hint of color and moisture. Glide on lips for a natural and effortless beauty boost.",
+    new: false,
+    popular: false
   },
   { 
     id: 9, 
@@ -103,7 +119,9 @@ const products = [
     description: "Treat your skin to a spa day with our glowing skin mask. Rejuvenate and reveal a radiant complexion.", 
     color: ["grey"],
     ingredients: ["Kaolin Clay", "Turmeric", "Honey", "Aloe Vera", "Rosewater"],
-    benefits: "Pamper your skin with a revitalizing mask. Apply, relax, and unveil a radiant and refreshed complexion."
+    benefits: "Pamper your skin with a revitalizing mask. Apply, relax, and unveil a radiant and refreshed complexion.",
+    new: false,
+    popular: false
   },
   { 
     id: 10, 
@@ -114,7 +132,9 @@ const products = [
     description: "Indulge your skin in the botanical bliss of our moisturizer. Achieve a soft and supple complexion naturally.", 
     color: ["green"],
     ingredients: ["Shea Butter", "Coconut Oil", "Hyaluronic Acid", "Chamomile Extract", "Vitamin E"],
-    benefits: "Hydrate and nourish your skin with a botanical blend. Use daily for a naturally radiant and moisturized complexion."
+    benefits: "Hydrate and nourish your skin with a botanical blend. Use daily for a naturally radiant and moisturized complexion.",
+    new: false,
+    popular: false
   },
   { 
     id: 11, 
@@ -125,7 +145,9 @@ const products = [
     description: "Pamper your lips with nature's kiss lip scrub. Exfoliate and moisturize for irresistibly smooth lips.", 
     color: ["purple"],
     ingredients: ["Brown Sugar", "Jojoba Oil", "Honey", "Almond Oil", "Vanilla Extract"],
-    benefits: "Gently exfoliate for soft and smooth lips. Massage onto lips, then rinse for a kissably smooth finish."
+    benefits: "Gently exfoliate for soft and smooth lips. Massage onto lips, then rinse for a kissably smooth finish.",
+    new: true,
+    popular: false
   },
   { 
     id: 12, 
@@ -136,7 +158,9 @@ const products = [
     description: "Refresh and soothe your skin with our lavender mist. A calming blend for a peaceful and rejuvenating experience.", 
     color: ["purple"],
     ingredients: ["Lavender Oil", "Aloe Vera", "Witch Hazel", "Chamomile Extract", "Glycerin"],
-    benefits: "Spritz for a calming and refreshing experience. Use as a toner or whenever a burst of relaxation is needed."
+    benefits: "Spritz for a calming and refreshing experience. Use as a toner or whenever a burst of relaxation is needed.",
+    new: false,
+    popular: true
   },
   { 
     id: 13, 
@@ -147,7 +171,9 @@ const products = [
     description: "Illuminate your features with our pure radiance highlighter. Achieve a natural and dewy glow for a luminous look.", 
     color: ["sand", "pink"],
     ingredients: ["Mica", "Coconut Oil", "Beeswax", "Shea Butter", "Rosehip Oil"],
-    benefits: "Enhance your features with a radiant glow. Apply to cheekbones and brow bones for a luminous and natural look."
+    benefits: "Enhance your features with a radiant glow. Apply to cheekbones and brow bones for a luminous and natural look.",
+    new: false,
+    popular: false
   },
   { 
     id: 14, 
@@ -158,7 +184,9 @@ const products = [
     description: "Upgrade your makeup routine with our eco-friendly bamboo brush set. Sustainable beauty at its best.", 
     color: ["sand"],
     ingredients: ["Bamboo", "Synthetic Bristles", "Aluminum", "Recycled Plastic", "Cotton"],
-    benefits: "Elevate your makeup application with eco-friendly brushes. Cruelty-free and perfect for a sustainable beauty routine."
+    benefits: "Elevate your makeup application with eco-friendly brushes. Cruelty-free and perfect for a sustainable beauty routine.",
+    new: false,
+    popular: false
   },
   { 
     id: 15, 
@@ -169,7 +197,9 @@ const products = [
     description: "Balance and tone your skin with the soothing properties of tea tree. Refresh your complexion naturally.", 
     color: ["green"],
     ingredients: ["Tea Tree Oil", "Witch Hazel", "Aloe Vera", "Chamomile Extract", "Lavender Oil"],
-    benefits: "Achieve a balanced and refreshed complexion. Apply with a cotton pad after cleansing for best results."
+    benefits: "Achieve a balanced and refreshed complexion. Apply with a cotton pad after cleansing for best results.",
+    new: false,
+    popular: false
   },
   { 
     id: 16, 
@@ -180,7 +210,9 @@ const products = [
     description: "Achieve a flawless complexion with our natural radiance BB cream. Enhance your beauty with a lightweight and natural finish.", 
     color: ["sand", "pink"],
     ingredients: ["Jojoba Oil", "Shea Butter", "Mineral Pigments", "Aloe Vera", "Green Tea Extract"],
-    benefits: "Perfect your skin with a lightweight and natural finish. Apply evenly for a radiant and flawless complexion."
+    benefits: "Perfect your skin with a lightweight and natural finish. Apply evenly for a radiant and flawless complexion.",
+    new: false,
+    popular: false
   },
   { 
     id: 17, 
@@ -191,7 +223,9 @@ const products = [
     description: "Nourish your hair with the exotic aroma of jasmine-infused hair oil. Achieve silky-smooth locks with a touch of luxury.", 
     color: ["yellow", "white"],
     ingredients: ["Jojoba Oil", "Argan Oil", "Jasmine Extract", "Coconut Oil", "Vitamin E"],
-    benefits: "Indulge your hair with a luxurious aroma. Apply to damp or dry hair for a silky and frizz-free finish."
+    benefits: "Indulge your hair with a luxurious aroma. Apply to damp or dry hair for a silky and frizz-free finish.",
+    new: true,
+    popular: false
   },
   { 
     id: 18, 
@@ -202,7 +236,9 @@ const products = [
     description: "Revitalize your skin with the power of green tea and aloe vera. Experience a spa-like treatment at home.", 
     color: ["green"],
     ingredients: ["Green Tea Extract", "Aloe Vera", "Kaolin Clay", "Honey", "Chamomile Extract"],
-    benefits: "Treat your skin to a spa-like experience. Apply a thin layer, relax, and rinse for a revitalized complexion."
+    benefits: "Treat your skin to a spa-like experience. Apply a thin layer, relax, and rinse for a revitalized complexion.",
+    new: false,
+    popular: false
   },
   { 
     id: 19, 
@@ -213,7 +249,9 @@ const products = [
     description: "Define and shape your brows naturally with our brow styler. Achieve a polished and effortless look.", 
     color: ["sand", "brown"],
     ingredients: ["Castor Oil", "Beeswax", "Cocoa Butter", "Jojoba Oil", "Vitamin E"],
-    benefits: "Shape and define your brows for a polished look. Glide on for easy application and a natural finish."
+    benefits: "Shape and define your brows for a polished look. Glide on for easy application and a natural finish.",
+    new: false,
+    popular: true
   },
   { 
     id: 20, 
@@ -224,7 +262,9 @@ const products = [
     description: "Invigorate your senses and exfoliate your skin with our refreshing citrus body scrub. A burst of energy for your skin.", 
     color: ["orange"],
     ingredients: ["Sea Salt", "Citrus Essential Oils", "Coconut Oil", "Grapeseed Oil", "Vitamin E"],
-    benefits: "Exfoliate and energize your skin. Massage onto damp skin in circular motions for a refreshing and invigorating experience."
+    benefits: "Exfoliate and energize your skin. Massage onto damp skin in circular motions for a refreshing and invigorating experience.",
+    new: false,
+    popular: false
   },
   { 
     id: 21, 
@@ -235,7 +275,9 @@ const products = [
     description: "Gently cleanse your skin with the soothing power of chamomile. Remove impurities for a fresh and calm complexion.", 
     color: ["yellow"],
     ingredients: ["Chamomile Extract", "Aloe Vera", "Jojoba Oil", "Glycerin", "Cucumber Extract"],
-    benefits: "Gently cleanse and soothe your skin. Massage onto damp skin, rinse, and enjoy a fresh and calm complexion."
+    benefits: "Gently cleanse and soothe your skin. Massage onto damp skin, rinse, and enjoy a fresh and calm complexion.",
+    new: false,
+    popular: false
   },
   { 
     id: 22, 
@@ -246,7 +288,9 @@ const products = [
     description: "Drench your lips in the tropical paradise of our lip gloss. Add shine and a hint of exotic flavor to your look.", 
     color: ["red", "orange"],
     ingredients: ["Coconut Oil", "Mango Extract", "Papaya Extract", "Beeswax", "Vitamin E"],
-    benefits: "Add a glossy finish and tropical flavor to your lips. Swipe on for a hydrating and luscious touch of paradise."
+    benefits: "Add a glossy finish and tropical flavor to your lips. Swipe on for a hydrating and luscious touch of paradise.",
+    new: false,
+    popular: false
   },
   { 
     id: 23, 
@@ -257,7 +301,9 @@ const products = [
     description: "Elevate your skincare routine with our radiant rosewater mist. Hydrate and revitalize your skin with a floral touch.", 
     color: ["purple", "pink"],
     ingredients: ["Rosewater", "Witch Hazel", "Aloe Vera", "Glycerin", "Lavender Oil"],
-    benefits: "Refresh and soothe your skin with a burst of floral hydration. Spritz on face as needed throughout the day."
+    benefits: "Refresh and soothe your skin with a burst of floral hydration. Spritz on face as needed throughout the day.",
+    new: false,
+    popular: true
   },
   { 
     id: 24, 
@@ -268,7 +314,9 @@ const products = [
     description: "Explore a spectrum of natural hues with our eyeshadow palette. Create versatile and stunning eye looks effortlessly.", 
     color: ["sand", "brown"],
     ingredients: ["Mica", "Iron Oxides", "Talc", "Kaolin", "Jojoba Oil"],
-    benefits: "Create endless eye looks with versatile and natural shades. Blend and build for stunning and long-lasting results."
+    benefits: "Create endless eye looks with versatile and natural shades. Blend and build for stunning and long-lasting results.",
+    new: false,
+    popular: false
   },
   { 
     id: 25, 
@@ -279,7 +327,9 @@ const products = [
     description: "Indulge your skin in the richness of cocoa and shea butter. Moisturize and nourish for soft and smooth skin.", 
     color: ["sand", "brown"],
     ingredients: ["Cocoa Butter", "Shea Butter", "Coconut Oil", "Almond Oil", "Vitamin E"],
-    benefits: "Hydrate and nourish your skin with a rich and luxurious blend. Smooth onto skin for soft and silky results."
+    benefits: "Hydrate and nourish your skin with a rich and luxurious blend. Smooth onto skin for soft and silky results.",
+    new: false,
+    popular: false
   },
   { 
     id: 26, 
@@ -290,7 +340,9 @@ const products = [
     description: "Revitalize your breath with our minty fresh breath mist. A natural and refreshing way to maintain oral hygiene.", 
     color: ["green"],
     ingredients: ["Peppermint Oil", "Spearmint Oil", "Xylitol", "Aloe Vera", "Tea Tree Oil"],
-    benefits: "Freshen your breath naturally. Spray directly into the mouth for an instant burst of minty freshness."
+    benefits: "Freshen your breath naturally. Spray directly into the mouth for an instant burst of minty freshness.",
+    new: false,
+    popular: false
   },
   { 
     id: 27, 
@@ -301,7 +353,9 @@ const products = [
     description: "Transform your hair with the silk elegance of our hair serum. Achieve a smooth and frizz-free finish.", 
     color: ["sand", "white"],
     ingredients: ["Silk Proteins", "Argan Oil", "Jojoba Oil", "Coconut Oil", "Vitamin E"],
-    benefits: "Add shine and smoothness to your hair. Apply to damp or dry hair for a silky and frizz-free finish."
+    benefits: "Add shine and smoothness to your hair. Apply to damp or dry hair for a silky and frizz-free finish.",
+    new: false,
+    popular: false
   },
   { 
     id: 28, 
@@ -312,7 +366,9 @@ const products = [
     description: "Get a sun-kissed glow with our bronzing powder. Add warmth and radiance to your complexion naturally.", 
     color: ["sand", "brown"],
     ingredients: ["Mica", "Iron Oxides", "Talc", "Kaolin", "Jojoba Oil"],
-    benefits: "Achieve a natural sun-kissed glow. Apply to areas where the sun naturally hits for a radiant and bronzed look."
+    benefits: "Achieve a natural sun-kissed glow. Apply to areas where the sun naturally hits for a radiant and bronzed look.",
+    new: false,
+    popular: false
   },
   { 
     id: 29, 
@@ -323,7 +379,9 @@ const products = [
     description: "Cleanse and nourish your hair with the soothing blend of jasmine and green tea. A spa-like experience for your locks.", 
     color: ["green", "white"],
     ingredients: ["Jasmine Extract", "Green Tea Extract", "Aloe Vera", "Coconut Oil", "Vitamin E"],
-    benefits: "Indulge your hair with a spa-like experience. Gently massage into wet hair and rinse for nourished and refreshed locks."
+    benefits: "Indulge your hair with a spa-like experience. Gently massage into wet hair and rinse for nourished and refreshed locks.",
+    new: false,
+    popular: false
   },
   { 
     id: 30, 
@@ -334,7 +392,9 @@ const products = [
     description: "Treat your lips to the heavenly aroma of vanilla with our lip scrub. Gently exfoliate for soft and kissable lips.", 
     color: ["sand", "pink"],
     ingredients: ["Brown Sugar", "Vanilla Extract", "Jojoba Oil", "Coconut Oil", "Vitamin E"],
-    benefits: "Gently exfoliate and moisturize for irresistibly smooth lips. Massage onto lips, then rinse for a heavenly touch."
+    benefits: "Gently exfoliate and moisturize for irresistibly smooth lips. Massage onto lips, then rinse for a heavenly touch.",
+    new: false,
+    popular: false
   },
   { 
     id: 31, 
@@ -345,7 +405,9 @@ const products = [
     description: "Combat signs of aging with our acai berry anti-aging mask. Rejuvenate and restore your skin's youthful glow.", 
     color: ["purple", "pink"],
     ingredients: ["Acai Berry Extract", "Kaolin Clay", "Hyaluronic Acid", "Vitamin C", "Rosehip Oil"],
-    benefits: "Revitalize and nourish your skin. Apply a thin layer, relax, and rinse for a youthful and radiant complexion."
+    benefits: "Revitalize and nourish your skin. Apply a thin layer, relax, and rinse for a youthful and radiant complexion.",
+    new: false,
+    popular: false
   },
   { 
     id: 32, 
@@ -356,7 +418,9 @@ const products = [
     description: "Elevate your bath time with our sustainable bamboo bath brush. Gentle exfoliation for smooth and radiant skin.", 
     color: ["green"],
     ingredients: ["Bamboo", "Synthetic Bristles", "Aluminum", "Recycled Plastic", "Cotton"],
-    benefits: "Upgrade your bath routine with eco-friendly materials. Use for gentle exfoliation and a spa-like experience."
+    benefits: "Upgrade your bath routine with eco-friendly materials. Use for gentle exfoliation and a spa-like experience.",
+    new: false,
+    popular: false
   },
   { 
     id: 33, 
@@ -367,7 +431,9 @@ const products = [
     description: "Indulge in the coconut bliss of our body butter. Hydrate and nourish your skin for a luxurious and tropical experience.", 
     color: ["white", "brown"],
     ingredients: ["Coconut Oil", "Shea Butter", "Cocoa Butter", "Almond Oil", "Vitamin E"],
-    benefits: "Moisturize and nourish your skin with a tropical blend. Smooth onto skin for a luxurious and hydrated feel."
+    benefits: "Moisturize and nourish your skin with a tropical blend. Smooth onto skin for a luxurious and hydrated feel.",
+    new: false,
+    popular: false
   },
   { 
     id: 34, 
@@ -378,7 +444,9 @@ const products = [
     description: "Immerse yourself in the delicate scent of petals and peony with our perfume oil. A natural and captivating fragrance.", 
     color: ["purple", "pink"],
     ingredients: ["Jojoba Oil", "Rose Extract", "Peony Extract", "Lavender Oil", "Vanilla Extract"],
-    benefits: "Enhance your aura with a captivating scent. Apply to pulse points for a long-lasting and alluring fragrance."
+    benefits: "Enhance your aura with a captivating scent. Apply to pulse points for a long-lasting and alluring fragrance.",
+    new: true,
+    popular: false
   },
   { 
     id: 35, 
@@ -389,7 +457,9 @@ const products = [
     description: "Go green with our eco-friendly cotton pads. Perfect for applying and removing your favorite natural cosmetics.", 
     color: ["white", "green"],
     ingredients: ["Organic Cotton", "Bamboo Fiber", "Recycled Paper", "Cornstarch", "Water-based Adhesive"],
-    benefits: "Choose sustainability with eco-friendly cotton pads. Ideal for applying and removing makeup while caring for the environment."
+    benefits: "Choose sustainability with eco-friendly cotton pads. Ideal for applying and removing makeup while caring for the environment.",
+    new: false,
+    popular: false
   },
   { 
     id: 36, 
@@ -400,7 +470,9 @@ const products = [
     description: "Reveal silky-smooth skin with our mango and papaya body scrub. Exfoliate and indulge in a tropical spa experience.", 
     color: ["orange"],
     ingredients: ["Sugar", "Mango Extract", "Papaya Extract", "Coconut Oil", "Vitamin E"],
-    benefits: "Exfoliate and indulge in a tropical spa experience. Massage onto damp skin for silky-smooth and revitalized results."
+    benefits: "Exfoliate and indulge in a tropical spa experience. Massage onto damp skin for silky-smooth and revitalized results.",
+    new: false,
+    popular: false
   },
   { 
     id: 37, 
@@ -411,7 +483,9 @@ const products = [
     description: "Stay fresh with our forest breeze deodorant. A natural and effective way to keep odors at bay throughout the day.", 
     color: ["green", "brown"],
     ingredients: ["Coconut Oil", "Arrowroot Powder", "Baking Soda", "Tea Tree Oil", "Cypress Oil"],
-    benefits: "Stay naturally fresh all day. Apply as needed for effective odor protection with a hint of forest breeze."
+    benefits: "Stay naturally fresh all day. Apply as needed for effective odor protection with a hint of forest breeze.",
+    new: false,
+    popular: false
   },
   { 
     id: 38, 
@@ -422,7 +496,9 @@ const products = [
     description: "Purify and detoxify your skin with our bamboo charcoal mask. Experience a deep cleanse for a radiant complexion.", 
     color: ["black", "green"],
     ingredients: ["Bamboo Charcoal", "Kaolin Clay", "Aloe Vera", "Tea Tree Oil", "Witch Hazel"],
-    benefits: "Draw out impurities and achieve a radiant complexion. Apply a thin layer, relax, and rinse for a detoxified and refreshed skin."
+    benefits: "Draw out impurities and achieve a radiant complexion. Apply a thin layer, relax, and rinse for a detoxified and refreshed skin.",
+    new: false,
+    popular: false
   },
   { 
     id: 39, 
@@ -433,7 +509,9 @@ const products = [
     description: "Nourish and hydrate your cuticles with the refreshing scent of lemon zest. Achieve healthy and well-groomed nails.", 
     color: ["yellow"],
     ingredients: ["Jojoba Oil", "Sweet Almond Oil", "Lemon Essential Oil", "Vitamin E", "Argan Oil"],
-    benefits: "Nourish and hydrate cuticles for healthy and well-groomed nails. Apply to cuticles and massage for optimal results."
+    benefits: "Nourish and hydrate cuticles for healthy and well-groomed nails. Apply to cuticles and massage for optimal results.",
+    new: false,
+    popular: false
   },
   { 
     id: 40, 
@@ -444,7 +522,9 @@ const products = [
     description: "Calm and nurture your baby's delicate skin with our gentle baby massage oil. A soothing blend for a bonding experience.", 
     color: ["blue"],
     ingredients: ["Sweet Almond Oil", "Chamomile Extract", "Lavender Oil", "Calendula Extract", "Jojoba Oil"],
-    benefits: "Soothe and bond with your baby. Gently massage onto baby's skin for a calming and nurturing experience."
+    benefits: "Soothe and bond with your baby. Gently massage onto baby's skin for a calming and nurturing experience.",
+    new: false,
+    popular: false
   }
 ];
 
